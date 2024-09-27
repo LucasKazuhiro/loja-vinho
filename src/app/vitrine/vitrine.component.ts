@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { Vinho } from '../model/vinho';
 import { CommonModule } from '@angular/common';
+import { MenuComponent } from '../menu/menu.component';
 
 @Component({
   selector: 'app-vitrine',
   standalone: true,
-  imports: [CommonModule],
+  imports: [MenuComponent, CommonModule],
   templateUrl: './vitrine.component.html',
   styleUrl: './vitrine.component.css'
 })
@@ -35,7 +36,7 @@ export class VitrineComponent {
 
 
     public verMais(vinho:Vinho){
-      localStorage.setItem("vinho", JSON.stringify(vinho))
-      window.location.href="./detalhe"
+      localStorage.setItem("vinho", JSON.stringify(vinho));
+      window.location.href="./detalhe";
     }
   }
