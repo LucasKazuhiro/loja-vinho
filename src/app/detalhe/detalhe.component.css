@@ -41,15 +41,14 @@
 
 /* ===== Titulo ===== */
 #titulo-box{    
-    border: 1.5px #D1416C solid;
-    width: 100%;
-    padding: 30px 0;
-    border-radius: 5px;
-    text-align: center;
+    padding: 20px 0 20px 16px;
+    border-left: 4px #D1416C solid;
 }
 
 #titulo{
+    width: 100%;
     font-size: 40px;
+    line-height: 36px;
 }
 
 /* ===== Descrição do Vinho ===== */
@@ -66,6 +65,7 @@
     width: 60%;
     flex-wrap: wrap;
     gap: 15px;
+    align-self: flex-start;
 }
 
 .tag-box{
@@ -77,11 +77,11 @@
     padding: 15px 25px;
     line-height: 22px;  
     gap: 12px;
+    vertical-align: middle;
 }
 
 .icon-tags-img{
     width: 35px;
-
 }
 
 /* ===== Area dos Preços ===== */
@@ -160,6 +160,7 @@ button.botaoMaisMenos{
     border-radius: 0 10px 10px 0;
     color: white;
     font-weight: 600;
+    line-height: 20px;
 }
 
 
@@ -189,7 +190,11 @@ button.botaoMaisMenos{
 
 
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 950px) {
+    #titulo{
+        font-size: 30px;
+    }
+
     #img-vinho-descricao-box-responsivo{
         display: flex;
         flex-direction: row;
@@ -212,7 +217,7 @@ button.botaoMaisMenos{
 
 
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 650px) {
     #img-vinho-descricao-box-responsivo{
         flex-direction: column;
     }
