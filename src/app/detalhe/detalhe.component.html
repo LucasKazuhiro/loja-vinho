@@ -1,18 +1,50 @@
 <menu></menu>
 
-<h1> ESSA É O DETALHE!! </h1>
 <div *ngIf="vinho.codigo > 0">
-    <p>Código: {{vinho.codigo}}</p>
-    <p>Nome: {{vinho.nome}}</p>
-    <img src="assets/{{vinho.codigo}}.png" alt="">
-    <p>Tipo: {{vinho.tipo}}</p>
-    <p>Uva: {{vinho.uva}}</p>
-    <p>Volume: {{vinho.volume}}</p>
-    <p>Teor Alcoolico: {{vinho.teorAlcoolico}}%</p>
-    <p>Marca: {{vinho.marca}}</p>
-    <p>Origem: {{vinho.regiao}}, {{vinho.pais}}</p>
-    <p>R$ {{vinho.preco}}</p>
-
-    <button *ngIf="vinho.quantidade > 0">Comprar</button>
-    <h4 *ngIf="vinho.quantidade <= 0">Item fora de estoque</h4>
+    <div id="container">
+        <div id="vinho-box">
+            <!-- <p>Código: {{vinho.codigo}}</p> -->
+            <div id="vinho-img-box">
+                <img src="assets/vinhos/{{vinho.codigo}}.png" alt="" width="140px">
+            </div>
+            <div id="informacao-box">
+                <div id="titulo-box">
+                    <h1 id="titulo">{{vinho.nome}}</h1>
+                </div>
+                <div id="descricao-box">
+                    <div id="tags-box">
+                        <div class="tag-box">
+                            <img src="assets/paises/{{vinho.cdPais}}.png" alt="" class="icon-tags-img">
+                            <p>{{vinho.regiao}}, {{vinho.pais}}</p>
+                        </div>
+                        <div class="tag-box">
+                            <img src="assets/icons/uva.png" alt="" class="icon-tags-img">
+                            <p>{{vinho.uva}}</p>
+                        </div>
+                        <div class="tag-box">
+                            <img src="assets/icons/tipo.png" alt="" class="icon-tags-img">
+                            <p>{{vinho.tipo}}</p>
+                        </div>
+                        <div class="tag-box">
+                            <img src="assets/icons/volume.png" alt="" class="icon-tags-img">
+                            <p>{{vinho.volume}}</p>
+                        </div>
+                        <div class="tag-box">
+                            <img src="assets/icons/teorAlcoolico.png" alt="" class="icon-tags-img">
+                            <p>{{vinho.teorAlcoolico}}%</p>
+                        </div>
+                        <div class="tag-box">
+                            <img src="assets/icons/marca.png" alt="" class="icon-tags-img">
+                            <p>{{vinho.marca}}</p>
+                        </div>
+                    </div>
+                    <div id="preco-box">
+                        <p>R$ {{vinho.preco}}</p>
+                        <button *ngIf="vinho.quantidade > 0">Comprar</button>
+                        <h4 *ngIf="vinho.quantidade <= 0">Item fora de estoque</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

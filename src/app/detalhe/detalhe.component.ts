@@ -12,12 +12,15 @@ import { MenuComponent } from '../menu/menu.component';
 })
 export class DetalheComponent {
   public vinho:Vinho = new Vinho();
+  public tags:string = "";
 
   constructor(){
     let vinhoJSON:any = localStorage.getItem('vinho');
 
     if(vinhoJSON!=null){
       this.vinho = JSON.parse(vinhoJSON);
+
+      
     }
     else{
       // error ==> produto não encontrado
