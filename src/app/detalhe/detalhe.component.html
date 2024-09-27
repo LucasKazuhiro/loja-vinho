@@ -1,1 +1,16 @@
-<p>detalhe works!</p>
+<h1> ESSA É O DETALHE!! </h1>
+<div *ngIf="vinho.codigo > 0">
+    <p>Código: {{vinho.codigo}}</p>
+    <p>Nome: {{vinho.nome}}</p>
+    <img src="assets/{{vinho.codigo}}.png" alt="">
+    <p>Tipo: {{vinho.tipo}}</p>
+    <p>Uva: {{vinho.uva}}</p>
+    <p>Volume: {{vinho.volume}}</p>
+    <p>Teor Alcoolico: {{vinho.teorAlcoolico}}%</p>
+    <p>Marca: {{vinho.marca}}</p>
+    <p>Origem: {{vinho.regiao}}, {{vinho.pais}}</p>
+    <p>R$ {{vinho.preco}}</p>
+
+    <button *ngIf="vinho.quantidade > 0">Comprar</button>
+    <h4 *ngIf="vinho.quantidade <= 0">Item fora de estoque</h4>
+</div>
