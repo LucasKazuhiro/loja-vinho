@@ -1,1 +1,20 @@
-<p>cadastro works!</p>
+<menu></menu>
+
+<h1> ESSA É O CADASTRO!! </h1>
+
+<h2>Cadastro de Cliente</h2>
+<b>{{mensagem}}</b>
+
+<br><br>
+
+nome: <input type="text" [(ngModel)]="cliente.nome"><br>
+email <input type="email" [(ngModel)]="cliente.email"><br>
+senha <input type="password" [(ngModel)]="cliente.senha"><br>
+documento <input type="text" [(ngModel)]="cliente.documento"><br>
+telefone <input type="text" [(ngModel)]="cliente.telefone"><br>
+cep <input type="text" [(ngModel)]="cliente.cep"><br>
+logradouro <input type="text" [(ngModel)]="cliente.logradouro"><br>
+cidade <input type="text" [(ngModel)]="cliente.cidade"><br>
+complemento <input type="text" [(ngModel)]="cliente.complemento"><br>
+
+<button (click)="salvarCadastro()">{{cadastrarBtnText}}</button>
