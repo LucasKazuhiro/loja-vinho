@@ -6,6 +6,7 @@ export class Vinho {
     public volume:number = 0;
     public teorAlcoolico:number = 0;
     public marca:string = "";
+    public cdPais:string = "";
     public pais:string = "";
     public regiao:string = "";
     public preco:number = 0;
