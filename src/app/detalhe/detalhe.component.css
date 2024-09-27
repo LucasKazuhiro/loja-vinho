@@ -1,12 +1,11 @@
-.display-flex-centro-centro{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+
 
 #container{
     font-family: Arial, Helvetica, sans-serif;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #vinho-box{
@@ -21,8 +20,12 @@
 
 /* ===== Imagem do Vinho ===== */
 #vinho-img-box{
-    width: 30%;  
-    text-align: center;
+    width: fit-content;
+    margin-right: 40px;
+}
+
+#vinho-img-box-responsivo{
+    display: none;
 }
 
 
@@ -42,6 +45,7 @@
     width: 100%;
     padding: 30px 0;
     border-radius: 5px;
+    text-align: center;
 }
 
 #titulo{
@@ -156,4 +160,76 @@ button.botaoMaisMenos{
     border-radius: 0 10px 10px 0;
     color: white;
     font-weight: 600;
+}
+
+
+
+
+
+
+
+/* ========== RESPONSIVIDADE ========= */
+@media only screen and (max-width: 1300px) {
+    #vinho-box{
+        width: 85%;
+    }
+
+    #descricao-box{
+        flex-direction: column;
+    }
+
+    #tags-box{
+        width: 100%;
+    }   
+
+    #comprar-box{
+        max-width: 70%;
+    }
+}
+
+
+
+@media only screen and (max-width: 800px) {
+    #img-vinho-descricao-box-responsivo{
+        display: flex;
+        flex-direction: row;
+    }
+
+    #vinho-img-box{
+       display: none;
+    }
+    
+    #vinho-img-box-responsivo{
+        margin-right: 30px;
+        width: fit-content;
+        display: block;
+    }
+
+    #comprar-box{
+        max-width: 100%;
+    }
+}
+
+
+
+@media only screen and (max-width: 550px) {
+    #img-vinho-descricao-box-responsivo{
+        flex-direction: column;
+    }
+    
+    #vinho-img-box-responsivo{
+        margin-right: 30px;
+        width: 100%;
+        margin: 0 0 50px 0;
+        text-align: center;
+        display: block;
+    }
+
+    #tags-box{
+        justify-content: center;
+    } 
+
+    #preco-box{
+        align-items: center;
+    }
 }
