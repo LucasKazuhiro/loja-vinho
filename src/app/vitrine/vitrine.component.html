@@ -1,3 +1,4 @@
+<h1> ESSA É A VITRINE!! </h1>
 <div *ngFor="let vinho of vinhos">
     <p>Código: {{vinho.codigo}}</p>
     <p>Nome: {{vinho.nome}}</p>
@@ -9,5 +10,10 @@
     <p>Marca: {{vinho.marca}}</p>
     <p>Origem: {{vinho.regiao}}, {{vinho.pais}}</p>
     <p>R$ {{vinho.preco}}</p>
-    <br><br><br>
+
+    <button
+        (click)="verMais(vinho)"
+    > Ver mais </button>
+
+    <br><br><br><br><br>
 </div>
