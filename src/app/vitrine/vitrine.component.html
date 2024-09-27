@@ -1,1 +1,13 @@
-<p>vitrine works!</p>
+<div *ngFor="let vinho of vinhos">
+    <p>Código: {{vinho.codigo}}</p>
+    <p>Nome: {{vinho.nome}}</p>
+    <img src="assets/{{vinho.codigo}}.png" alt="">
+    <p>Tipo: {{vinho.tipo}}</p>
+    <p>Uva: {{vinho.uva}}</p>
+    <p>Volume: {{vinho.volume}}</p>
+    <p>Teor Alcoolico: {{vinho.teorAlcoolico}}%</p>
+    <p>Marca: {{vinho.marca}}</p>
+    <p>Origem: {{vinho.regiao}}, {{vinho.pais}}</p>
+    <p>R$ {{vinho.preco}}</p>
+    <br><br><br>
+</div>
