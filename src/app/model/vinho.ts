@@ -11,4 +11,5 @@ export class Vinho {
     public regiao:string = "";
     public preco:number = 0;
     public quantidade:number = 0;
+    public desconto:number = 0;
 }
