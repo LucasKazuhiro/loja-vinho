@@ -20,10 +20,14 @@ export class MenuComponent {
 
   puxarClienteLogado(){
     let clienteJSON:any = localStorage.getItem("cliente");
-
+    console.log(clienteJSON);
+    console.log(this.cliente)
     if(clienteJSON!=null){
       this.cliente = JSON.parse(clienteJSON);
       this.estaLogado=true;
+    }
+    else{
+      this.estaLogado=false;
     }
   }
 }

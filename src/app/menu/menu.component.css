@@ -1,0 +1,52 @@
+#container{
+    background-color: #222222;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#menu-box{
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+}
+
+#caixa-pesquisa-box{
+    background-color: #585858;
+    border-radius: 25px;
+    width: 650px;
+    display: flex;
+    align-items: center;
+}
+
+#caixa-pesquisa{
+    padding: 16px 24px;
+    width: 85%;
+    border: none;
+    outline: none;
+    color: #dbdbdb;
+    background: transparent;
+    font-size: 18px;
+}
+
+#caixa-pesquisa::placeholder{
+    color: rgb(129, 129, 129);
+}
+
+#lupa-pesquisa{
+    cursor: pointer;
+}
+
+
+#conta-carrinho-box{
+    display: flex;
+}
+
+#cadastro-login-box{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
