@@ -1,33 +1,37 @@
 #container{
+    font-family: Arial, Helvetica, sans-serif;
     background-color: #222222;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
+/* ===== Menu Box 1 ===== */
 #menu-box{
     padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 90%;
+    width: 60%;
 }
 
+/* ===== Pesquisar ===== */
 #caixa-pesquisa-box{
-    background-color: #585858;
+    background-color: #444444;
     border-radius: 25px;
-    width: 650px;
+    width: 600px;
     display: flex;
     align-items: center;
 }
 
 #caixa-pesquisa{
-    padding: 16px 24px;
+    padding: 12px 24px;
     width: 85%;
     border: none;
     outline: none;
     color: #dbdbdb;
     background: transparent;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 #caixa-pesquisa::placeholder{
@@ -38,13 +42,63 @@
     cursor: pointer;
 }
 
-
+/* ===== Conta do usuario e Carrinho */
 #conta-carrinho-box{
     display: flex;
+    gap: 35px;
 }
 
+/* ===== Conta do usuario */
 #cadastro-login-box{
     display: flex;
     flex-direction: row;
     align-items: center;
+
+}
+
+#mensagem-menu, #mensagem-menu > a{
+    font-size: 14px;
+    color: #bbbbbb;
+    line-height: 22px;
+}
+
+#mensagem-menu > a{
+    text-decoration: none;
+    font-weight: 600;
+    transition: .6s;
+}
+
+#mensagem-menu >a:hover{
+    color: #ffa65d;
+}
+
+
+
+
+
+/* ===== Menu Box 2 ===== */
+#menu-box-2{
+    width: 100%;
+    background-color: #2e2e2e;
+}
+
+#menu-items-box{
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 45%;
+    height: 50px;
+}
+
+#menu-items-box > a{
+    color: #bbbbbb;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 15px;
+    transition: 1s;
+}
+
+#menu-items-box > a:hover{
+    color: #e0883f;
 }

@@ -1,29 +1,32 @@
 <div id="container">
     <div id="menu-box">
-        <img src="assets/icons/logo2.png" alt="" width="30px">
+        <img src="assets/icons/logo2.png" alt="" width="28px">
         
         <div id="caixa-pesquisa-box">
             <input type="text" placeholder="Encontre o seu vinho..." id="caixa-pesquisa">
-            <img src="assets/icons/search.svg" alt="" width="35px" id="lupa-pesquisa">
+            <img src="assets/icons/search.svg" alt="" width="28px" id="lupa-pesquisa">
         </div>
     
         <div id="conta-carrinho-box">
             <div id="cadastro-login-box">
-                <img src="assets/icons/user.svg" alt="" width="42px" style="">
-                <p *ngIf="estaLogado == false" style="width: 80px;">
+                <img src="assets/icons/user.svg" alt="" width="40px">
+                <p *ngIf="estaLogado == false" id="mensagem-menu">
+                    <span>Bem-vindo(a)</span><br>
                     <a href="./cadastro"> Entrar</a> ou <a href="./login">Cadastrar</a>
                 </p>
             </div>
-            <img src="assets/icons/cart.svg" alt="" width="42px">
+            <a href="./cesta">
+                <img src="assets/icons/cart.svg" alt="" width="40px">
+            </a>
         </div>
     </div>
+    <nav id="menu-box-2">
+        <div id="menu-items-box">
+            <a href="./vitrine">Vitrine</a>
+            <a href="./pesquisa">Pesquisar</a>
+            <a href="./login">Logar</a>
+            <a href="./cadastro">Cadastrar</a>
+            <a href="./cesta">Carrinho</a>
+        </div>
+    </nav>
 </div>
-<nav>
-    <a href="./cadastro">Cadastrar</a><br>
-    <a href="./cesta">Carrinho</a><br>
-    <a href="./detalhe">Detalhe</a><br>
-    <a href="./esqueci-senha">Esquecia a Senha</a><br>
-    <a href="./login">Logar</a><br>
-    <a href="./pesquisa">Pesquisar</a><br>
-    <a href="./vitrine">Vitrine</a><br>
-</nav>
