@@ -1,1 +1,36 @@
-<p>cesta works!</p>
+<menu></menu>
+
+<div id="container">
+    <h1> Carrinho de compras </h1>
+    <div id="carrinho-box">
+        <div id="produtos-carrinho-box">
+            <div class="item-carrinho-box" *ngFor="let item of carrinhoDeItems">
+                <h2> {{item.vinho.nome}}</h2>
+                <div>
+                    <img src="" alt="">
+                    <div class="item-carrinho-info-box">
+                        <div class="item-carrinho-tags">
+                            <p> {{item.vinho.tipo}} </p>
+                            <p> {{item.vinho.regiao}}, {{item.vinho.pais}} </p>
+                            <p> {{item.vinho.uva}} </p>
+                            <p> {{item.vinho.teorAlcoolico}} </p>
+                            <p> {{item.vinho.teorAlcoolico}} </p>
+                            <p> {{item.vinho.marca}} </p>
+                        </div>
+                        <div class="item-carrinho-preco">
+                            <div class="precounid-quantidade">
+                                {{item.vinho.preco}}
+                            </div>
+                            <div class="preco-total">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="pagamento-box">
+    
+        </div>
+    </div>
+</div>
