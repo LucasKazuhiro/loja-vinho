@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.css'
 })
-export class MenuComponent {
+export class MenuComponent{
   constructor(){
     this.puxarClienteLogado();
   }
@@ -17,6 +17,7 @@ export class MenuComponent {
   public cliente:Cliente = new Cliente();
   public mensagemBemVindo:string = "";
   public estaLogado:boolean=false;
+
 
   puxarClienteLogado(){
     let clienteJSON:any = localStorage.getItem("cliente");
@@ -27,7 +28,8 @@ export class MenuComponent {
       this.estaLogado=true;
     }
     else{
-      this.estaLogado=false;
+      this.estaLogado=false;  
     }
   }
+
 }

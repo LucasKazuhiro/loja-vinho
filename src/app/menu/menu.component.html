@@ -1,15 +1,20 @@
 <div id="container">
     <div id="menu-box">
+        <img src="assets/icons/menu-hamb.png" alt="" id="menu-hamb-icon">
         <img src="assets/icons/logo2.png" alt="" width="28px">
         
-        <div id="caixa-pesquisa-box">
-            <input type="text" placeholder="Encontre o seu vinho..." id="caixa-pesquisa">
-            <img src="assets/icons/search.svg" alt="" width="28px" id="lupa-pesquisa">
+        <div id="caixa-pesquisa-desktop" class="caixa-pesquisa-box">
+            <input type="text" placeholder="Encontre o seu vinho..." class="caixa-pesquisa">
+            <div class="lupa-pesquisa-box">
+                <img src="assets/icons/search.svg" alt="" width="28px" class="lupa-pesquisa">
+            </div>
         </div>
     
         <div id="conta-carrinho-box">
             <div id="cadastro-login-box">
-                <img src="assets/icons/user.svg" alt="" width="40px">
+                <a href="./cadastro">
+                    <img src="assets/icons/user.svg" alt="" width="40px">
+                </a>
                 <p *ngIf="estaLogado == false" id="mensagem-menu">
                     <span>Bem-vindo(a)</span><br>
                     <a href="./cadastro"> Entrar</a> ou <a href="./login">Cadastrar</a>
@@ -29,4 +34,10 @@
             <a href="./cesta">Carrinho</a>
         </div>
     </nav>
+    <div id="caixa-pesquisa-mobile" class="caixa-pesquisa-box">
+        <input type="text" placeholder="Encontre o seu vinho..." class="caixa-pesquisa">
+        <div class="lupa-pesquisa-box">
+            <img src="assets/icons/search.svg" alt="" width="28px" class="lupa-pesquisa">
+        </div>
+    </div>
 </div>
