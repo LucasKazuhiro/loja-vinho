@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { Cliente } from '../model/cliente';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'menu',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.css'
 })
@@ -18,7 +19,8 @@ export class MenuComponent{
   public mensagemBemVindo:string = "";
   public estaLogado:boolean=false;
 
-
+  
+  
   puxarClienteLogado(){
     let clienteJSON:any = localStorage.getItem("cliente");
     console.log(clienteJSON);
@@ -32,13 +34,12 @@ export class MenuComponent{
     }
   }
 
-  changeAriaHiddenValue(){
-    const menuLateralCheckbox = document.getElementById('menu-lateral-ativar');
-    const menuLateralBox = document.querySelector('menu-lateral-box');
 
-    menuLateralCheckbox?.addEventListener('change', (event) => {
-      const checkbox = event.target as HTMLInputElement;
-      menuLateralBox?.setAttribute('aria-hidden', String(!checkbox.checked));
-    })
+
+
+  estaAtivoMenuLateral = false;
+
+  toggleMenuLateral(){
+    this.estaAtivoMenuLateral = !this.estaAtivoMenuLateral;
   }
 }

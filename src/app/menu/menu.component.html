@@ -1,25 +1,32 @@
 <div id="container">
+    <aside>
+        <label id="sobreporFundoMenuLateral" for="menu-lateral-ativo"
+        [ngStyle]="{
+            opacity: estaAtivoMenuLateral ? '0.3' : '0',
+            visibility: estaAtivoMenuLateral ? 'visible' : 'hidden'
+        }"
+        ></label>
+        <nav class="menu-lateral-box" aria-hidden="true"
+        [ngStyle]="{
+            left: estaAtivoMenuLateral ? '0' : '-100%'
+        }"
+        [attr.aria-hidden]="!estaAtivoMenuLateral"
+        >
+            <label class="fechar-menu-lateral-btn" (click)="toggleMenuLateral()">
+                <img src="assets/icons/x-fechar.png" alt="" id="x-fechar-icon">
+            </label>  
+            
+            <a href="./vitrine">Vitrine</a>
+            <a href="./pesquisa">Pesquisar</a>
+            <a href="./login">Logar</a>
+            <a href="./cadastro">Cadastrar</a>
+            <a href="./cesta">Carrinho</a>
+        </nav>
+    </aside>
     <div id="menu-box">
-        <input type="checkbox" id="menu-lateral-ativar" (click)="changeAriaHiddenValue()">
-        <label for="menu-lateral-ativar" class="abrir-menu-lateral-btn">
+        <label class="abrir-menu-lateral-btn" (click)="toggleMenuLateral()">
             <img src="assets/icons/menu-hamb.png" alt="" id="menu-hamb-icon">
         </label>
-
-        <aside>
-            <label id="sobreporFundoMenuLateral" for="menu-lateral-ativo"></label>
-            <nav class="menu-lateral-box" aria-hidden="true">
-                <label for="menu-lateral-ativar" class="fechar-menu-lateral-btn">
-                    <img src="assets/icons/x-fechar.png" alt="" id="x-fechar-icon">
-                </label>  
-                
-                <a href="./vitrine">Vitrine</a>
-                <a href="./pesquisa">Pesquisar</a>
-                <a href="./login">Logar</a>
-                <a href="./cadastro">Cadastrar</a>
-                <a href="./cesta">Carrinho</a>
-            </nav>
-        </aside>
-
 
         <img src="assets/icons/logo2.png" alt="" width="28px">
         
