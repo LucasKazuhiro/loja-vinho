@@ -1,22 +1,24 @@
-<menu></menu>
 
 <h1> ESSA É A VITRINE!! </h1>
-<div *ngFor="let vinho of vinhos">
-    <img src="assets/paises/{{vinho.cdPais}}.png" alt="">
-    <p id="codigo_paragrafo" >Código: {{vinho.codigo}}</p>
-    <p>Nome: {{vinho.nome}}</p>
-    <img src="assets/vinhos/{{vinho.codigo}}.png" alt="">
-    <p>Tipo: {{vinho.tipo}}</p>
-    <p>Uva: {{vinho.uva}}</p>
-    <p>Volume: {{vinho.volume}}</p>
-    <p>Teor Alcoolico: {{vinho.teorAlcoolico}}%</p>
-    <p>Marca: {{vinho.marca}}</p>
-    <p>Origem: {{vinho.regiao}}, {{vinho.pais}}</p>
-    <p id="preco">R$ {{vinho.preco}}</p>
-
-    <button
-        (click)="verMais(vinho)"
-    > Ver mais </button>
-
-    <br><br><br><br><br>
+<div>
+    <menu></menu>
+    <div *ngFor="let vinho of vinhos">
+        <img src="assets/paises/{{vinho.cdPais}}.png" alt="">
+        <p id="codigo_paragrafo" >Código: {{vinho.codigo}}</p>
+        <p>Nome: {{vinho.nome}}</p>
+        <img src="assets/vinhos/{{vinho.codigo}}.png" alt="">
+        <p>Tipo: {{vinho.tipo}}</p>
+        <p>Uva: {{vinho.uva}}</p>
+        <p>Volume: {{vinho.volume}}</p>
+        <p>Teor Alcoolico: {{vinho.teorAlcoolico}}%</p>
+        <p>Marca: {{vinho.marca}}</p>
+        <p>Origem: {{vinho.regiao}}, {{vinho.pais}}</p>
+        <p id="preco">R$ {{vinho.preco}}</p>
+    
+        <button
+            (click)="verMais(vinho)"
+        > Ver mais </button>
+    
+        <br><br><br><br><br>
+    </div>
 </div>
