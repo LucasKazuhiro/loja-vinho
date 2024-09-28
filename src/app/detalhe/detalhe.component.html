@@ -43,7 +43,7 @@
                             </div>
                         </div>
                         <div id="preco-box">
-                            <div id="desconto-box">
+                            <div id="desconto-box" *ngIf="vinho.desconto > 0">
                                 <p style="text-decoration-line: line-through; color:#9b9b9b;">de R$ {{vinho.preco.toFixed(2)}} por</p>
                                 <p id="desconto-valor">{{vinho.desconto * 100}}% OFF</p>
                             </div>
