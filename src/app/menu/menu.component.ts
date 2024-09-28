@@ -32,4 +32,13 @@ export class MenuComponent{
     }
   }
 
+  changeAriaHiddenValue(){
+    const menuLateralCheckbox = document.getElementById('menu-lateral-ativar');
+    const menuLateralBox = document.querySelector('menu-lateral-box');
+
+    menuLateralCheckbox?.addEventListener('change', (event) => {
+      const checkbox = event.target as HTMLInputElement;
+      menuLateralBox?.setAttribute('aria-hidden', String(!checkbox.checked));
+    })
+  }
 }
