@@ -191,6 +191,10 @@ button.botaoMaisMenos{
 
 
 @media only screen and (max-width: 950px) {
+    #container{
+        padding-bottom: 40pxgit ;
+    }
+
     #titulo{
         font-size: 30px;
     }
