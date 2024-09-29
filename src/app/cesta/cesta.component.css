@@ -7,7 +7,7 @@
 
 #container-2{
     margin: auto;
-    width: 75%;
+    width: 80%;
 }
 
 #container-2 > h1{
@@ -17,22 +17,24 @@
 
 #carrinho-box{
     display: flex;
+    width: 100%;
+    gap: 100px;
 }
 
 
 /* ===== Produtos do Carrinho ===== */
+
 #produtos-carrinho-box{
-    display: flex;
-    flex-wrap: wrap;
-    width: 65%;
-    gap: 25px;
+    display: grid;
+    width: 70%;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
 }
 
 .item-carrinho-box{
     display: flex;
     flex-direction: column;
-    width: 40%;
-    padding: 15px 20px 25px 20px;
+    padding: 30px 20px 25px 20px;
     border: 1px #C5C5C5 solid;
     border-radius: 10px;
     position: relative;
@@ -57,11 +59,10 @@
 .img-vinho-box{
     display: flex;
     align-items: end;
-    width: 50%;
 }
 
 .img-vinho{
-    width: 100%;
+        width: 100%;
 }
 
 /* ===== Informações do Produto ===== */
@@ -91,7 +92,7 @@
 .item-carrinho-preco{
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 8px;
 }
 
 .precounid-quantidade{
@@ -107,7 +108,7 @@
 .quantidade-valor{
     display: flex;
     height: 100%;
-    width: 40%;
+    width: 110px;
 }
 
 .quantidade-contador-box{
@@ -141,8 +142,8 @@
 }
 
 .remover-item-box > img{
-    background-color: rgb(255, 189, 189);
-    padding: 3px;
+    background-color: rgb(255, 223, 223);
+    padding: 5px;
     border-radius: 8px;
 }
 
@@ -158,8 +159,8 @@
 #pagamento-box{
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
     gap: 40px;
+    width: 30%;
 }
 
 
@@ -283,4 +284,21 @@
     font-size: 13px;
     color: #8b8b8b;
 }
+
+
+
+
+
+
+
+
+
+
+/* ===== Responsividade ===== */
+@media only screen and (max-width: 650px){
+
+}
+
+
+
 
