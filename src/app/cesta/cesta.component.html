@@ -8,7 +8,9 @@
                 <div class="item-carrinho-box" *ngFor="let item of carrinhoDeItems">
                     <h2> {{item.vinho.nome}}</h2>
                     <div class="item-carrinho-img-info-box">
-                        <img src="assets/vinhos/{{item.vinho.codigo}}.png" alt="" class="img-vinho">
+                        <div class="img-vinho-box">
+                            <img src="assets/vinhos/{{item.vinho.codigo}}.png" alt="" class="img-vinho">
+                        </div>
                         <div class="item-carrinho-info-box">
                             <div class="item-carrinho-tags">
                                 <div class="item-carrinho-tag">

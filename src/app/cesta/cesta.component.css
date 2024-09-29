@@ -19,9 +19,12 @@
     display: flex;
     flex-wrap: wrap;
     width: 65%;
+    gap: 25px;
 }
 
 .item-carrinho-box{
+    display: flex;
+    flex-direction: column;
     width: 40%;
     padding: 15px 20px 25px 20px;
     border: 1px #C5C5C5 solid;
@@ -29,25 +32,36 @@
     position: relative;
 }
 
+
 .item-carrinho-box > h2{
-    font-size: 22px;
-    padding: 0px 0px 15px;
+    text-align: center;
+    line-height: 25px;
+    font-size: 20px;
+    flex: 1;
+    margin-bottom: 15px;
 }
 
 .item-carrinho-img-info-box{
     display: flex;
     gap: 25px;
+    flex: 1;
+}
+
+.img-vinho-box{
+    display: flex;
+    align-items: end;
+    width: 50%;
 }
 
 .img-vinho{
-    width: 70px;
+    width: 100%;
 }
 
 /* ===== Informações do Produto ===== */
 .item-carrinho-info-box{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    gap: 20px;
 }
 
 /* ===== Tags do Produto ===== */
