@@ -33,7 +33,7 @@ menu{
     display: grid;
     width: 70%;
     gap: 20px;
-    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
 }
 
 .item-carrinho-box{
@@ -64,10 +64,12 @@ menu{
 .img-vinho-box{
     display: flex;
     align-items: end;
+    justify-content: center;
 }
 
 .img-vinho{
-        width: 100%;
+    width: auto;
+    height: 250px;
 }
 
 /* ===== Informações do Produto ===== */
@@ -166,6 +168,7 @@ menu{
     flex-direction: column;
     gap: 40px;
     width: 30%;
+    flex-shrink: 0;
 }
 
 
@@ -301,10 +304,72 @@ menu{
 
 
 /* ===== Responsividade ===== */
-@media only screen and (max-width: 650px){
+@media only screen and (max-width: 1700px){
+    #carrinho-box{
+        gap: 50px;
+    }
 
+    #pagamento-box{
+        width: 450px;
+    }
+}
+
+
+@media only screen and (max-width: 1200px){
+    #container-2{
+        margin: auto;
+        width: 92%;
+        margin-bottom: 70px;
+    }
+}
+
+
+
+@media only screen and (max-width: 950px){
+    #container-2 > h1{
+        text-align: center;
+    }
+
+    #carrinho-box{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 100px;
+    }
+
+    #produtos-carrinho-box{
+        width: 100%;
+    }
+
+    #pagamento-box{
+        width: 100%;
+    }
+
+    #pedido-box{
+        position: static;
+    }
 }
 
 
 
 
+@media only screen and (max-width: 400px){
+    #container-2{
+        width: 97%;
+    }
+
+    #produtos-carrinho-box{
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    }
+
+    .quantidade-valor{
+        height: 42px;
+    }
+
+    .remover-item-box{
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 7px 7px 0 0;
+    }
+}
