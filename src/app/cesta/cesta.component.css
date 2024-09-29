@@ -14,7 +14,7 @@
 }
 
 
-/* ===== Produtos do Carrinho */
+/* ===== Produtos do Carrinho ===== */
 #produtos-carrinho-box{
     display: flex;
     flex-wrap: wrap;
@@ -41,6 +41,7 @@
     margin-bottom: 15px;
 }
 
+/* ===== Caixa da Imagem e das Informações ===== */
 .item-carrinho-img-info-box{
     display: flex;
     gap: 25px;
@@ -124,11 +125,6 @@
     font-size: 20px;
 }
 
-/* ===== Area do Pagamento ===== */
-#pagamento-box{
-    background-color: purple;
-    flex-grow: 1;
-}
 
 /* ===== Area do Lixo ===== */
 .remover-item-box{
@@ -145,4 +141,9 @@
 }
 
 
+/* ===== Area do Pagamento ===== */
+#pagamento-box{
+    background-color: purple;
+    flex-grow: 1;
+}
 
