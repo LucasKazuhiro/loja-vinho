@@ -78,33 +78,35 @@
                 </div>
             </div>
             <div id="pagamento-box">
-                <div id="desconto-box">
-                    <img src="" alt="">
-                    <h2> Cumpom de desconto </h2>
-                    <input type="text">
-                    <button id="desconto-botao"></button>
+                <div id="cupom-box">
+                    <div id="cupom-titulo-box">
+                        <img src="assets/icons/ticket.png" alt="" width="30px">
+                        <h2> Cumpom de desconto </h2>
+                    </div>
+                    <input type="text" placeholder="Inserir código de desconto">
+                    <button id="cupom-botao"> Aplicar </button>
                 </div>
                 <div id="pedido-box">
                     <div id="resumo-pedido-box">
                         <h2> Resumo do Pedido </h2>
                         <div id="informacoes-pagamento-box">
-                            <div id="subtotal-box">
+                            <div class="informacoes-pagamento">
                                 <p> Subtotal </p>
                                 <p> R$ 1.256,43 </p>
                             </div>
-                            <div id="desconto-box">
+                            <div class="informacoes-pagamento">
                                 <p> Descontos    </p>
                                 <p> R$ -272,18 </p>
                             </div>
-                            <div id="total-box">
+                            <div class="informacoes-pagamento">
                                 <p> Total </p>
                                 <p> R$ 984,25 </p>
                             </div>
                         </div>
                     </div> 
-                    <div>
-                        <button id="finalizar-pedido-botao"></button>
-                        <p> Ao comprar, você concorda com nossos termos e condições. </p>
+                    <div id="finalizar-pedido-box">
+                        <button id="finalizar-pedido-botao"> Finalizar Pedido <img src="assets/svgs/right-arrow-2.svg" width="30px" alt=""> </button>
+                        <p id="termos-condicoes-texto"> Ao comprar, você concorda com nossos <span style="text-decoration: underline;">termos e condições</span>.</p>
                     </div>
                 </div>
             </div>

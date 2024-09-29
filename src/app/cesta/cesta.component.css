@@ -2,11 +2,17 @@
 
 #container{
     font-family: Arial, Helvetica, sans-serif;
+    margin-top: 125px;
 }
 
 #container-2{
     margin: auto;
     width: 75%;
+}
+
+#container-2 > h1{
+    font-size: 32px;
+    margin-bottom: 40px;
 }
 
 #carrinho-box{
@@ -141,9 +147,140 @@
 }
 
 
+
+
+
+
+
+
+
 /* ===== Area do Pagamento ===== */
 #pagamento-box{
-    background-color: purple;
+    display: flex;
+    flex-direction: column;
     flex-grow: 1;
+    gap: 40px;
+}
+
+
+
+/* ===== Ares do Desconto ===== */
+#cupom-box{
+    display: flex;
+    flex-direction: column;
+    border: 1px #a3a3a3 solid;
+    border-radius: 5px;
+    padding: 22px 30px;
+}
+
+#cupom-titulo-box{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+#cupom-titulo-box > h2{
+    font-size: 22px;
+    color: #272727;
+}
+
+#cupom-box > input{
+    padding: 14px 12px 14px 26px;
+    font-size: 18px;
+    margin-bottom: 8px;
+    outline: none;
+    border: 1px solid #c2c2c2;
+    border-radius: 10px;
+    color: #5e5e5e;
+    text-transform: uppercase;
+}
+
+#cupom-box > input::placeholder{
+    font-size: 16px;
+    color: #cfcfcf;
+    text-transform: none;
+}
+
+#cupom-box > button{
+    background-color: #2D2D2D;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+
+
+/* ===== Resumo do Pedido ===== */
+#pedido-box{
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    border: 1px #a3a3a3 solid;
+    padding: 30px 40px;
+    border-radius: 20px;
+
+}
+
+#resumo-pedido-box{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+#resumo-pedido-box > h2{
+    font-size: 24px;
+    padding-bottom: 25px;
+    border-bottom: 1px #c2c2c2 solid ;
+    font-weight: bold;
+    color: #505050;
+}
+
+#informacoes-pagamento-box{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.informacoes-pagamento{
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    color: #585858;
+}
+
+#finalizar-pedido-box{
+    text-align: center;
+}
+
+#finalizar-pedido-botao{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    font-size: 22px;
+    padding: 14px;
+    background-color: #27A480;
+    border: none;
+    border-radius: 100px;
+    color: white;
+    cursor: pointer;
+    transition: 0.7s;
+    margin-bottom: 12px;
+}
+
+#finalizar-pedido-botao:hover{
+    background-color: #208b6d;
+}
+
+#termos-condicoes-texto{
+    font-size: 13px;
+    color: #8b8b8b;
 }
 
