@@ -28,7 +28,7 @@ export class DetalheComponent {
   }
 
   quantidadeAumentar(){
-    if(this.quantidadeItemsAtual < this.vinho.quantidade){
+    if(this.quantidadeItemsAtual < this.vinho.estoque){
       this.quantidadeItemsAtual = this.quantidadeItemsAtual + 1;
     }
   }

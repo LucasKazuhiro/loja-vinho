@@ -60,9 +60,9 @@
                                         <img src="assets/icons/plus.png" alt="" width="14px">
                                     </button>
                                 </div>
-                                <button *ngIf="vinho.quantidade > 0" id="botao-comprar"> ADICIONAR AO CARRINHO</button>
+                                <button *ngIf="vinho.estoque > 0" id="botao-comprar"> ADICIONAR AO CARRINHO</button>
                             </div>
-                            <h4 *ngIf="vinho.quantidade <= 0">Item fora de estoque</h4>
+                            <h4 *ngIf="vinho.estoque <= 0">Item fora de estoque</h4>
                         </div>
                     </div>
                 </div>

@@ -10,6 +10,6 @@ export class Vinho {
     public pais:string = "";
     public regiao:string = "";
     public preco:number = 0;
-    public quantidade:number = 0;
+    public estoque:number = 0;
     public desconto:number = 0;
 }
