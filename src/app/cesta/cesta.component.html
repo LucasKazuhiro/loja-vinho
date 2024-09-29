@@ -15,6 +15,16 @@
                                     <img src="assets/icons/tipo.png" alt="" width="25px">
                                     <p> {{item.vinho.tipo}} </p>
                                 </div>
+                                
+                                <div class="item-carrinho-tag">
+                                    <img src="assets/icons/volume.png" alt="" width="25px">
+                                    <p> {{item.vinho.volume}}ml </p>
+                                </div>
+                                
+                                <div class="item-carrinho-tag">
+                                    <img src="assets/icons/teorAlcoolico.png" alt="" width="25px">
+                                    <p> {{item.vinho.teorAlcoolico}}% </p>
+                                </div>
 
                                 <div class="item-carrinho-tag">
                                     <img src="assets/paises/{{item.vinho.cdPais}}.png" alt="" width="25px">
@@ -26,15 +36,7 @@
                                     <p> {{item.vinho.uva}} </p>
                                 </div>
 
-                                <div class="item-carrinho-tag">
-                                    <img src="assets/icons/teorAlcoolico.png" alt="" width="25px">
-                                    <p> {{item.vinho.teorAlcoolico}} </p>
-                                </div>
 
-                                <div class="item-carrinho-tag">
-                                    <img src="assets/icons/volume.png" alt="" width="25px">
-                                    <p> {{item.vinho.volume}}ml </p>
-                                </div>
                                 
                                 <div class="item-carrinho-tag">
                                     <img src="assets/icons/marca.png" alt="" width="25px">
@@ -45,11 +47,13 @@
                                 <div class="precounid-quantidade">
                                     <div class="preco-unidade">
                                         <div>
-                                            <p style="line-height: 24px; margin-bottom: 0;">
-                                                <span style="font-size: 18px;">Unidade</span><br>
-                                                R$ {{(item.vinho.preco - (item.vinho.preco * item.vinho.desconto)).toFixed(2)}}<br>
+                                            <p style="text-decoration-line: line-through; color:#9b9b9b; font-size: 14px; margin-bottom: 4px;">
+                                                de R$ {{item.vinho.preco.toFixed(2)}} por
                                             </p>
-                                            <p style="text-decoration-line: line-through; color:#9b9b9b; font-size: 16px;">R$ {{item.vinho.preco.toFixed(2)}}</p>
+                                            <p>
+                                                R$ {{(item.vinho.preco - (item.vinho.preco * item.vinho.desconto)).toFixed(2)}}
+                                                <span style="font-size: 14px;"> UNID. </span>
+                                            </p>
                                         </div>
                                     </div>
                                     <div class="quantidade-valor">
@@ -65,6 +69,9 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="remover-item-box">
+                        <img src="assets/svgs/trash.svg" alt="" width="30px">
                     </div>
                 </div>
             </div>

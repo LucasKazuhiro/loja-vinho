@@ -16,7 +16,7 @@ export class CestaComponent {
   public carrinhoDeItems:Item[] = [
     {codigo: 1, 
     vinho: {codigo:17, nome:"Miolo Lote 43 ",                                tipo:"Tinto",   uva:"Cabernet Sauvignon, Merlot",       volume:750, teorAlcoolico:14,   marca:"Salentein",                  cdPais:"1",  pais:"Argentina", regiao:"Mendoza",   preco:109.00,  quantidade:10, desconto:0.13},
-    quantidade: 5}
+    quantidade: 5},
   ];
   
 
