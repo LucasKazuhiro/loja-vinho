@@ -1,0 +1,73 @@
+
+
+#container{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#container-2{
+    margin: auto;
+    width: 75%;
+    background-color: brown;
+}
+
+#carrinho-box{
+    display: flex;
+    background-color: red;
+}
+
+
+/* ===== Produtos do Carrinho */
+#produtos-carrinho-box{
+    background-color: blue;
+    display: flex;
+    flex-wrap: wrap;
+    width: 65%;
+}
+
+.item-carrinho-box{
+    width: 45%;
+    background-color: chartreuse;
+    padding: 20px 25px;
+}
+
+.item-carrinho-box > h2{
+    font-size: 22px;
+    background-color: blueviolet;
+    padding: 0px 0px 15px;
+}
+
+.item-carrinho-img-info-box{
+    display: flex;
+    background-color: cadetblue;
+}
+
+/* ===== Informações do Produto ===== */
+.item-carrinho-info-box{
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== Tags do Produto ===== */
+.item-carrinho-tags{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+/* ===== Area do Preco ===== */
+.item-carrinho-preco{
+
+}
+
+.precounid-quantidade{
+    display: flex;
+    
+}
+
+
+
+/* ===== Area do Pagamento ===== */
+#pagamento-box{
+    background-color: purple;
+    flex-grow: 1;
+}

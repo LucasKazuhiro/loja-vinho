@@ -1,36 +1,66 @@
 <menu></menu>
 
 <div id="container">
-    <h1> Carrinho de compras </h1>
-    <div id="carrinho-box">
-        <div id="produtos-carrinho-box">
-            <div class="item-carrinho-box" *ngFor="let item of carrinhoDeItems">
-                <h2> {{item.vinho.nome}}</h2>
-                <div>
-                    <img src="" alt="">
-                    <div class="item-carrinho-info-box">
-                        <div class="item-carrinho-tags">
-                            <p> {{item.vinho.tipo}} </p>
-                            <p> {{item.vinho.regiao}}, {{item.vinho.pais}} </p>
-                            <p> {{item.vinho.uva}} </p>
-                            <p> {{item.vinho.teorAlcoolico}} </p>
-                            <p> {{item.vinho.teorAlcoolico}} </p>
-                            <p> {{item.vinho.marca}} </p>
-                        </div>
-                        <div class="item-carrinho-preco">
-                            <div class="precounid-quantidade">
-                                {{item.vinho.preco}}
-                            </div>
-                            <div class="preco-total">
+    <div id="container-2">
+        <h1> Carrinho de compras </h1>
+        <div id="carrinho-box">
+            <div id="produtos-carrinho-box">
+                <div class="item-carrinho-box" *ngFor="let item of carrinhoDeItems">
+                    <h2> {{item.vinho.nome}}</h2>
+                    <div class="item-carrinho-img-info-box">
+                        <img src="assets/vinhos/{{item.vinho.codigo}}.png" alt="" width="70px">
+                        <div class="item-carrinho-info-box">
+                            <div class="item-carrinho-tags">
+                                <div class="item-carrinho-tag">
+                                    <img src="assets/icons/tipo.png" alt="" width="25px">
+                                    <p> {{item.vinho.tipo}} </p>
+                                </div>
 
+                                <div class="item-carrinho-tag">
+                                    <img src="assets/paises/{{item.vinho.cdPais}}.png" alt="" width="25px">
+                                    <p> {{item.vinho.regiao}}, {{item.vinho.pais}} </p>
+                                </div>
+
+                                <div class="item-carrinho-tag">
+                                    <img src="assets/icons/uva.png" alt="" width="25px">
+                                    <p> {{item.vinho.uva}} </p>
+                                </div>
+
+                                <div class="item-carrinho-tag">
+                                    <img src="assets/icons/teorAlcoolico.png" alt="" width="25px">
+                                    <p> {{item.vinho.teorAlcoolico}} </p>
+                                </div>
+
+                                <div class="item-carrinho-tag">
+                                    <img src="assets/icons/volume.png" alt="" width="25px">
+                                    <p> {{item.vinho.volume}}ml </p>
+                                </div>
+                                
+                                <div class="item-carrinho-tag">
+                                    <img src="assets/icons/marca.png" alt="" width="25px">
+                                    <p> {{item.vinho.marca}} </p>
+                                </div>
+                            </div>
+                            <div class="item-carrinho-preco">
+                                <div class="precounid-quantidade">
+                                    <div class="preco-unidade">
+                                        {{item.vinho.preco}}
+                                    </div>
+                                    <div class="quantidade-valor">
+                                        - 3 +
+                                    </div>
+                                </div>
+                                <div class="preco-total">
+                                    Preço totla: R$ 1264,00
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div id="pagamento-box">
-    
+            <div id="pagamento-box">
+                a
+            </div>
         </div>
     </div>
 </div>
