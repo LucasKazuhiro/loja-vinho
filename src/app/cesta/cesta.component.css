@@ -12,6 +12,7 @@ menu{
 #container-2{
     margin: auto;
     width: 80%;
+    margin-bottom: 70px;
 }
 
 #container-2 > h1{
@@ -229,7 +230,8 @@ menu{
     border: 1px #a3a3a3 solid;
     padding: 30px 40px;
     border-radius: 20px;
-
+    position: sticky;
+    top: 170px;
 }
 
 #resumo-pedido-box{
