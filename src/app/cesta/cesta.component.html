@@ -8,7 +8,7 @@
                 <div class="item-carrinho-box" *ngFor="let item of carrinhoDeItems">
                     <h2> {{item.vinho.nome}}</h2>
                     <div class="item-carrinho-img-info-box">
-                        <img src="assets/vinhos/{{item.vinho.codigo}}.png" alt="" width="70px">
+                        <img src="assets/vinhos/{{item.vinho.codigo}}.png" alt="" class="img-vinho">
                         <div class="item-carrinho-info-box">
                             <div class="item-carrinho-tags">
                                 <div class="item-carrinho-tag">
@@ -44,14 +44,24 @@
                             <div class="item-carrinho-preco">
                                 <div class="precounid-quantidade">
                                     <div class="preco-unidade">
-                                        {{item.vinho.preco}}
+                                        <div>
+                                            <p style="line-height: 24px; margin-bottom: 0;">
+                                                <span style="font-size: 18px;">Unidade</span><br>
+                                                R$ {{(item.vinho.preco - (item.vinho.preco * item.vinho.desconto)).toFixed(2)}}<br>
+                                            </p>
+                                            <p style="text-decoration-line: line-through; color:#9b9b9b; font-size: 16px;">R$ {{item.vinho.preco.toFixed(2)}}</p>
+                                        </div>
                                     </div>
                                     <div class="quantidade-valor">
-                                        - 3 +
+                                        <div class="quantidade-contador-box">
+                                            <img src="assets/icons/minus.png" alt="" width="12px" class="maisMenosQuantidadeBotao">
+                                            <p> 6 </p>
+                                            <img src="assets/icons/plus.png" alt="" width="14px" class="maisMenosQuantidadeBotao">
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="preco-total">
-                                    Preço totla: R$ 1264,00
+                                    Preço total: R$ 1264,00
                                 </div>
                             </div>
                         </div>

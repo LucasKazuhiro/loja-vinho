@@ -7,18 +7,15 @@
 #container-2{
     margin: auto;
     width: 75%;
-    background-color: brown;
 }
 
 #carrinho-box{
     display: flex;
-    background-color: red;
 }
 
 
 /* ===== Produtos do Carrinho */
 #produtos-carrinho-box{
-    background-color: blue;
     display: flex;
     flex-wrap: wrap;
     width: 65%;
@@ -26,45 +23,94 @@
 
 .item-carrinho-box{
     width: 45%;
-    background-color: chartreuse;
-    padding: 20px 25px;
+    padding: 15px 20px;
+    border: 1px #C5C5C5 solid;
+    border-radius: 10px;
 }
 
 .item-carrinho-box > h2{
     font-size: 22px;
-    background-color: blueviolet;
     padding: 0px 0px 15px;
 }
 
 .item-carrinho-img-info-box{
     display: flex;
-    background-color: cadetblue;
+    gap: 25px;
+}
+
+.img-vinho{
+    width: 70px;
 }
 
 /* ===== Informações do Produto ===== */
 .item-carrinho-info-box{
     display: flex;
     flex-direction: column;
+    gap: 30px;
 }
 
 /* ===== Tags do Produto ===== */
 .item-carrinho-tags{
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 12px 15px;
+}
+
+.item-carrinho-tag{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    text-transform: uppercase;
 }
 
 /* ===== Area do Preco ===== */
 .item-carrinho-preco{
-
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .precounid-quantidade{
     display: flex;
-    
+    justify-content: space-evenly;
+    align-items: end;
 }
 
+.preco-unidade{
+    font-size: 22px;
+}
 
+.quantidade-valor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35%;
+}
+
+.quantidade-contador-box{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #FEC700;
+    border-radius: 100px;
+    width: 100%;
+    height: 45px;
+}
+
+.maisMenosQuantidadeBotao{
+    background-color: white;
+    padding: 10px;
+    border-radius: 500px;
+}
+
+.preco-total{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    flex: 1;
+    font-size: 22px;
+}
 
 /* ===== Area do Pagamento ===== */
 #pagamento-box{
