@@ -1,22 +1,16 @@
-<div>
-    <menu></menu>
-    <div *ngFor="let vinho of vinhos">
-        <img src="assets/paises/{{vinho.cdPais}}.png" alt="">
-        <p id="codigo_paragrafo" >Código: {{vinho.codigo}}</p>
-        <p>Nome: {{vinho.nome}}</p>
-        <img src="assets/vinhos/{{vinho.codigo}}.png" alt="">
-        <p>Tipo: {{vinho.tipo}}</p>
-        <p>Uva: {{vinho.uva}}</p>
-        <p>Volume: {{vinho.volume}}</p>
-        <p>Teor Alcoolico: {{vinho.teorAlcoolico}}%</p>
-        <p>Marca: {{vinho.marca}}</p>
-        <p>Origem: {{vinho.regiao}}, {{vinho.pais}}</p>
-        <p id="preco">R$ {{vinho.preco}}</p>
-    
-        <button
-            (click)="verMais(vinho)"
-        > Ver mais </button>
-    
-        <br><br><br><br><br>
+<menu></menu>
+<div id="container">
+  <h1 id="vitrine-title">Vitrine de vinhos</h1>
+  <div id="vitrine-container">
+    <div class="card" *ngFor="let vinho of vinhos" id="vinho-{{vinho.codigo}}" (click)="verMais(vinho)">
+      <img class="flag" src="assets/paises/{{vinho.cdPais}}.png" alt="Bandeira do país"><br><br><br>
+      <img class="image" src="assets/vinhos/{{vinho.codigo}}.png" alt="Imagem do vinho"><br>
+      <p id="nome-{{vinho.codigo}}">{{vinho.nome}}</p><br>
+      <p class="origem"> <fa-icon [icon]="faLocationDot"></fa-icon> {{vinho.regiao}}, {{vinho.pais}}</p><br>
+      <p class="preco">R$ {{vinho.preco.toFixed(2)}}</p>    
+      <br><br><br><br><br>
     </div>
+  </div>
+  
+  <br><br><br>
 </div>
