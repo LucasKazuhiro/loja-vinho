@@ -1,0 +1,167 @@
+menu{
+  align-self: stretch;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+}
+
+
+
+
+#box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  height: 100vh;
+}
+
+#box-2{
+  width: 95%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.container {
+  margin: auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.1);
+  max-width: 850px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 24px;
+  color: #110e0f;
+  font-family: Arial;
+}
+
+
+.input-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
+.input-box {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.input-box label {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 5px;
+  font-family: arial;
+}
+
+.input-box input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+
+.input-box.full-width {
+  width: 100%;
+}
+
+
+#submit-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: rgba(68, 194, 81, 1);
+  font-family: arial;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+#submit-btn:hover {
+  background-color: rgb(47, 135, 56);
+  ;
+}
+
+#login-link {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  font-family: arial;
+}
+
+#login-link a {
+  color: #383535;
+  text-decoration: underline;
+}
+
+#login-link a:hover {
+  color: #000000;
+}
+
+.password-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-container input {
+  width: 100%;
+}
+
+.alternar-senha {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+
+
+@media (max-width: 1024px) {
+  .container {
+    width: 80%;
+  }
+
+  .input-box {
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 550px) {
+  .container {
+    width: 100%;
+  }
+}
