@@ -1,4 +1,82 @@
 menu{
-    position: sticky;
-    top: 0;
+	position: sticky;
+	top: 0;
+	z-index: 2;
+}
+
+/* 
+ =================== POSSIVEL CODIGO FUTIL! ========================
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	font-family: "Arial", sans-serif;
+	gap: 16px;
+	background-color: white;
+} */
+
+#container{
+	margin-top: 100px;
+}
+
+#vitrine-title{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: Arial, Helvetica, sans-serif;
+	color:rgba(209, 65, 108, 1);
+	height: 80px;
+	font-size: 40px;
+	margin-bottom: 30px;
+}
+
+#vitrine-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 36px;
+}
+
+.card {
+	background-color: rgba(242, 242, 242, 1);
+	border-radius: 40px;
+	padding: 30px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	width: 300px;
+	height: 400px;
+	text-align: center;
+	transition: .3s;
+}
+
+.card [class^="flag"] {
+	width: 30px;     
+	height: auto;   
+	float: left;     
+	margin-left: 10px; 
+}
+
+.card [class^="image"] {
+	width: auto;    
+	height: 250px;    
+	margin-top:-30px;
+}
+
+.card p[id^="nome"] {
+	color: rgb(0, 0, 0);
+	font-weight: bold; 
+	font-family: Verdana, Geneva, Tahoma, sans-serif ;
+}
+
+.card p[class^="preco"] {
+	color:rgba(209, 65, 108, 1);
+	font-size: 24px;
+	font-weight: bold; 
+	font-family: arial;
+}
+
+.card:hover {
+	transform: scale(1.04); 
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
 }
