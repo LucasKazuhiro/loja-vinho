@@ -17,7 +17,7 @@
         <button type="submit" id="entrar-botao">Entrar</button>
 
         <p id="cadastro-link">Não possue uma conta? <a href="./cadastro">Faça um cadastro</a></p>
-        <button (click)="logout()" id="logout-botao" type="button">Sair da Conta</button>
+        <button (click)="logout()" id="logout-botao" type="button" *ngIf="estaLogado">Sair da Conta</button>
       </form>
     </div>
   </div>
