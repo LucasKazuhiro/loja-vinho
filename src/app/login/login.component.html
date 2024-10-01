@@ -1,11 +1,24 @@
-<menu></menu>
+<div id="container">
+  <menu></menu>
+  <div id="container-2">
+    <div id="login-form-box">
+      <h1 id="login-titulo"> Faça seu login </h1>
+      <p id="mensagem-execucao">{{mensagem}}</p>
+      <form (submit)="fazerLogin()" id="login-form">
+        <label for="name">E-mail:</label>
+        <input type="email" [(ngModel)]="cliente.email" name="email" required placeholder="Digite seu email...">
 
-<h1> ESSA É O LOGIN!! </h1> <button (click)="logout()">Sair da Conta</button>
-<b>{{mensagem}}</b><br>
+        <br>
 
-Informe os dados abaixo para acessar a area restrita:<br><br>
-email:<input type="email" [(ngModel)]="cliente.email" name="email"><br>
-senha:<input type="password" [(ngModel)]="cliente.senha" name="senha"><br>
-<button (click)="fazerLogin()">Entrar</button><br>
-<a href="./esqueci-senha">Esqueci a senha</a><br><br>
-<a href="./cadastro">Fazer um novo cadastro</a>
+        <label for="senha">Senha:</label>
+        <input type="password" [(ngModel)]="cliente.senha" name="senha" required placeholder="Digite sua senha...">
+        <a href="./esqueci-senha" id="esqueci-senha">Esqueci a senha</a>
+
+        <button type="submit" id="entrar-botao">Entrar</button>
+
+        <p id="cadastro-link">Não possue uma conta? <a href="./cadastro">Faça um cadastro</a></p>
+        <button (click)="logout()" id="logout-botao" type="button">Sair da Conta</button>
+      </form>
+    </div>
+  </div>
+</div>
