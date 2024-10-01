@@ -26,6 +26,8 @@ export class LoginComponent implements OnInit{
   public clienteMemoria:Cliente = new Cliente();
   public mensagem:String = "";
   public estaLogado:boolean = false;
+  public emailCliente:string = "";  
+  public senhaCliente:string = "";
 
   
   puxarClienteMemoria(){
@@ -41,13 +43,13 @@ export class LoginComponent implements OnInit{
 
 
   public fazerLogin(){
-    if(this.cliente.email == '' || this.cliente.senha == ''){
+    if(this.emailCliente == '' || this.senhaCliente == ''){
       this.mensagem="Email e Senha são obrigatórios!"
     }
     else{
-      if(this.cliente.email == this.clienteMemoria.email && 
-         this.cliente.senha == this.clienteMemoria.senha){
-        localStorage.setItem('cliente', JSON.stringify(this.cliente));
+      if(this.emailCliente == this.clienteMemoria.email && 
+         this.senhaCliente == this.clienteMemoria.senha){
+        localStorage.setItem('cliente', JSON.stringify(this.clienteMemoria));
         window.location.href="./vitrine"
       } 
       else{

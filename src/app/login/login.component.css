@@ -60,6 +60,7 @@ input{
     padding: 10px;
     border: 1px #ccc solid;
     border-radius: 6px;
+    font-size: 16px;
 }
 
 #esqueci-senha{

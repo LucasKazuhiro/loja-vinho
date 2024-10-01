@@ -6,12 +6,12 @@
       <p id="mensagem-execucao">{{mensagem}}</p>
       <form (submit)="fazerLogin()" id="login-form">
         <label for="name">E-mail:</label>
-        <input type="email" [(ngModel)]="cliente.email" name="email" required placeholder="Digite seu email...">
+        <input type="email" [(ngModel)]="emailCliente" name="email" required placeholder="Digite seu email...">
 
-        <br>
+        <br><br>
 
         <label for="senha">Senha:</label>
-        <input type="password" [(ngModel)]="cliente.senha" name="senha" required placeholder="Digite sua senha...">
+        <input type="password" [(ngModel)]="senhaCliente" name="senha" required placeholder="Digite sua senha...">
         <a href="./esqueci-senha" id="esqueci-senha">Esqueci a senha</a>
 
         <button type="submit" id="entrar-botao">Entrar</button>
