@@ -5,8 +5,8 @@
     <div class="container">
       <div class="form">
         <div class="header">
-          <h1 id="mensagem">{{mensagem}}</h1>
-          <p> {{mensagemErro}} </p>
+          <h1 id="mensagem">{{mensagemTitulo}}</h1>
+          <p id="mensagem-erro"> {{mensagemErro}} </p>
         </div>
   
         <div class="input-group">
@@ -68,9 +68,9 @@
             <label for="confirmsenha">Confirme sua senha:</label>
             <div class="password-container">
               <input type="password" id="confirmsenha" [(ngModel)]="confirmarSenhaValor"
-                placeholder="Confirme sua senha" [type]="mostraConfirmSenha ? 'text' : 'password'" required>
-              <button type="button" class="alternar-senha" (click)="alternaConfirmSenha()">
-                <fa-icon [icon]="mostraSenha ? faEyeSlash : faEye"></fa-icon>
+                placeholder="Confirme sua senha" [type]="mostraConfirmaSenha ? 'text' : 'password'" required>
+              <button type="button" class="alternar-senha" (click)="alternaConfirmaSenha()">
+                <fa-icon [icon]="mostraConfirmaSenha ? faEyeSlash : faEye"></fa-icon>
               </button>
             </div>
           </div>
