@@ -2,8 +2,10 @@
     <menu></menu>
     <div id="container">
         <div id="container-2">
-            <h1> Carrinho de compras </h1>
-            <!-- <button (click)="limparCesta()"> Limpar cesta </button> -->
+            <div style="display: flex; align-items: center; margin-bottom: 40px;">
+                <h1> Carrinho de compras </h1>
+                <button (click)="limparCesta()" id="botaoLimparCarrinho"> Limpar </button>
+            </div>
             <div id="carrinho-box">
                 <div id="produtos-carrinho-box">
                     <div class="item-carrinho-box" *ngFor="let item of cestaCompra.itens">

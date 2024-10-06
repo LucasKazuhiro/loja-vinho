@@ -80,6 +80,9 @@ export class CestaComponent {
     localStorage.removeItem("cestaCompra");
     this.cestaCompra = new Cesta();
     this.mensagem = "Cesta vazia, adicione novos itens!";
+    this.valorTotalFinal = 0;
+    this.valorDesconto = 0;
+    this.codigoDesconto = "";
   }
 
   public aplicarDesconto(){
@@ -87,6 +90,9 @@ export class CestaComponent {
     if(this.codigoDesconto == "PRIMEIROVINHO"){
       this.valorDesconto = this.cestaCompra.total * 0.2;
       this.valorTotalFinal = this.cestaCompra.total - this.valorDesconto;
+    }
+    else{
+      this.valorTotalFinal = this.cestaCompra.total;
     }
   }
 }

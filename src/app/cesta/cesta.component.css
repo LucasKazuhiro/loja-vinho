@@ -15,9 +15,24 @@ menu{
     margin-bottom: 70px;
 }
 
-#container-2 > h1{
+#container-2 h1{
     font-size: 32px;
-    margin-bottom: 40px;
+    display: inline-block;
+    height: fit-content;
+}
+
+#botaoLimparCarrinho{
+    display: flex;
+    align-items: center;
+    margin-left: 25px;
+    background-color: rgb(255, 199, 199);
+    font-size: 16px;
+    border: none;
+    padding: 8px;
+    border-radius: 10px;
+    height: 30px;
+    font-family: Tajawal;
+    cursor: pointer;
 }
 
 #carrinho-box{
