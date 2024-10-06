@@ -3,11 +3,14 @@ import { Cliente } from '../model/cliente';
 import { FormsModule } from '@angular/forms';
 import { MenuComponent } from '../menu/menu.component';
 import { CommonModule } from '@angular/common';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faEye } from '@fortawesome/free-solid-svg-icons'
+import { faEyeSlash } from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [MenuComponent, FormsModule, CommonModule],
+  imports: [MenuComponent, FormsModule, CommonModule, FontAwesomeModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -21,6 +24,9 @@ export class LoginComponent implements OnInit{
     this.verificarEstaLogado();
   }
 
+  faEye = faEye;
+  faEyeSlash = faEyeSlash;
+
 
   public cliente:Cliente = new Cliente();
   public clienteMemoria:Cliente = new Cliente();
@@ -28,6 +34,9 @@ export class LoginComponent implements OnInit{
   public estaLogado:boolean = false;
   public emailCliente:string = "";  
   public senhaCliente:string = "";
+  public mostraSenha: boolean = false;
+  public mostraConfirmaSenha: boolean = false;
+
 
   
   puxarClienteMemoria(){
@@ -60,11 +69,16 @@ export class LoginComponent implements OnInit{
 
   public logout(){
     localStorage.removeItem("cliente");
-    localStorage.removeItem("clienteMemoria")     // Remover quando for impossivel cadastrar usuario vazio
     window.location.href="./login";
   }
 
   public verificarEstaLogado(){
     this.estaLogado = localStorage.getItem('cliente') !== null;
+  }
+
+
+
+  public alternaSenha() {
+    this.mostraSenha = !this.mostraSenha;
   }
 }

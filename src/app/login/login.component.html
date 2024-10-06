@@ -11,7 +11,13 @@
         <br><br>
 
         <label for="senha">Senha:</label>
-        <input type="password" [(ngModel)]="senhaCliente" name="senha" required placeholder="Digite sua senha...">
+        <div id="password-container">
+          <input type="password" [(ngModel)]="senhaCliente" name="senha" required placeholder="Digite sua senha..."
+          [type]="mostraSenha ? 'text' : 'password'" required>
+          <button type="button" id="alternar-senha" (click)="alternaSenha()">
+            <fa-icon [icon]="mostraSenha ? faEyeSlash : faEye"></fa-icon>
+          </button>
+        </div>
         <a href="./esqueci-senha" id="esqueci-senha">Esqueci a senha</a>
 
         <button type="submit" id="entrar-botao">Entrar</button>
