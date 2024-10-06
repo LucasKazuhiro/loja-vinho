@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Vinho } from '../model/vinho';
 import { CommonModule } from '@angular/common';
 import { MenuComponent } from '../menu/menu.component';
+import { Cesta } from '../model/cesta';
+import { Item } from '../model/item';
 
 @Component({
   selector: 'app-detalhe',
@@ -36,5 +38,60 @@ export class DetalheComponent {
     if(this.quantidadeItemsAtual > 1){
       this.quantidadeItemsAtual = this.quantidadeItemsAtual - 1;
     }
+  }
+
+  public adicionarItem(vinho:Vinho){
+    let cestaJSON = localStorage.getItem("cestaCompra");
+    let clienteJSON = localStorage.getItem("cliente");
+    let cestaCompra:Cesta = new Cesta();
+    let item:Item = new Item();
+
+    if(cestaJSON == null){
+      item = this.criarNovoItem(vinho);
+
+      cestaCompra.codigo = 1;
+      cestaCompra.total = item.valorTotal;
+      cestaCompra.itens.push(item);
+
+      if(clienteJSON != null){
+        cestaCompra.cliente = JSON.parse(clienteJSON);
+      }
+    }
+    else{
+      let itemJaExiste = false;
+      cestaCompra = JSON.parse(cestaJSON);
+
+      for(let i=0; i<cestaCompra.itens.length; i++){
+        if(cestaCompra.itens[i].codigo == vinho.codigo){
+          cestaCompra.itens[i].quantidade = this.quantidadeItemsAtual;
+          cestaCompra.itens[i].valorTotal = vinho.preco * this.quantidadeItemsAtual;
+          itemJaExiste = true;
+          break;
+        }
+      }
+
+      if(!itemJaExiste){
+        item = this.criarNovoItem(vinho);
+        cestaCompra.itens.push(item);
+      }
+    }
+
+    cestaCompra.total = 0;
+    for(let i=0; i<cestaCompra.itens.length; i++){
+      cestaCompra.total = cestaCompra.total + cestaCompra.itens[i].valorTotal;
+    }
+
+    localStorage.setItem("cestaCompra", JSON.stringify(cestaCompra));
+  }
+
+  public criarNovoItem(vinho:Vinho){
+    let criarItem = new Item();
+
+    criarItem.codigo = vinho.codigo;
+    criarItem.vinho = vinho;
+    criarItem.quantidade = this.quantidadeItemsAtual;
+    criarItem.valorTotal = vinho.preco * this.quantidadeItemsAtual;
+
+    return criarItem;
   }
 }
