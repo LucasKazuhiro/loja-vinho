@@ -34,6 +34,7 @@ menu{
     width: 70%;
     gap: 20px;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-auto-rows: min-content;
 }
 
 .item-carrinho-box{
@@ -79,6 +80,7 @@ menu{
     display: flex;
     flex-direction: column;
     gap: 20px;
+    justify-content: space-around;
 }
 
 /* ===== Tags do Produto ===== */
@@ -154,6 +156,7 @@ menu{
     background-color: rgb(255, 223, 223);
     padding: 5px;
     border-radius: 8px;
+    cursor: pointer;
 }
 
 

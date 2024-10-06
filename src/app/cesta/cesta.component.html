@@ -3,9 +3,10 @@
     <div id="container">
         <div id="container-2">
             <h1> Carrinho de compras </h1>
+            <!-- <button (click)="limparCesta()"> Limpar cesta </button> -->
             <div id="carrinho-box">
                 <div id="produtos-carrinho-box">
-                    <div class="item-carrinho-box" *ngFor="let item of carrinhoDeItems">
+                    <div class="item-carrinho-box" *ngFor="let item of cestaCompra.itens">
                         <h2> {{item.vinho.nome}}</h2>
                         <div class="item-carrinho-img-info-box">
                             <div class="img-vinho-box">
@@ -59,19 +60,19 @@
                                         <div class="quantidade-valor">
                                             <div class="quantidade-contador-box">
                                                 <img src="assets/icons/minus.png" alt="" width="12px" class="maisMenosQuantidadeBotao">
-                                                <p> 6 </p>
+                                                <p> {{item.quantidade}} </p>
                                                 <img src="assets/icons/plus.png" alt="" width="14px" class="maisMenosQuantidadeBotao">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="preco-total">
-                                        Preço total: R$ 1264,00
+                                        Preço total: {{item.valorTotal}}
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="remover-item-box">
-                            <img src="assets/svgs/trash.svg" alt="" width="22px">
+                            <img src="assets/svgs/trash.svg" alt="" width="22px" (click)="removerItem(item)">
                         </div>
                     </div>
                 </div>
