@@ -4,7 +4,7 @@
         <div id="container-2">
             <div style="display: flex; align-items: center; margin-bottom: 40px;">
                 <h1> Carrinho de compras </h1>
-                <button (click)="limparCesta()" id="botaoLimparCarrinho"> Limpar </button>
+                <button (click)="limparCesta()" id="botaoLimparCarrinho" *ngIf="this.cestaCompra.itens.length != 0"> Limpar </button>
             </div>
             <div id="carrinho-box">
                 <div id="produtos-carrinho-box">
