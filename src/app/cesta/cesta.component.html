@@ -66,7 +66,7 @@
                                         </div>
                                     </div>
                                     <div class="preco-total">
-                                        Preço total: {{item.valorTotal}}
+                                        Preço total: {{item.valorTotal.toFixed(2)}}
                                     </div>
                                 </div>
                             </div>
@@ -82,8 +82,8 @@
                             <img src="assets/icons/ticket.png" alt="" width="30px">
                             <h2> Cumpom de desconto </h2>
                         </div>
-                        <input type="text" placeholder="Inserir código de desconto">
-                        <button id="cupom-botao"> Aplicar </button>
+                        <input type="text" placeholder="Inserir código de desconto" [(ngModel)]="codigoDesconto">
+                        <button id="cupom-botao" (click)="aplicarDesconto()"> Aplicar </button>
                     </div>
                     <div id="pedido-box">
                         <div id="resumo-pedido-box">
@@ -91,15 +91,15 @@
                             <div id="informacoes-pagamento-box">
                                 <div class="informacoes-pagamento">
                                     <p> Subtotal </p>
-                                    <p> R$ 1.256,43 </p>
+                                    <p> {{this.cestaCompra.total.toFixed(2)}} </p>
                                 </div>
-                                <div class="informacoes-pagamento">
-                                    <p> Descontos    </p>
-                                    <p> R$ -272,18 </p>
+                                <div class="informacoes-pagamento" *ngIf="valorDesconto != 0">
+                                    <p> Descontos (20%) </p>
+                                    <p> R$ {{valorDesconto.toFixed(2)}}</p>
                                 </div>
                                 <div class="informacoes-pagamento">
                                     <p> Total </p>
-                                    <p> R$ 984,25 </p>
+                                    <p> R$ {{valorTotalFinal.toFixed(2)}} </p>
                                 </div>
                             </div>
                         </div> 

@@ -4,13 +4,14 @@ import { Item } from '../model/item';
 import { CommonModule } from '@angular/common';
 import { Vinho } from '../model/vinho';
 import { Cesta } from '../model/cesta';
+import { FormsModule } from '@angular/forms';
 
 
 
 @Component({
   selector: 'app-cesta',
   standalone: true,
-  imports: [MenuComponent, CommonModule],
+  imports: [MenuComponent, CommonModule, FormsModule],
   templateUrl: './cesta.component.html',
   styleUrl: './cesta.component.css'
 })
@@ -44,12 +45,17 @@ export class CestaComponent {
   
   public cestaCompra:Cesta = new Cesta();
   public mensagem:string = "";
+  public valorTotalFinal:number = 0;
+  public codigoDesconto:string = "";
+  public valorDesconto:number = 0;
 
   constructor(){
     let cestaJSON= localStorage.getItem("cestaCompra");
 
     if(cestaJSON != null){
       this.cestaCompra = JSON.parse(cestaJSON);
+
+      this.valorTotalFinal = this.cestaCompra.total;
     }
     else{
       this.mensagem = "Cesta vazia, adicione novos itens!";
@@ -65,6 +71,8 @@ export class CestaComponent {
       this.cestaCompra.total = this.cestaCompra.total + this.cestaCompra.itens[i].valorTotal;
     }
 
+    this.aplicarDesconto();
+
     localStorage.setItem("cestaCompra", JSON.stringify(this.cestaCompra));
   }
 
@@ -72,5 +80,13 @@ export class CestaComponent {
     localStorage.removeItem("cestaCompra");
     this.cestaCompra = new Cesta();
     this.mensagem = "Cesta vazia, adicione novos itens!";
+  }
+
+  public aplicarDesconto(){
+    this.codigoDesconto = this.codigoDesconto.toUpperCase();
+    if(this.codigoDesconto == "PRIMEIROVINHO"){
+      this.valorDesconto = this.cestaCompra.total * 0.2;
+      this.valorTotalFinal = this.cestaCompra.total - this.valorDesconto;
+    }
   }
 }

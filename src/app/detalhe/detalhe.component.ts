@@ -90,7 +90,7 @@ export class DetalheComponent {
     criarItem.codigo = vinho.codigo;
     criarItem.vinho = vinho;
     criarItem.quantidade = this.quantidadeItemsAtual;
-    criarItem.valorTotal = vinho.preco * this.quantidadeItemsAtual;
+    criarItem.valorTotal = (vinho.preco - (vinho.preco * vinho.desconto)) * this.quantidadeItemsAtual;
 
     return criarItem;
   }
