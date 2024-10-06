@@ -145,6 +145,10 @@ menu{
   width: 100%;
 }
 
+#senha, #confirmsenha{
+  padding: 10px 45px 10px 16px;
+}
+
 .alternar-senha {
   position: absolute;
   right: 10px;
