@@ -43,6 +43,7 @@ menu{
     border: 1px #C5C5C5 solid;
     border-radius: 10px;
     position: relative;
+    font-family: Tajawal;
 }
 
 
@@ -52,6 +53,7 @@ menu{
     font-size: 20px;
     flex: 1;
     margin-bottom: 15px;
+    font-family: Marcellus;
 }
 
 /* ===== Caixa da Imagem e das Informações ===== */
@@ -169,6 +171,7 @@ menu{
     gap: 40px;
     width: 30%;
     flex-shrink: 0;
+    font-family: Tajawal;
 }
 
 
