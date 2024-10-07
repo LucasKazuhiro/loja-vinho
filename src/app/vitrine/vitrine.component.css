@@ -48,6 +48,7 @@ body {
 	height: 400px;
 	text-align: center;
 	transition: .3s;
+	cursor: pointer;
 }
 
 .card [class^="flag"] {
