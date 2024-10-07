@@ -1,8 +1,8 @@
 <menu></menu>
 <div id="container">
-  <p id="pesquisa-title"><I>Pesquisa por:  <b>Branco</b></I></p><br><br><br>
+  <p id="pesquisa-title"><I>Pesquisa por: <b>{{pesquisaValorVinho}}</b></I></p><br><br><br>
   <div id="pesquisa-container">
-    <div class="card" *ngFor="let vinho of vinhos" id="vinho-{{vinho.codigo}}" (click)="verMais(vinho)">
+    <div class="card" *ngFor="let vinho of vinhosFiltrado" id="vinho-{{vinho.codigo}}" (click)="verMais(vinho)">
       <img class="flag" src="assets/paises/{{vinho.cdPais}}.png" alt="Bandeira do país"><br><br><br>
       <img class="image" src="assets/vinhos/{{vinho.codigo}}.png" alt="Imagem do vinho"><br>
       <p id="nome-{{vinho.codigo}}">{{vinho.nome}}</p><br>

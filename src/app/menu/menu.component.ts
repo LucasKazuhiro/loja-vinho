@@ -12,11 +12,28 @@ import { FormsModule } from '@angular/forms';
 })
 export class MenuComponent{
   public estaLogado:boolean=false;
+  public estaAtivoMenuLateral = false;
+  public pesquisaValorVinho:string = "";
+  public itemPesquisado:string = "";
+
+  constructor(){
+    let pesquisaValorVinhoJSON = localStorage.getItem("pesquisaValorVinho");
+
+    if(pesquisaValorVinhoJSON != null){
+      this.itemPesquisado = pesquisaValorVinhoJSON.replace(/"/g, '');
+    }
+    else{
+      this.itemPesquisado = "Encontre o seu vinho...";
+    }
+  }
 
 
-  estaAtivoMenuLateral = false;
-
-  toggleMenuLateral(){
+  public toggleMenuLateral(){
     this.estaAtivoMenuLateral = !this.estaAtivoMenuLateral;
+  }
+
+  public pesquisarVinho(){
+    localStorage.setItem("pesquisaValorVinho", JSON.stringify(this.pesquisaValorVinho));
+    window.location.href="./pesquisa";
   }
 }

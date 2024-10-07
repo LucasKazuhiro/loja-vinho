@@ -4,19 +4,6 @@ menu{
 	z-index: 2;
 }
 
-/* 
- =================== POSSIVEL CODIGO FUTIL! ========================
-
-body {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-	font-family: "Arial", sans-serif;
-	gap: 16px;
-	background-color: white;
-} */
-
 #container{
 	margin-top: 100px;
 }
@@ -48,6 +35,7 @@ body {
 	height: 400px;
 	text-align: center;
 	transition: .3s;
+	cursor: pointer;
 }
 
 .card [class^="flag"] {
@@ -65,15 +53,20 @@ body {
 
 .card p[id^="nome"] {
 	color: rgb(0, 0, 0);
-	font-weight: bold; 
-	font-family: Verdana, Geneva, Tahoma, sans-serif ;
+	font-weight: regular; 
+	font-family: Marcellus;
+	font-size: 22px;
+}
+
+.card p[class^="origem"]{
+	font-family: Tajawal;
 }
 
 .card p[class^="preco"] {
 	color:rgba(209, 65, 108, 1);
 	font-size: 24px;
 	font-weight: bold; 
-	font-family: arial;
+	font-family: Tajawal;
 }
 
 .card:hover {
