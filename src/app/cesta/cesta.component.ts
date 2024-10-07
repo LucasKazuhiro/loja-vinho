@@ -93,6 +93,7 @@ export class CestaComponent {
     }
     else{
       this.valorTotalFinal = this.cestaCompra.total;
+      this.valorDesconto = 0;
     }
   }
 }
