@@ -1,72 +1,67 @@
 <div id="container">
-    <aside>
-        <label id="sobreporFundoMenuLateral" for="menu-lateral-ativo"
-        [ngStyle]="{
+  <aside>
+    <label id="sobreporFundoMenuLateral" for="menu-lateral-ativo" [ngStyle]="{
             opacity: estaAtivoMenuLateral ? '0.3' : '0',
             visibility: estaAtivoMenuLateral ? 'visible' : 'hidden'
-        }"
-        ></label>
-        <nav class="menu-lateral-box" aria-hidden="true"
-        [ngStyle]="{
+        }"></label>
+    <nav class="menu-lateral-box" aria-hidden="true" [ngStyle]="{
             left: estaAtivoMenuLateral ? '0' : '-100%'
-        }"
-        [attr.aria-hidden]="!estaAtivoMenuLateral"
-        >
-            <label class="fechar-menu-lateral-btn" (click)="toggleMenuLateral()">
-                <img src="assets/icons/x-fechar.png" alt="" id="x-fechar-icon">
-            </label>  
-            
-            <a href="./vitrine">Vitrine</a>
-            <a href="./pesquisa">Pesquisar</a>
-            <a href="./login">Logar</a>
-            <a href="./cadastro">Cadastrar</a>
-            <a href="./cesta">Carrinho</a>
-        </nav>
-    </aside>
-    <div id="menu-box">
-        <label class="abrir-menu-lateral-btn" (click)="toggleMenuLateral()">
-            <img src="assets/icons/menu-hamb.png" alt="" id="menu-hamb-icon">
-        </label>
+        }" [attr.aria-hidden]="!estaAtivoMenuLateral">
+      <label class="fechar-menu-lateral-btn" (click)="toggleMenuLateral()">
+        <img src="assets/icons/x-fechar.png" alt="" id="x-fechar-icon">
+      </label>
 
-        <a href="./vitrine">
-            <img src="assets/icons/logo2.png" alt="" width="28px">
-        </a>
-        
-        <div id="caixa-pesquisa-desktop" class="caixa-pesquisa-box">
-            <input type="text" [placeholder]="itemPesquisado" class="caixa-pesquisa" [(ngModel)]="pesquisaValorVinho">
-            <div class="lupa-pesquisa-box" (click)="pesquisarVinho()">
-                <img src="assets/icons/search.svg" alt="" width="28px" class="lupa-pesquisa">
-            </div>
-        </div>
-    
-        <div id="conta-carrinho-box">
-            <div id="cadastro-login-box">
-                <a href="./cadastro">
-                    <img src="assets/icons/user.svg" alt="" width="40px">
-                </a>
-                <p *ngIf="estaLogado == false" id="mensagem-menu">
-                    <span>Bem-vindo(a)</span><br>
-                    <a href="./cadastro"> Entrar</a> ou <a href="./login">Cadastrar</a>
-                </p>
-            </div>
-            <a href="./cesta">
-                <img src="assets/icons/cart.svg" alt="" width="40px">
-            </a>
-        </div>
-    </div>
-    <nav id="menu-box-2">
-        <div id="menu-items-box">
-            <a href="./vitrine">Vitrine</a>
-            <a href="./pesquisa">Pesquisar</a>
-            <a href="./login">Logar</a>
-            <a href="./cadastro">Cadastrar</a>
-            <a href="./cesta">Carrinho</a>
-        </div>
+      <a href="./vitrine">Vitrine</a>
+      <a href="./pesquisa">Pesquisar</a>
+      <a href="./login">Logar</a>
+      <a href="./cadastro">Cadastrar</a>
+      <a href="./cesta">Carrinho</a>
     </nav>
-    <div id="caixa-pesquisa-mobile" class="caixa-pesquisa-box">
-        <input type="text" placeholder="Encontre o seu vinho..." class="caixa-pesquisa">
-        <div class="lupa-pesquisa-box">
-            <img src="assets/icons/search.svg" alt="" width="28px" class="lupa-pesquisa">
-        </div>
+  </aside>
+  <div id="menu-box">
+    <label class="abrir-menu-lateral-btn" (click)="toggleMenuLateral()">
+      <img src="assets/icons/menu-hamb.png" alt="" id="menu-hamb-icon">
+    </label>
+
+    <a href="./vitrine">
+      <img src="assets/icons/logo2.png" alt="" width="28px">
+    </a>
+
+    <div id="caixa-pesquisa-desktop" class="caixa-pesquisa-box">
+      <input type="text" [placeholder]="itemPesquisado" class="caixa-pesquisa" [(ngModel)]="pesquisaValorVinho">
+      <div class="lupa-pesquisa-box" (click)="pesquisarVinho()">
+        <img src="assets/icons/search.svg" alt="" width="28px" class="lupa-pesquisa">
+      </div>
     </div>
+
+    <div id="conta-carrinho-box">
+      <div id="cadastro-login-box">
+        <a href="./cadastro">
+          <img src="assets/icons/user.svg" alt="" width="40px">
+        </a>
+        <p *ngIf="estaLogado == false" id="mensagem-menu">
+          <span>Bem-vindo(a)</span><br>
+          <a href="./cadastro"> Entrar</a> ou <a href="./login">Cadastrar</a>
+        </p>
+      </div>
+      <a href="./cesta">
+        <img src="assets/icons/cart.svg" alt="" width="40px">
+      </a>
+    </div>
+  </div>
+  <nav id="menu-box-2">
+    <div id="menu-items-box">
+      <a href="./vitrine">Vitrine</a>
+      <a href="./pesquisa">Pesquisar</a>
+      <a href="./login">Logar</a>
+      <a href="./cadastro">Cadastrar</a>
+      <a href="./cesta">Carrinho</a>
+    </div>
+  </nav>
+  <div id="caixa-pesquisa-mobile" class="caixa-pesquisa-box">
+    <input type="text" placeholder="Encontre o seu vinho..." class="caixa-pesquisa">
+    <div class="lupa-pesquisa-box">
+      <img src="assets/icons/search.svg" alt="" width="28px" class="lupa-pesquisa">
+    </div>
+  </div>
 </div>

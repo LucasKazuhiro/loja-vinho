@@ -1,171 +1,169 @@
-
-
-#container{
-    font-family: Arial, Helvetica, sans-serif;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+#container {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-#vinho-box{
-    display: flex;
-    align-items: start;
-    justify-content: center;
-    flex-direction: row;
-    width: 65%;
-    padding-top: 100px;
+#vinho-box {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: row;
+  width: 65%;
+  padding-top: 100px;
 }
 
 
 
 /* ===== Imagem do Vinho ===== */
-#vinho-img-box{
-    width: fit-content;
-    margin-right: 40px;
+#vinho-img-box {
+  width: fit-content;
+  margin-right: 40px;
 }
 
-#vinho-img-box-responsivo{
-    display: none;
+#vinho-img-box-responsivo {
+  display: none;
 }
 
 
 /* ===== Paine da Direita ===== */
-#informacao-box{
-    display: flex;
-    flex-direction: column;
-    justify-content: top;
-    flex-grow: 1;
-    height: 100%;
-    gap: 50px;
+#informacao-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  flex-grow: 1;
+  height: 100%;
+  gap: 50px;
 }
 
 /* ===== Titulo ===== */
-#titulo-box{    
-    padding: 20px 0 20px 16px;
-    border-left: 4px #D1416C solid;
+#titulo-box {
+  padding: 20px 0 20px 16px;
+  border-left: 4px #D1416C solid;
 }
 
-#titulo{
-    width: 100%;
-    font-size: 40px;
-    line-height: 36px;
-    font-family: Marcellus;
+#titulo {
+  width: 100%;
+  font-size: 40px;
+  line-height: 36px;
+  font-family: Marcellus;
 }
 
 /* ===== Descrição do Vinho ===== */
-#descricao-box{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    gap: 40px;
+#descricao-box {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 40px;
 }
 
 /* ===== Area das Tags do Vinho ===== */
-#tags-box{
-    display: flex;
-    width: 60%;
-    flex-wrap: wrap;
-    gap: 15px;
-    align-self: flex-start;
+#tags-box {
+  display: flex;
+  width: 60%;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-self: flex-start;
 }
 
-.tag-box{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f3f3f3;
-    border-radius: 20px;
-    padding: 10px 18px;
-    line-height: 22px;  
-    gap: 12px;
-    vertical-align: middle;
-    font-family: Tajawal;
+.tag-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3f3f3;
+  border-radius: 20px;
+  padding: 10px 18px;
+  line-height: 22px;
+  gap: 12px;
+  vertical-align: middle;
+  font-family: Tajawal;
 }
 
-.icon-tags-img{
-    width: 25px;
+.icon-tags-img {
+  width: 25px;
 }
 
 /* ===== Area dos Preços ===== */
-#preco-box{
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    font-family: Tajawal;
+#preco-box {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  font-family: Tajawal;
 }
 
 /* ===== Area dos Valores ===== */
-#desconto-box{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-    font-weight: 600;
+#desconto-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
 }
 
-#desconto-valor{
-    background-color: #5FBD7F; 
-    color: white; 
-    padding: 7px 7px; 
-    border-radius: 20px;
-    font-size: 14px;
+#desconto-valor {
+  background-color: #5FBD7F;
+  color: white;
+  padding: 7px 7px;
+  border-radius: 20px;
+  font-size: 14px;
 }
 
-#preco-valor{
-    font-size: 40px;
-    color: #D1416C;
-    font-weight: bold;
+#preco-valor {
+  font-size: 40px;
+  color: #D1416C;
+  font-weight: bold;
 }
 
-#preco-parcela{
-    margin-top: 16px;
-    color:#9b9b9b;
-    font-weight: 600;
-    font-size: 1.2rem;
+#preco-parcela {
+  margin-top: 16px;
+  color: #9b9b9b;
+  font-weight: 600;
+  font-size: 1.2rem;
 }
 
 /* ===== Area da Compra ===== */
-#comprar-box{
-    display: flex;
-    flex-direction: row;
-    margin-top: 40px;
-    height: 60px;
+#comprar-box {
+  display: flex;
+  flex-direction: row;
+  margin-top: 40px;
+  height: 60px;
 }
 
-#quantidade-box{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    background-color: #F6F4F1;
-    width: 30%;
-    border-radius: 10px 0px 0px 10px;
+#quantidade-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #F6F4F1;
+  width: 30%;
+  border-radius: 10px 0px 0px 10px;
 }
 
-.botaoMaisMenos{
-    display: block;
-    font-size: 20px;
+.botaoMaisMenos {
+  display: block;
+  font-size: 20px;
 }
 
-button.botaoMaisMenos{
-    border: none;
-    background: none;
-    cursor: pointer;
+button.botaoMaisMenos {
+  border: none;
+  background: none;
+  cursor: pointer;
 }
 
-#botao-comprar{
-    width: 70%;
-    border: none;
-    background: none;
-    cursor: pointer;
-    background-color: #21A76E;
-    border-radius: 0 10px 10px 0;
-    font-family: Tajawal;
-    font-size: 16px;
-    color: white;
-    font-weight: 600;
-    line-height: 20px;
+#botao-comprar {
+  width: 70%;
+  border: none;
+  background: none;
+  cursor: pointer;
+  background-color: #21A76E;
+  border-radius: 0 10px 10px 0;
+  font-family: Tajawal;
+  font-size: 16px;
+  color: white;
+  font-weight: 600;
+  line-height: 20px;
 }
 
 
@@ -176,74 +174,74 @@ button.botaoMaisMenos{
 
 /* ========== RESPONSIVIDADE ========= */
 @media only screen and (max-width: 1300px) {
-    #vinho-box{
-        width: 85%;
-    }
+  #vinho-box {
+    width: 85%;
+  }
 
-    #descricao-box{
-        flex-direction: column;
-    }
+  #descricao-box {
+    flex-direction: column;
+  }
 
-    #tags-box{
-        width: 100%;
-    }   
+  #tags-box {
+    width: 100%;
+  }
 
-    #comprar-box{
-        max-width: 70%;
-    }
+  #comprar-box {
+    max-width: 70%;
+  }
 }
 
 
 
 @media only screen and (max-width: 950px) {
-    #container{
-        padding-bottom: 40pxgit ;
-    }
+  #container {
+    padding-bottom: 40pxgit;
+  }
 
-    #titulo{
-        font-size: 30px;
-    }
+  #titulo {
+    font-size: 30px;
+  }
 
-    #img-vinho-descricao-box-responsivo{
-        display: flex;
-        flex-direction: row;
-    }
+  #img-vinho-descricao-box-responsivo {
+    display: flex;
+    flex-direction: row;
+  }
 
-    #vinho-img-box{
-       display: none;
-    }
-    
-    #vinho-img-box-responsivo{
-        margin-right: 30px;
-        width: fit-content;
-        display: block;
-    }
+  #vinho-img-box {
+    display: none;
+  }
 
-    #comprar-box{
-        max-width: 100%;
-    }
+  #vinho-img-box-responsivo {
+    margin-right: 30px;
+    width: fit-content;
+    display: block;
+  }
+
+  #comprar-box {
+    max-width: 100%;
+  }
 }
 
 
 
 @media only screen and (max-width: 650px) {
-    #img-vinho-descricao-box-responsivo{
-        flex-direction: column;
-    }
-    
-    #vinho-img-box-responsivo{
-        margin-right: 30px;
-        width: 100%;
-        margin: 0 0 50px 0;
-        text-align: center;
-        display: block;
-    }
+  #img-vinho-descricao-box-responsivo {
+    flex-direction: column;
+  }
 
-    #tags-box{
-        justify-content: center;
-    } 
+  #vinho-img-box-responsivo {
+    margin-right: 30px;
+    width: 100%;
+    margin: 0 0 50px 0;
+    text-align: center;
+    display: block;
+  }
 
-    #preco-box{
-        align-items: center;
-    }
+  #tags-box {
+    justify-content: center;
+  }
+
+  #preco-box {
+    align-items: center;
+  }
 }
