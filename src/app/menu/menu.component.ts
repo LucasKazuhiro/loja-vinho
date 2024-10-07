@@ -11,7 +11,6 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './menu.component.css'
 })
 export class MenuComponent{
-  public estaLogado:boolean=false;
   public estaAtivoMenuLateral = false;
   public pesquisaValorVinho:string = "";
   public itemPesquisado:string = "";
