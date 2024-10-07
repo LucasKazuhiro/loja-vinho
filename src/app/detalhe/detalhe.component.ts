@@ -64,7 +64,7 @@ export class DetalheComponent {
       for(let i=0; i<cestaCompra.itens.length; i++){
         if(cestaCompra.itens[i].codigo == vinho.codigo){
           cestaCompra.itens[i].quantidade = this.quantidadeItemsAtual;
-          cestaCompra.itens[i].valorTotal = vinho.preco * this.quantidadeItemsAtual;
+          cestaCompra.itens[i].valorTotal = (vinho.preco - (vinho.preco * vinho.desconto)) * this.quantidadeItemsAtual;
           itemJaExiste = true;
           break;
         }
