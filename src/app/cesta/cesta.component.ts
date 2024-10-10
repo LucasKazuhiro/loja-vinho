@@ -102,7 +102,7 @@ export class CestaComponent {
         this.cestaCompra.itens[i].quantidade = item.quantidade + qtd;
 
         this.cestaCompra.total = this.cestaCompra.total - this.cestaCompra.itens[i].valorTotal;
-        this.cestaCompra.itens[i].valorTotal = (item.vinho.preco - (item.vinho.preco * item.vinho.desconto)) * (item.quantidade + qtd);
+        this.cestaCompra.itens[i].valorTotal = (item.vinho.preco - (item.vinho.preco * item.vinho.desconto)) * this.cestaCompra.itens[i].quantidade;
         this.cestaCompra.total = this.cestaCompra.total + this.cestaCompra.itens[i].valorTotal;        
         
         localStorage.setItem("cestaCompra", JSON.stringify(this.cestaCompra));
