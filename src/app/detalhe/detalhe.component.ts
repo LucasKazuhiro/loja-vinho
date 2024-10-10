@@ -82,6 +82,7 @@ export class DetalheComponent {
     }
 
     localStorage.setItem("cestaCompra", JSON.stringify(cestaCompra));
+    window.location.href="/cesta";
   }
 
   public criarNovoItem(vinho:Vinho){
