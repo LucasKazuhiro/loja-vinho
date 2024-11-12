@@ -1,42 +1,60 @@
-# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+# Ignorar arquivos do frontend (Angular)
+lojavinho-angular/dist/
+lojavinho-angular/tmp/
+lojavinho-angular/out-tsc/
+lojavinho-angular/bazel-out/
+lojavinho-angular/node_modules/
+lojavinho-angular/npm-debug.log
+lojavinho-angular/yarn-error.log
+lojavinho-angular/.angular/cache
+lojavinho-angular/.sass-cache/
+lojavinho-angular/connect.lock
+lojavinho-angular/coverage
+lojavinho-angular/libpeerconnection.log
+lojavinho-angular/testem.log
+lojavinho-angular/typings/
+lojavinho-angular/.history/
 
-# Compiled output
-/dist
-/tmp
-/out-tsc
-/bazel-out
+# Ignorar arquivos do backend (Spring Boot)
+lojavinho-springboot/target/
+lojavinho-springboot/.mvn/wrapper/maven-wrapper.jar
+lojavinho-springboot/**/src/main/**/target/
+lojavinho-springboot/**/src/test/**/target/
 
-# Node
-/node_modules
-npm-debug.log
-yarn-error.log
+# Ignorar arquivos específicos de IDEs e editores
+# Para o projeto Angular
+lojavinho-angular/.idea/
+lojavinho-angular/.project
+lojavinho-angular/.classpath
+lojavinho-angular/.c9/
+lojavinho-angular/*.launch
+lojavinho-angular/.settings/
+lojavinho-angular/*.sublime-workspace
+lojavinho-angular/.vscode/*
 
-# IDEs and editors
-.idea/
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
+# Para o projeto Spring Boot
+lojavinho-springboot/.idea/
+lojavinho-springboot/*.iws
+lojavinho-springboot/*.iml
+lojavinho-springboot/*.ipr
+lojavinho-springboot/.vscode/
 
-# Visual Studio Code
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-.history/*
+# Ignorar arquivos do Spring Tools Suite (STS)
+lojavinho-springboot/.apt_generated
+lojavinho-springboot/.factorypath
+lojavinho-springboot/.project
+lojavinho-springboot/.settings
+lojavinho-springboot/.springBeans
+lojavinho-springboot/.sts4-cache
 
-# Miscellaneous
-/.angular/cache
-.sass-cache/
-/connect.lock
-/coverage
-/libpeerconnection.log
-testem.log
-/typings
+# Ignorar arquivos de outras IDEs
+lojavinho-springboot/nbproject/private/
+lojavinho-springboot/nbbuild/
+lojavinho-springboot/dist/
+lojavinho-springboot/nbdist/
+lojavinho-springboot/.nb-gradle/
+lojavinho-springboot/build/
 
-# System files
+# Sistema de arquivos
 .DS_Store
 Thumbs.db
