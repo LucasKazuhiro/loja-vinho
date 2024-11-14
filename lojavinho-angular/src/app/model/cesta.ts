@@ -6,4 +6,5 @@ export class Cesta {
   public cliente: Cliente = new Cliente();
   public itens: Item[] = [];
   public total: number = 0;
+  public data: Date | null = null;
 }
