@@ -35,10 +35,63 @@ export class CestaService {
       }
 
       // Salva os valores
+      this.salvarItensTotal(itensSalvos, compraTotal);
+    }
+
+    public removerItem(item : Item){
+      let itensSalvos = this.cestaSalva.value.itens;
+      let compraTotal = 0;
+
+      // Remove o item do array usando o filter
+      itensSalvos = itensSalvos.filter((itemSalvo) => item !== itemSalvo);
+
+      // Calcula novo valor total da cesta
+      itensSalvos.forEach(item => {
+        compraTotal += item.valorTotal;
+      })
+
+      // Salva os valores
+      this.salvarItensTotal(itensSalvos, compraTotal);
+    }
+
+    public limparCesta(){
+      // Zera tudo e salva os valores
       this.cestaSalva.next({
-        ...this.cestaSalva.value, 
+        ...this.cestaSalva.value,
+        itens: [],
+        total: 0,
+        desconto: 0
+      });
+    }
+
+    public alterarQuantidade(item:Item, qtd:number){
+      let itensSalvos = this.cestaSalva.value.itens;
+      let compraTotal = 0;
+      
+      // Calcula novo valor de 'quantidade' e 'valorTotal' do item
+      for(let i=0; i<itensSalvos.length; i++){
+        if(item.vinho.codigo === itensSalvos[i].vinho.codigo){
+          itensSalvos[i].quantidade += qtd;
+          itensSalvos[i].valorTotal = (item.vinho.preco - (item.vinho.preco * item.vinho.desconto)) * itensSalvos[i].quantidade;
+          break;
+        }
+      }
+
+      // Calcula novo valor total da cesta
+      itensSalvos.forEach(item => {
+        compraTotal += item.valorTotal;
+      })
+
+      // Salva os valores
+      this.salvarItensTotal(itensSalvos, compraTotal);
+    }
+
+    public salvarItensTotal(itensSalvos:Item[], compraTotal:number){
+      // Salva os valores
+      this.cestaSalva.next({
+        ...this.cestaSalva.value,
         itens: itensSalvos,
         total: compraTotal
-      });
+      })
     }
 }
