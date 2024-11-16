@@ -5,6 +5,7 @@ import { CommonModule, JsonPipe } from '@angular/common';
 import { Vinho } from '../model/vinho';
 import { Cesta } from '../model/cesta';
 import { FormsModule } from '@angular/forms';
+import { CestaService } from '../service/cesta.service';
 
 
 
@@ -24,49 +25,31 @@ export class CestaComponent {
   public codigoDesconto:string = "";
   public valorDesconto:number = 0;
 
-  constructor(){
-    let cestaJSON = localStorage.getItem("cestaCompra");
-
-    this.verificarCestaVazia(cestaJSON);
+  constructor(private cestaService:CestaService){
+    this.cestaService.cestaSalva$.subscribe(cesta => {
+      this.cestaCompra = cesta
+      this.verificarCestaVazia(this.cestaCompra);
+    });
   }
 
 
-  public verificarCestaVazia(cestaJSON:string | null){
-    if(cestaJSON !== null){
-      this.cestaCompra = JSON.parse(cestaJSON);
-      if(this.cestaCompra.itens.length != 0){
-        this.valorTotalFinal = this.cestaCompra.total;
-        this.mensagem = "";
-      }
-      else{
-        this.mensagem = "Cesta vazia, adicione novos itens!";
-      }
+  public verificarCestaVazia(cestaCompra : Cesta){
+    if(cestaCompra.itens.length > 0){
+      this.valorTotalFinal = this.cestaCompra.total;
+      this.aplicarDesconto();
+      this.mensagem = "";
     }
     else{
       this.mensagem = "Cesta vazia, adicione novos itens!";
     }
   }
 
-  public removerItem(itemRemover: Item){
-    this.cestaCompra.itens = this.cestaCompra.itens.filter(item => item != itemRemover);
-    
-    this.cestaCompra.total = 0;
-    for(let i=0; i<this.cestaCompra.itens.length; i++){
-      this.cestaCompra.total = this.cestaCompra.total + this.cestaCompra.itens[i].valorTotal;
-    }
-
-    this.aplicarDesconto();
-
-    localStorage.setItem("cestaCompra", JSON.stringify(this.cestaCompra));
-
-    let cestaJSON = localStorage.getItem("cestaCompra");
-    this.verificarCestaVazia(cestaJSON);
+  public removerItem(item: Item){
+    this.cestaService.removerItem(item);
   }
 
   public limparCesta(){
-    localStorage.removeItem("cestaCompra");
-    this.cestaCompra = new Cesta();
-    this.mensagem = "Cesta vazia, adicione novos itens!";
+    this.cestaService.limparCesta();
     this.valorTotalFinal = 0;
     this.valorDesconto = 0;
     this.codigoDesconto = "";
@@ -86,30 +69,13 @@ export class CestaComponent {
 
   public quantidadeAumentar(item:Item){
     if(item.quantidade < item.vinho.estoque){
-      this.atualizarDados(item, 1);
+      this.cestaService.alterarQuantidade(item, 1);
     }
   }
 
   public quantidadeDiminuir(item:Item){
     if(item.quantidade > 1){
-      this.atualizarDados(item, -1);
+      this.cestaService.alterarQuantidade(item, -1);
     }
   }
-
-  public atualizarDados(item:Item, qtd:number){
-    for(let i=0; i<this.cestaCompra.itens.length; i++){
-      if(this.cestaCompra.itens[i].codigo == item.vinho.codigo){
-        this.cestaCompra.itens[i].quantidade = item.quantidade + qtd;
-
-        this.cestaCompra.total = this.cestaCompra.total - this.cestaCompra.itens[i].valorTotal;
-        this.cestaCompra.itens[i].valorTotal = (item.vinho.preco - (item.vinho.preco * item.vinho.desconto)) * this.cestaCompra.itens[i].quantidade;
-        this.cestaCompra.total = this.cestaCompra.total + this.cestaCompra.itens[i].valorTotal;        
-        
-        localStorage.setItem("cestaCompra", JSON.stringify(this.cestaCompra));
-        this.aplicarDesconto();
-        break;
-      }
-    }
-  }
-
 }

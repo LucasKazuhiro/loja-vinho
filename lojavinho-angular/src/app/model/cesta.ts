@@ -7,4 +7,5 @@ export class Cesta {
   public itens: Item[] = [];
   public total: number = 0;
   public data: Date | null = null;
+  public desconto: number = 0;
 }
