@@ -1,0 +1,823 @@
+{
+	"info": {
+		"_postman_id": "381771e4-2d60-4f2a-905d-b4e90e59879e",
+		"name": "requestsPostman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38962202"
+	},
+	"item": [
+		{
+			"name": "Cliente",
+			"item": [
+				{
+					"name": "Cliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\"      : \"Testador User\",\r\n    \"email\"     : \"emailteste@gmail.com\",\r\n    \"senha\"     : \"teste\",\r\n    \"telefone\"  : \"2345-3495\",\r\n    \"documento\" : \"rg\",\r\n    \"logradouro\": \"rua tal logo ali\",\r\n    \"cep\"       : \"03495-4395\",\r\n    \"cidade\"    : \"minha cidade aqui\",\r\n    \"complemento\": \"completado endereco\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/clientes",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cliente",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"codigo\"    : 1,    \r\n    \"nome\"      : \"Testador User\",\r\n    \"email\"     : \"emailteste@gmail.com\",\r\n    \"senha\"     : \"teste\",\r\n    \"telefone\"  : \"2345-3495\",\r\n    \"documento\" : \"cpf\",\r\n    \"logradouro\": \"rua tal logo ali\",\r\n    \"cep\"       : \"03495-4395\",\r\n    \"cidade\"    : \"minha cidade aqui\",\r\n    \"complemento\": \"completado endereco\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/clientes",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cliente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/clientes/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"clientes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cliente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/clientes/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"clientes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vinho",
+			"item": [
+				{
+					"name": "Vinho 1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Trapiche Vineyards Cabernet Sauvignon\",\r\n    \"tipo\": \"Tinto\",\r\n    \"uva\": \"Cabernet Sauvignon\",\r\n    \"volume\": 750,\r\n    \"teorAlcoolico\": 12.5,\r\n    \"marca\": \"Trapiche\",\r\n    \"cdPais\": \"1\",\r\n    \"pais\": \"Argentina\",\r\n    \"regiao\": \"Mendoza\",\r\n    \"preco\": 48.90,\r\n    \"estoque\": 10,\r\n    \"desconto\": 0.06\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/vinhos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"vinhos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vinho 2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"nome\": \"Vinho Trapiche Alaris Malbec\",\r\n        \"tipo\": \"Tinto\",\r\n        \"uva\": \"Malbec\",\r\n        \"volume\": 750,\r\n        \"teorAlcoolico\": 12.5,\r\n        \"marca\": \"Trapiche\",\r\n        \"cdPais\": \"1\",\r\n        \"pais\": \"Argentina\",\r\n        \"regiao\": \"Mendoza\",\r\n        \"preco\": 42.90,\r\n        \"estoque\": 10,\r\n        \"desconto\": 0.08\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/vinhos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"vinhos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vinho 3",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"nome\": \"Concha y Toro Casillero Del Diablo Carmenere\",\r\n        \"tipo\": \"Tinto\",\r\n        \"uva\": \"Carmenere\",\r\n        \"volume\": 750,\r\n        \"teorAlcoolico\": 13.5,\r\n        \"marca\": \"Casillero del Diablo\",\r\n        \"cdPais\": \"2\",\r\n        \"pais\": \"Chile\",\r\n        \"regiao\": \"Vale Central\",\r\n        \"preco\": 59.90,\r\n        \"estoque\": 10,\r\n        \"desconto\": 0.1\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/vinhos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"vinhos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vinho 4",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"nome\": \"Seleccion Cabernet Sauvignon Carmenère\",\r\n        \"tipo\": \"Tinto\",\r\n        \"uva\": \"Cabernet Sauvignon, Carmenère\",\r\n        \"volume\": 750,\r\n        \"teorAlcoolico\": 12.5,\r\n        \"marca\": \"Casillero del Diablo\",\r\n        \"cdPais\": \"2\",\r\n        \"pais\": \"Chile\",\r\n        \"regiao\": \"Valle de Central\",\r\n        \"preco\": 41.90,\r\n        \"estoque\": 10,\r\n        \"desconto\": 0.08\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/vinhos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"vinhos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vinho 5",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"nome\": \"Angélica Zapata Cabernet Franc Alta\",\r\n        \"tipo\": \"Tinto\",\r\n        \"uva\": \"Cabernet Franc\",\r\n        \"volume\": 750,\r\n        \"teorAlcoolico\": 13.5,\r\n        \"marca\": \"Angélica Zapata\",\r\n        \"cdPais\": \"1\",\r\n        \"pais\": \"Argentina\",\r\n        \"regiao\": \"Mendoza\",\r\n        \"preco\": 289.90,\r\n        \"estoque\": 10,\r\n        \"desconto\": 0.23\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/vinhos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"vinhos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vinho 6",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"nome\": \"Trapiche Vineyards Merlot\",\r\n        \"tipo\": \"Tinto\",\r\n        \"uva\": \"Merlot\",\r\n        \"volume\": 750,\r\n        \"teorAlcoolico\": 14,\r\n        \"marca\": \"Trapiche\",\r\n        \"cdPais\": \"1\",\r\n        \"pais\": \"Argentina\",\r\n        \"regiao\": \"Mendoza\",\r\n        \"preco\": 48.90,\r\n        \"estoque\": 10,\r\n        \"desconto\": 0.15\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/vinhos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"vinhos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vinho 7",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"nome\": \"Codici Masserie Fiano\",\r\n        \"tipo\": \"Branco\",\r\n        \"uva\": \"Fiano\",\r\n        \"volume\": 750,\r\n        \"teorAlcoolico\": 12.5,\r\n        \"marca\": \"Codici Masserie\",\r\n        \"cdPais\": \"3\",\r\n        \"pais\": \"Itália\",\r\n        \"regiao\": \"Puglia\",\r\n        \"preco\": 94.72,\r\n        \"estoque\": 10,\r\n        \"desconto\": 0.34\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/vinhos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"vinhos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vinho 8",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"nome\": \"San Valentín Tempranillo\",\r\n        \"tipo\": \"Tinto\",\r\n        \"uva\": \"Tempranillo\",\r\n        \"volume\": 750,\r\n        \"teorAlcoolico\": 14.5,\r\n        \"marca\": \"San Valentín\",\r\n        \"cdPais\": \"4\",\r\n        \"pais\": \"Espanha\",\r\n        \"regiao\": \"La Mancha\",\r\n        \"preco\": 75.00,\r\n        \"estoque\": 10,\r\n        \"desconto\": 0\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/vinhos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"vinhos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vinho 9",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"nome\": \"Marqués de Cáceres Rioja Crianza\",\r\n        \"tipo\": \"Tinto\",\r\n        \"uva\": \"Tempranillo, Garnacha, Graciano\",\r\n        \"volume\": 750,\r\n        \"teorAlcoolico\": 13.5,\r\n        \"marca\": \"Marqués de Cáceres\",\r\n        \"cdPais\": \"4\",\r\n        \"pais\": \"Espanha\",\r\n        \"regiao\": \"Rioja\",\r\n        \"preco\": 89.00,\r\n        \"estoque\": 10,\r\n        \"desconto\": 0.09\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/vinhos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"vinhos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vinho 10",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"nome\": \"Luigi Bosca Malbec\",\r\n        \"tipo\": \"Tinto\",\r\n        \"uva\": \"Malbec\",\r\n        \"volume\": 750,\r\n        \"teorAlcoolico\": 14,\r\n        \"marca\": \"Luigi Bosca\",\r\n        \"cdPais\": \"1\",\r\n        \"pais\": \"Argentina\",\r\n        \"regiao\": \"Mendoza\",\r\n        \"preco\": 145.00,\r\n        \"estoque\": 10,\r\n        \"desconto\": 0.04\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/vinhos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"vinhos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vinho 11",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"nome\": \"Château Lafite Rothschild Pauillac\",\r\n        \"tipo\": \"Tinto\",\r\n        \"uva\": \"Cabernet Sauvignon, Merlot\",\r\n        \"volume\": 750,\r\n        \"teorAlcoolico\": 13,\r\n        \"marca\": \"Château Lafite Rothschild\",\r\n        \"cdPais\": \"5\",\r\n        \"pais\": \"França\",\r\n        \"regiao\": \"Pauillac\",\r\n        \"preco\": 8000,\r\n        \"estoque\": 10,\r\n        \"desconto\": 0.12\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/vinhos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"vinhos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vinho 12",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"nome\": \"Antinori Tignanello\",\r\n        \"tipo\": \"Tinto\",\r\n        \"uva\": \"Sangiovese, Cabernet Sauvignon\",\r\n        \"volume\": 750,\r\n        \"teorAlcoolico\": 13.5,\r\n        \"marca\": \"Antinori\",\r\n        \"cdPais\": \"3\",\r\n        \"pais\": \"Itália\",\r\n        \"regiao\": \"Toscana\",\r\n        \"preco\": 1900,\r\n        \"estoque\": 10,\r\n        \"desconto\": 0.9\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/vinhos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"vinhos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vinho 13",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"nome\": \"Ramón Bilbao Crianza\",\r\n        \"tipo\": \"Tinto\",\r\n        \"uva\": \"Tempranillo\",\r\n        \"volume\": 750,\r\n        \"teorAlcoolico\": 14,\r\n        \"marca\": \"Ramón Bilbao\",\r\n        \"cdPais\": \"4\",\r\n        \"pais\": \"Espanha\",\r\n        \"regiao\": \"Rioja\",\r\n        \"preco\": 123.00,\r\n        \"estoque\": 10,\r\n        \"desconto\": 1\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/vinhos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"vinhos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vinho 14",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"nome\": \"Torres Celeste Verdejo Branco\",\r\n        \"tipo\": \"Branco\",\r\n        \"uva\": \"Verdejo\",\r\n        \"volume\": 750,\r\n        \"teorAlcoolico\": 13,\r\n        \"marca\": \"Torres Celeste\",\r\n        \"cdPais\": \"4\",\r\n        \"pais\": \"Espanha\",\r\n        \"regiao\": \"Rueda\",\r\n        \"preco\": 100.00,\r\n        \"estoque\": 10,\r\n        \"desconto\": 0.35\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/vinhos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"vinhos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vinho 15",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"nome\": \"Miolo Seleção Rosé\",\r\n        \"tipo\": \"Rosé\",\r\n        \"uva\": \"Merlot, Cabernet Sauvignon\",\r\n        \"volume\": 750,\r\n        \"teorAlcoolico\": 12,\r\n        \"marca\": \"Miolo\",\r\n        \"cdPais\": \"6\",\r\n        \"pais\": \"Brasil\",\r\n        \"regiao\": \"Vale dos Vinhedos\",\r\n        \"preco\": 39.90,\r\n        \"estoque\": 10,\r\n        \"desconto\": 0.03\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/vinhos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"vinhos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vinho 16",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"nome\": \"Salentein Reserva Malbec\",\r\n        \"tipo\": \"Tinto\",\r\n        \"uva\": \"Malbec\",\r\n        \"volume\": 750,\r\n        \"teorAlcoolico\": 14,\r\n        \"marca\": \"Salentein\",\r\n        \"cdPais\": \"1\",\r\n        \"pais\": \"Argentina\",\r\n        \"regiao\": \"Mendoza\",\r\n        \"preco\": 109.00,\r\n        \"estoque\": 10,\r\n        \"desconto\": 0.01\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/vinhos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"vinhos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vinho 17",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"nome\": \"Miolo Lote 43 \",\r\n        \"tipo\": \"Tinto\",\r\n        \"uva\": \"Cabernet Sauvignon, Merlot\",\r\n        \"volume\": 750,\r\n        \"teorAlcoolico\": 13.5,\r\n        \"marca\": \"Miolo\",\r\n        \"cdPais\": \"6\",\r\n        \"pais\": \"Brasil\",\r\n        \"regiao\": \"Vale dos Vinhedos\",\r\n        \"preco\": 229.00,\r\n        \"estoque\": 10,\r\n        \"desconto\": 0.13\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/vinhos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"vinhos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vinho 18",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"nome\": \"Baron Philippe de Rothschild Escudo Rojo Reserva\",\r\n        \"tipo\": \"Tinto\",\r\n        \"uva\": \"Cabernet Sauvignon, Carmenere\",\r\n        \"volume\": 750,\r\n        \"teorAlcoolico\": 14,\r\n        \"marca\": \"Escudo Rojo\",\r\n        \"cdPais\": \"2\",\r\n        \"pais\": \"Chile\",\r\n        \"regiao\": \"Valle Central\",\r\n        \"preco\": 95.00,\r\n        \"estoque\": 10,\r\n        \"desconto\": 0.17\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/vinhos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"vinhos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vinho 19",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"nome\": \"Herdade de São Miguel Colheita Selecionada\",\r\n        \"tipo\": \"Tinto\",\r\n        \"uva\": \"Syrah, Touriga Nacional\",\r\n        \"volume\": 750,\r\n        \"teorAlcoolico\": 14,\r\n        \"marca\": \"Herdade de São Miguel\",\r\n        \"cdPais\": \"7\",\r\n        \"pais\": \"Portugal\",\r\n        \"regiao\": \"Alentejano\",\r\n        \"preco\": 87.00,\r\n        \"estoque\": 10,\r\n        \"desconto\": 0.42\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/vinhos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"vinhos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vinho 20",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"nome\": \"Quinta do Crasto Superior \",\r\n        \"tipo\": \"Tinto\",\r\n        \"uva\": \"Touriga Nacional\",\r\n        \"volume\": 750,\r\n        \"teorAlcoolico\": 14.5,\r\n        \"marca\": \"Quinta do Crasto\",\r\n        \"cdPais\": \"7\",\r\n        \"pais\": \"Portugal\",\r\n        \"regiao\": \"Douro\",\r\n        \"preco\": 215.00,\r\n        \"estoque\": 10,\r\n        \"desconto\": 0.19\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/vinhos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"vinhos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vinho",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"codigo\": 2,\r\n    \"nome\": \"Trapiche Vineyards Cabernet Sauvignon\",\r\n    \"tipo\": \"Tinto\",\r\n    \"uva\": \"Cabernet Sauvignonn\",\r\n    \"volume\": 750,\r\n    \"teorAlcoolico\": 12.5,\r\n    \"marca\": \"Trapiche\",\r\n    \"cdPais\": \"1\",\r\n    \"pais\": \"Argentina\",\r\n    \"regiao\": \"Mendoza\",\r\n    \"preco\": 48.90,\r\n    \"estoque\": 10,\r\n    \"desconto\": 0.06\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/vinhos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"vinhos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vinho",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/vinhos/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"vinhos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vinho",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/vinhos/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"vinhos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cesta",
+			"item": [
+				{
+					"name": "Cesta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cliente\": {\r\n    \"codigo\": 1\r\n  },\r\n  \"itens\": [\r\n    {\r\n      \"vinho\": {\r\n        \"codigo\": 3\r\n      },\r\n      \"quantidade\": 2,\r\n      \"valorTotal\": 50.0\r\n    },\r\n    {\r\n      \"vinho\": {\r\n        \"codigo\": 7\r\n      },\r\n      \"quantidade\": 7,\r\n      \"valorTotal\": 648.93\r\n    }\r\n  ],\r\n  \"total\": 475.64\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/cesta",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cesta"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cesta",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/cesta/cliente?clienteCod=1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cesta",
+								"cliente"
+							],
+							"query": [
+								{
+									"key": "clienteCod",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cesta",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/cesta/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cesta",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
