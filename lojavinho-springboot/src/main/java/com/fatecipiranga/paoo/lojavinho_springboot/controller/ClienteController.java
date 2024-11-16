@@ -22,28 +22,28 @@ public class ClienteController {
     private ClienteRepository clienteRepository;
 
      
-    @PostMapping("/api/clientes")
+    @PostMapping("/api/cliente")
     public String gravar(@RequestBody Cliente cliente) {
         clienteRepository.save(cliente);
         return "O Cliente " + cliente.getNome() + " foi salvo corretamente!";
     }
 
      
-    @PutMapping("/api/clientes")
+    @PutMapping("/api/cliente")
     public String alterar(@RequestBody Cliente cliente) {
         clienteRepository.save(cliente);
         return "O Cliente " + cliente.getNome() + " foi alterado corretamente!";
     }
 
      
-    @GetMapping("/api/clientes/{codigo}")
+    @GetMapping("/api/cliente/{codigo}")
     public Cliente carregar(@PathVariable long codigo) {
         Optional<Cliente> cliente = clienteRepository.findById(codigo);
         return cliente.orElse(null);  
     }
 
      
-    @DeleteMapping("/api/clientes/{codigo}")
+    @DeleteMapping("/api/cliente/{codigo}")
     public String remover(@PathVariable long codigo) {
         clienteRepository.deleteById(codigo);
         return "Cliente de código " + codigo + " removido com sucesso!";
@@ -53,5 +53,28 @@ public class ClienteController {
     @GetMapping("/api/clientes")
     public List<Cliente> listar() {
         return clienteRepository.findAll();
+    }
+
+    @PostMapping("/api/cliente/login")
+    public Cliente fazerLogin(@RequestBody Cliente obj){
+        Optional<Cliente> retorno = 
+        clienteRepository.login(obj.getEmail(), obj.getSenha());
+        if(retorno.isPresent()){
+            return retorno.get();
+        } else {
+            return null;
+        }
+    }
+
+
+    @PostMapping("/api/cliente/recupera")
+    public Cliente recuperarSenha(@RequestBody Cliente obj){
+        Optional<Cliente> retorno = 
+        clienteRepository.recuperaSenha(obj.getEmail());
+        if(retorno.isPresent()){
+            return retorno.get();
+        } else {
+            return null;
+        }
     }
 }
