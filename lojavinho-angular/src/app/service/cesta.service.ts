@@ -96,10 +96,11 @@ export class CestaService {
         itens: itensSalvos,
         total: compraTotal
       })
+
     }
 
-
-    public salvarCesta(){
+    salvarCesta(){
       return this.http.post("http://localhost:8080/api/cesta", this.cestaSalva.value);
+
     }
 }

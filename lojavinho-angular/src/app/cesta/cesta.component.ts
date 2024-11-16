@@ -79,6 +79,7 @@ export class CestaComponent {
     }
   }
 
+
   public salvarCesta(){
     this.cestaService.cestaSalva$.subscribe({
       next: (response) => {
@@ -87,6 +88,7 @@ export class CestaComponent {
       error: (err) => {
         this.mensagem = "Erro ao salvar a cesta. Tente novamente!";
       }
-    })
+    });
   }
+
 }

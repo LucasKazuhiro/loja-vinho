@@ -22,9 +22,10 @@ export class VinhoService {
   remover(codigo:number):Observable<any> {
     return this.http.delete("http://localhost:8080/api/vinhos/"+codigo); 
   }
-  listar():Observable<any> {
-    return this.http.get("http://localhost:8080/api/vinhos"); 
+  listar(): Observable<Vinho[]> {
+    return this.http.get<Vinho[]>("http://localhost:8080/api/vinhos");
   }
+  
   pesquisar(termo:string):Observable<any> {
     return this.http.get("http://localhost:8080/api/vinhos/busca/"+termo); 
   }
