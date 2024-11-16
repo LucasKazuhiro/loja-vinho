@@ -2,11 +2,14 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Item } from '../model/item';
 import { Cesta } from '../model/cesta';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CestaService {
+    constructor(private http : HttpClient){}
+
     private cestaSalva = new BehaviorSubject<Cesta>(new Cesta());
     cestaSalva$ = this.cestaSalva.asObservable();
 
@@ -93,5 +96,10 @@ export class CestaService {
         itens: itensSalvos,
         total: compraTotal
       })
+    }
+
+
+    public salvarCesta(){
+      return this.http.post("http://localhost:8080/api/cesta", this.cestaSalva.value);
     }
 }
