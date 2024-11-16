@@ -6,6 +6,7 @@ import { Item } from '../model/item';
 import { ActivatedRoute } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
 import { CestaService } from '../service/cesta.service';
+import { VinhoService } from '../service/vinho.service';
 
 @Component({
   selector: 'app-detalhe',
@@ -24,7 +25,7 @@ export class DetalheComponent{
   constructor(private route:ActivatedRoute, private vinhoService:VinhoService, private cestaService:CestaService){
     this.vinhoId = Number(this.route.snapshot.paramMap.get('id'));
 
-    this.vinhoService.pesquisar(this.vinhoId).subscribe({
+    this.vinhoService.carregar(this.vinhoId).subscribe({
       next: (vinhoJSON : Vinho) => {
         this.vinho = vinhoJSON;
         this.precoComDesconto = Number(this.vinho.preco - (this.vinho.preco * this.vinho.desconto));
