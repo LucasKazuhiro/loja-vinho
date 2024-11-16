@@ -50,10 +50,10 @@ public class VinhoController {
     }
      
     @GetMapping("/api/vinhos")
-    public List<Vinho> carregarVitrine() {
+    public List<Vinho> listar() {
         return vinhoRepository.findAll();
     }
-
+    
     @GetMapping("/api/vinhos/busca/{pesquisa}")
     public List<Vinho> buscar(@PathVariable String pesquisa){
        return vinhoRepository.busca('%'+ pesquisa +'%');
