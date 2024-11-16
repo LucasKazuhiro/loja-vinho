@@ -78,4 +78,17 @@ export class CestaComponent {
       this.cestaService.alterarQuantidade(item, -1);
     }
   }
+
+
+  public salvarCesta(){
+    this.cestaService.cestaSalva$.subscribe({
+      next: (response) => {
+        this.mensagem = "Cesta salva com sucesso!";
+      },
+      error: (err) => {
+        this.mensagem = "Erro ao salvar a cesta. Tente novamente!";
+      }
+    });
+  }
+
 }
