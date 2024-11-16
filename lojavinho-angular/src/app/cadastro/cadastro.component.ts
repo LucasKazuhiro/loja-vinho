@@ -5,6 +5,7 @@ import { MenuComponent } from '../menu/menu.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faEye } from '@fortawesome/free-solid-svg-icons'
 import { faEyeSlash } from '@fortawesome/free-solid-svg-icons'
+import { ClienteService } from '../service/cliente.service';
 
 
 @Component({
@@ -15,63 +16,59 @@ import { faEyeSlash } from '@fortawesome/free-solid-svg-icons'
   styleUrl: './cadastro.component.css'
 })
 export class CadastroComponent {
-  constructor(){
-    this.carregar();
-  }
 
   faEye = faEye;
   faEyeSlash = faEyeSlash;
 
+  cliente: Cliente = new Cliente();
+  confirmarSenhaValor: string = "";
+  mensagem: string = "";
+  mostraSenha: boolean = false;
+  mostraConfirmaSenha: boolean = false;
+  cadastrarBtnText: string = "Criar conta";
+  mensagemTitulo: string = "Criar uma nova conta";
 
-  public cliente:Cliente = new Cliente();
-  public mensagemTitulo:String = "";
-  public mensagemErro:String = "";
-  public cadastrarBtnText:String = "";
-  public confirmarSenhaValor:String = ""
-  public mostraSenha: boolean = false;
-  public mostraConfirmaSenha: boolean = false;
-
-  public carregar(){
-    console.log("aa")
-    let json:any = localStorage.getItem("cliente");
-
-    if(json!=null){
-      this.cliente = JSON.parse(json);
-      this.mensagemTitulo = "Atualizar os dados da conta"
+  constructor(private service: ClienteService) {}
+ 
+  carregar() {
+    if (this.cliente.codigo) {
+      this.mensagemTitulo = "Atualizar os dados da conta";
       this.cadastrarBtnText = "Atualizar dados";
-    }
-    else{
+    } else {
       this.mensagemTitulo = "Criar uma nova conta";
       this.cadastrarBtnText = "Criar conta";
     }
   }
 
-  public salvarCadastro(){
+ 
+  gravar() {
     const todosValoresPreenchidos = Object.values(this.cliente).every(dado => dado !== null && dado !== '');
 
-    if(todosValoresPreenchidos){
-      if(this.cliente.senha == this.confirmarSenhaValor){
-        localStorage.setItem("clienteMemoria", JSON.stringify(this.cliente));
-        window.location.href="./login";
+    if (todosValoresPreenchidos) {
+      if (this.cliente.senha === this.confirmarSenhaValor) {
+        this.service.inserir(this.cliente).subscribe({
+          next: (data) => {
+            this.mensagem = "Cadastro realizado com sucesso!";
+            window.location.href = "./login";
+          },
+          error: (err) => {
+            this.mensagem = "Ocorreu um problema, tente mais tarde!";
+          }
+        });
+      } else {
+        this.mensagem = "As senhas informadas são diferentes!";
       }
-      else{
-        this.mensagemErro="As senhas informadas são diferentes!";
-      }
-    }
-    else{
-      this.mensagemErro="Todos os campos devem estar preenchidos!";
+    } else {
+      this.mensagem = "Todos os campos devem estar preenchidos!";
     }
   }
 
-
-  public alternaSenha() {
+   
+  alternaSenha() {
     this.mostraSenha = !this.mostraSenha;
   }
-
-  public alternaConfirmaSenha() {
+ 
+  alternaConfirmaSenha() {
     this.mostraConfirmaSenha = !this.mostraConfirmaSenha;
   }
 }
-  
-
-
