@@ -1,5 +1,6 @@
 package com.fatecipiranga.paoo.lojavinho_springboot.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -12,6 +13,7 @@ public class Item {
 
     @ManyToOne
     @JoinColumn(name = "cesta_cod", nullable = false)
+    @JsonIgnore
     private Cesta cesta;
 
     @ManyToOne
