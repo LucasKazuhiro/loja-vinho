@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fatecipiranga.paoo.lojavinho_springboot.model.Vinho;
@@ -47,11 +48,16 @@ public class VinhoController {
         vinhoRepository.deleteById(codigo);
         return "Vinho de código " + codigo + " removido com sucesso!";
     }
-
      
     @GetMapping("/api/vinhos")
-    public List<Vinho> listar() {
+    public List<Vinho> carregarVitrine() {
         return vinhoRepository.findAll();
     }
+
+    @GetMapping("/api/vinhos/busca/{pesquisa}")
+    public List<Vinho> buscar(@PathVariable String pesquisa){
+       return vinhoRepository.busca('%'+ pesquisa +'%');
+    }
+
 }
 
