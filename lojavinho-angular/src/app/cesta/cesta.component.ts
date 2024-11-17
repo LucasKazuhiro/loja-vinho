@@ -82,12 +82,18 @@ export class CestaComponent {
 
 
   public salvarCesta(){
-    this.cestaService.cestaSalva$.subscribe({
+    this.cestaService.salvarCesta().subscribe({
       next: (response) => {
         this.mensagem = "Cesta salva com sucesso!";
       },
       error: (err) => {
-        this.mensagem = "Erro ao salvar a cesta. Tente novamente!";
+        if(err.status === 400 && err.error){
+          this.mensagem = err.error;
+        }
+        else{
+          console.log(err)
+          this.mensagem = "Erro ao salvar a cesta. Tente novamente!";
+        }
       }
     });
   }
