@@ -3,7 +3,11 @@ package com.fatecipiranga.paoo.lojavinho_springboot.controller;
 import java.util.List;
 import java.util.Optional;
 
+import org.aspectj.apache.bcel.classfile.ExceptionTable;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.fatecipiranga.paoo.lojavinho_springboot.model.Cliente;
@@ -18,16 +22,24 @@ public class ClienteController {
 
      
     @PostMapping("/api/cliente")
-    public String gravar(@RequestBody Cliente cliente) {
-        clienteRepository.save(cliente);
-        return "O Cliente " + cliente.getNome() + " foi salvo corretamente!";
+    public ResponseEntity<?> gravar(@RequestBody Cliente cliente) {
+        try{
+            return ResponseEntity.ok(clienteRepository.save(cliente));
+        }
+        catch(Exception e){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro interno no servidor: " + e.getMessage());
+        }
     }
 
      
     @PutMapping("/api/cliente")
-    public String alterar(@RequestBody Cliente cliente) {
-        clienteRepository.save(cliente);
-        return "O Cliente " + cliente.getNome() + " foi alterado corretamente!";
+    public ResponseEntity<?> alterar(@RequestBody Cliente cliente) {
+        try{
+            return ResponseEntity.ok(clienteRepository.save(cliente));
+        }
+        catch(Exception e){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro interno no servidor: " + e.getMessage());
+        }
     }
 
      
@@ -39,9 +51,16 @@ public class ClienteController {
 
      
     @DeleteMapping("/api/cliente/{codigo}")
-    public String remover(@PathVariable long codigo) {
-        clienteRepository.deleteById(codigo);
-        return "Cliente de código " + codigo + " removido com sucesso!";
+    public ResponseEntity<?> remover(@PathVariable long codigo) {
+        try{
+            return ResponseEntity.ok("Sua conta foi deletada com sucesso! Recarregue a página.");
+        }
+        catch(EmptyResultDataAccessException e){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Conta do usuário não encontrada!");
+        }
+        catch(Exception e){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro interno no servidor: " + e.getMessage());
+        }
     }
 
     
