@@ -29,4 +29,7 @@ export class ClienteService {
     return this.http.post<Cliente>("http://localhost:8080/api/cliente/login", cliente);
   }
   
+  recuperarSenha(cliente: Cliente): Observable<Cliente> {
+    return this.http.post<Cliente>("http://localhost:8080/api/cliente/recupera", cliente);
+  }
 }
