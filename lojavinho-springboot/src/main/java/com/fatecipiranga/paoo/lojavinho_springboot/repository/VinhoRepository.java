@@ -9,6 +9,7 @@ import java.util.List;
 
 @Repository
 public interface VinhoRepository extends JpaRepository<Vinho, Long> {
-  @Query(value = "select * from produto where keywords like ?1 order by nome", nativeQuery = true)
-  List<Vinho> busca(String pesquisa);
+    @Query("SELECT v FROM Vinho v WHERE v.nome LIKE :pesquisa")
+    List<Vinho> busca(@Param("pesquisa") String pesquisa);
 }
+
