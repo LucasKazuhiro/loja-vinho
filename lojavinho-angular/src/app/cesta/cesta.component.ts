@@ -24,6 +24,7 @@ export class CestaComponent {
   public valorTotalFinal:number = 0;
   public codigoDesconto:string = "";
   public valorDesconto:number = 0;
+  public porcentagemDesconto:number = 0;
 
   constructor(private cestaService:CestaService){
     this.cestaService.cestaSalva$.subscribe(cesta => {
@@ -59,12 +60,14 @@ export class CestaComponent {
   public aplicarDesconto(){
     this.codigoDesconto = this.codigoDesconto.toUpperCase();
     if(this.codigoDesconto == "PRIMEIROVINHO"){
+      this.porcentagemDesconto = 20.0;
       this.valorDesconto = this.cestaCompra.total * 0.2;
       this.valorTotalFinal = this.cestaCompra.total - this.valorDesconto;
     }
     else{
-      this.valorTotalFinal = this.cestaCompra.total;
+      this.porcentagemDesconto = 0;
       this.valorDesconto = 0;
+      this.valorTotalFinal = this.cestaCompra.total;
     }
   }
 
@@ -82,10 +85,11 @@ export class CestaComponent {
 
 
   public salvarCesta(){
-    this.cestaService.salvarCesta().subscribe({
+    this.cestaService.salvarCesta(this.valorTotalFinal, this.porcentagemDesconto).subscribe({
       next: (response) => {
         this.mensagem = "Cesta salva com sucesso!";
         this.cestaService.limparCesta();
+        window.location.href = '/vitrine';
       },
       error: (err) => {
         if(err.status === 400 && err.error){

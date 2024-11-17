@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @CrossOrigin(origins = "*")
@@ -26,6 +27,11 @@ public class CestaController {
             for(Item item : cesta.getItens()){
                 item.setCesta(cesta);
             }
+
+            if (cesta.getData() == null) {
+                cesta.setData(LocalDate.now());
+            }
+
             return ResponseEntity.ok(bd_cesta.save(cesta));
         }
         catch (Exception e) {
