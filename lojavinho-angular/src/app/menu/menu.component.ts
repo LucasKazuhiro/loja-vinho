@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Cliente } from '../model/cliente';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { CestaService } from '../service/cesta.service';
 
 @Component({
   selector: 'menu',
@@ -14,8 +15,13 @@ export class MenuComponent{
   public estaAtivoMenuLateral = false;
   public pesquisaValorVinho:string = "";
   public itemPesquisado:string = "";
+  public qtdItensCarrinho:number = 0;
 
-  constructor(){
+  constructor(private cestaService:CestaService){
+    this.cestaService.cestaSalva$.subscribe(cesta => {
+      this.qtdItensCarrinho = cesta.itens.length
+    });
+
     let pesquisaValorVinhoJSON = localStorage.getItem("pesquisaValorVinho");
 
     if(pesquisaValorVinhoJSON != null){
