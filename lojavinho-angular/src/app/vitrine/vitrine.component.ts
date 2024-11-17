@@ -5,6 +5,7 @@ import { MenuComponent } from '../menu/menu.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { VinhoService } from '../service/vinho.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -23,7 +24,7 @@ export class VitrineComponent {
   public vinhos:Vinho[] = []
 
     
-  constructor(private service : VinhoService){
+  constructor(private service : VinhoService, private router: Router){
     this.carregarVitrine();
   }
     carregarVitrine(){
@@ -33,8 +34,7 @@ export class VitrineComponent {
       });
     }
 
-    public verMais(vinho:Vinho){
-      localStorage.setItem("vinho", JSON.stringify(vinho));
-      window.location.href="./detalhe";
+    public verMais(vinho: Vinho) {
+      this.router.navigate([`/detalhe`, vinho.codigo]);
     }
   }
