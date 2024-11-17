@@ -21,19 +21,30 @@ export class PesquisaComponent {
 
   constructor(private service : VinhoService){}
 
-  pesquisar(){
+  ngOnInit(): void {
+    const termoSalvo = localStorage.getItem("pesquisaValorVinho");
+    if (termoSalvo) {
+      this.termo = JSON.parse(termoSalvo); 
+      this.pesquisar();
+    }
+  }
+
+  pesquisar() {
     this.service.pesquisar(this.termo).subscribe({
-      next:(data) =>{
-        this.itens = data
-        if(this.itens.length<=0){
-          this.mensagem="nenhum produto encontrado!!";
+      next: (data: Vinho[]) => {
+        this.itens = data;
+        if (this.itens.length === 0) {
+          this.mensagem = "Nenhum produto encontrado!";
         } else {
-           this.mensagem= this.itens.length +" produto(s) encontrados com a palavra "+ this.termo;  
+          this.mensagem = `${this.itens.length} produto(s) encontrados com a palavra "${this.termo}".`;
         }
       },
-      error:(msg) =>{this.mensagem="ocorreu um erro, volte mais tarde"}
+      error: () => {
+        this.mensagem = "Ocorreu um erro, tente novamente mais tarde.";
+      }
     });
   }
+  
 
 
   public verMais(vinho:Vinho){

@@ -26,8 +26,9 @@ export class VinhoService {
     return this.http.get<Vinho[]>("http://localhost:8080/api/vinhos");
   }
   
-  pesquisar(termo:string):Observable<any> {
-    return this.http.get("http://localhost:8080/api/vinhos/busca/"+termo); 
+  pesquisar(termo: string): Observable<Vinho[]> {
+    return this.http.get<Vinho[]>(`http://localhost:8080/api/vinhos/busca/${termo}`);
   }
+  
 
 }
