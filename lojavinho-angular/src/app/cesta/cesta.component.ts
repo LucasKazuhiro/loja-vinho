@@ -86,6 +86,7 @@ export class CestaComponent {
       next: (response) => {
         this.mensagem = "Cesta salva com sucesso!";
         this.cestaService.limparCesta();
+        window.location.href = '/vitrine';
       },
       error: (err) => {
         if(err.status === 400 && err.error){
