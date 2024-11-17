@@ -128,7 +128,16 @@ export class CestaService {
       })
     }
 
-    public salvarCesta(){
+    public salvarTotalComDesconto(valorTotalFinal:number, porcentagemDesconto:number){
+      this.cestaSalva.next({
+        ...this.cestaSalva.value,
+        total: valorTotalFinal,
+        desconto: porcentagemDesconto
+      })
+    }
+
+    public salvarCesta(valorTotalFinal:number, porcentagemDesconto:number){
+      this.salvarTotalComDesconto(valorTotalFinal, porcentagemDesconto);
       return this.http.post("http://localhost:8080/api/cesta", this.cestaSalva.value);
     }
 }
