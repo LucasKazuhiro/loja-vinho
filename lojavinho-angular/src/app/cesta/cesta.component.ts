@@ -40,6 +40,7 @@ export class CestaComponent {
       this.mensagem = "";
     }
     else{
+      this.aplicarDesconto();
       this.mensagem = "Cesta vazia, adicione novos itens!";
     }
   }
