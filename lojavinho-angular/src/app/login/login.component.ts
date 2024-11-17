@@ -53,7 +53,7 @@ export class LoginComponent implements OnInit {
           }
         },
         error: (err) => {
-          this.mensagem = 'Erro no servidor: ' + err.message;
+          this.mensagem = 'Parece que houve um erro no Servidor! Tente novamente.';
         },
       });
     }
