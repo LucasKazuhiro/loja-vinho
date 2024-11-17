@@ -20,6 +20,7 @@ public class Cesta {
 
     private double total;
     private LocalDate data = LocalDate.now();
+    private double desconto = 0;
 
 
     public Long getCodigo() {
@@ -60,5 +61,13 @@ public class Cesta {
 
     public void setData(LocalDate data) {
         this.data = data;
+    }
+
+    public double getDesconto() {
+        return desconto;
+    }
+
+    public void setDesconto(double desconto) {
+        this.desconto = desconto;
     }
 }
