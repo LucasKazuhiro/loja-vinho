@@ -49,10 +49,10 @@ export class CadastroComponent {
         this.service.inserir(this.cliente).subscribe({
           next: (data) => {
             this.mensagem = "Cadastro realizado com sucesso!";
-            window.location.href = "./login";
+            window.location.href = "/login";
           },
           error: (err) => {
-            this.mensagem = "Ocorreu um problema, tente mais tarde!";
+            this.mensagem = "Ocorreu um problema, tente novamente mais tarde!";
           }
         });
       } else {
