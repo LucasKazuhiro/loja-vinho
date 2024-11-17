@@ -14,7 +14,6 @@ import { CestaService } from '../service/cesta.service';
 export class MenuComponent{
   public estaAtivoMenuLateral = false;
   public pesquisaValorVinho:string = "";
-  public itemPesquisado:string = "";
   public qtdItensCarrinho:number = 0;
 
   constructor(private cestaService:CestaService){
@@ -25,10 +24,7 @@ export class MenuComponent{
     let pesquisaValorVinhoJSON = localStorage.getItem("pesquisaValorVinho");
 
     if(pesquisaValorVinhoJSON != null){
-      this.itemPesquisado = pesquisaValorVinhoJSON.replace(/"/g, '');
-    }
-    else{
-      this.itemPesquisado = "Encontre o seu vinho...";
+      this.pesquisaValorVinho =  pesquisaValorVinhoJSON.replace(/"/g, '');
     }
   }
 
@@ -38,7 +34,9 @@ export class MenuComponent{
   }
 
   public pesquisarVinho(){
-    localStorage.setItem("pesquisaValorVinho", JSON.stringify(this.pesquisaValorVinho));
-    window.location.href="./pesquisa";
+    if(this.pesquisaValorVinho){
+      localStorage.setItem("pesquisaValorVinho", JSON.stringify(this.pesquisaValorVinho));
+      window.location.href="./pesquisa";
+    }
   }
 }
