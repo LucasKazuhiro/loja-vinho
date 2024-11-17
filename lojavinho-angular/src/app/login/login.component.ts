@@ -7,6 +7,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
 import { faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { ClienteService } from '../service/cliente.service'; 
+import { CestaService } from '../service/cesta.service';
 
 @Component({
   selector: 'app-login',
@@ -26,7 +27,7 @@ export class LoginComponent implements OnInit {
   public senhaCliente: string = '';
   public mostraSenha: boolean = false;
 
-  constructor(private clienteService: ClienteService) {} // 
+  constructor(private clienteService: ClienteService, private cestaService:CestaService) {} // 
 
   ngOnInit() {
     this.verificarEstaLogado();
@@ -44,6 +45,7 @@ export class LoginComponent implements OnInit {
       this.clienteService.fazerLogin(clienteLogin).subscribe({
         next: (clienteRetornado: Cliente) => {
           if (clienteRetornado) {
+            this.cestaService.salvarClienteNaCesta(clienteRetornado);
             localStorage.setItem('cliente', JSON.stringify(clienteRetornado));
             window.location.href = './vitrine';
           } else {

@@ -3,6 +3,7 @@ import { BehaviorSubject } from 'rxjs';
 import { Item } from '../model/item';
 import { Cesta } from '../model/cesta';
 import { HttpClient } from '@angular/common/http';
+import { Cliente } from '../model/cliente';
 
 @Injectable({
   providedIn: 'root'
@@ -27,6 +28,11 @@ export class CestaService {
 
     public salvarCestaSession(cesta:Cesta){
       sessionStorage.setItem('cesta', JSON.stringify(cesta));
+    }
+
+    public logoutRemoverCesta(){
+      this.cestaSalva.next(new Cesta);
+      sessionStorage.removeItem('cesta');
     }
 
     public adicionarItem(item : Item){
@@ -115,7 +121,14 @@ export class CestaService {
 
     }
 
-    salvarCesta(){
+    public salvarClienteNaCesta(cliente:Cliente){
+      this.cestaSalva.next({
+        ...this.cestaSalva.value,
+        cliente: cliente
+      })
+    }
+
+    public salvarCesta(){
       return this.http.post("http://localhost:8080/api/cesta", this.cestaSalva.value);
     }
 }

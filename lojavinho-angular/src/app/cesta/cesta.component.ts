@@ -85,6 +85,7 @@ export class CestaComponent {
     this.cestaService.salvarCesta().subscribe({
       next: (response) => {
         this.mensagem = "Cesta salva com sucesso!";
+        this.cestaService.limparCesta();
       },
       error: (err) => {
         if(err.status === 400 && err.error){
