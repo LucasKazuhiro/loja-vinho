@@ -4,79 +4,67 @@ import { FormsModule } from '@angular/forms';
 import { MenuComponent } from '../menu/menu.component';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faEye } from '@fortawesome/free-solid-svg-icons'
-import { faEyeSlash } from '@fortawesome/free-solid-svg-icons'
+import { faEye } from '@fortawesome/free-solid-svg-icons';
+import { faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import { ClienteService } from '../service/cliente.service'; 
 
 @Component({
   selector: 'app-login',
   standalone: true,
   imports: [MenuComponent, FormsModule, CommonModule, FontAwesomeModule],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrl: './login.component.css',
 })
-
-export class LoginComponent implements OnInit{
-  constructor(){
-    this.puxarClienteMemoria();
-  }
-
-  ngOnInit(){
-    this.verificarEstaLogado();
-  }
-
+export class LoginComponent implements OnInit {
   faEye = faEye;
   faEyeSlash = faEyeSlash;
 
-
-  public cliente:Cliente = new Cliente();
-  public clienteMemoria:Cliente = new Cliente();
-  public mensagem:String = "";
-  public estaLogado:boolean = false;
-  public emailCliente:string = "";  
-  public senhaCliente:string = "";
+  public cliente: Cliente = new Cliente();
+  public mensagem: string = '';
+  public estaLogado: boolean = false;
+  public emailCliente: string = '';
+  public senhaCliente: string = '';
   public mostraSenha: boolean = false;
-  public mostraConfirmaSenha: boolean = false;
 
+  constructor(private clienteService: ClienteService) {} // 
+
+  ngOnInit() {
+    this.verificarEstaLogado();
+  }
 
   
-  puxarClienteMemoria(){
-    let clienteJSON:any = localStorage.getItem("clienteMemoria");
-    if(clienteJSON!=null){
-      this.clienteMemoria = JSON.parse(clienteJSON);
-    }
-    else{
-      this.clienteMemoria.email = "admin@root.com";
-      this.clienteMemoria.senha = "root123";
-    }
-  }
+  public fazerLogin() {
+    if (this.emailCliente.trim() === '' || this.senhaCliente.trim() === '') {
+      this.mensagem = 'Email e Senha são obrigatórios!';
+    } else {
+      const clienteLogin = new Cliente();
+      clienteLogin.email = this.emailCliente;
+      clienteLogin.senha = this.senhaCliente;
 
-
-  public fazerLogin(){
-    if(this.emailCliente == '' || this.senhaCliente == ''){
-      this.mensagem="Email e Senha são obrigatórios!"
-    }
-    else{
-      if(this.emailCliente == this.clienteMemoria.email && 
-         this.senhaCliente == this.clienteMemoria.senha){
-        localStorage.setItem('cliente', JSON.stringify(this.clienteMemoria));
-        window.location.href="./vitrine"
-      } 
-      else{
-        this.mensagem="Usuario ou senha inválido!";
-      }
+      this.clienteService.fazerLogin(clienteLogin).subscribe({
+        next: (clienteRetornado: Cliente) => {
+          if (clienteRetornado) {
+            localStorage.setItem('cliente', JSON.stringify(clienteRetornado));
+            window.location.href = './vitrine';
+          } else {
+            this.mensagem = 'Usuário ou senha inválido!';
+          }
+        },
+        error: (err) => {
+          this.mensagem = 'Erro no servidor: ' + err.message;
+        },
+      });
     }
   }
 
-  public logout(){
-    localStorage.removeItem("cliente");
-    window.location.href="./login";
-  }
-
-  public verificarEstaLogado(){
+  public verificarEstaLogado() {
     this.estaLogado = localStorage.getItem('cliente') !== null;
   }
 
-
+  public logout() {
+    localStorage.removeItem('cliente');
+    window.location.href = './login';
+  }
 
   public alternaSenha() {
     this.mostraSenha = !this.mostraSenha;

@@ -25,4 +25,8 @@ export class ClienteService {
   remover(codigo: number) : Observable<any> {
     return this.http.delete("http://localhost:8080/api/cliente/"+ codigo);
   }
+  fazerLogin(cliente: Cliente): Observable<Cliente> {
+    return this.http.post<Cliente>("http://localhost:8080/api/cliente/login", cliente);
+  }
+  
 }
