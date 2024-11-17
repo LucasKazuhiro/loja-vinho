@@ -134,6 +134,26 @@
   color: #ffa65d;
 }
 
+#carrinho-box{
+  position: relative;
+}
+
+#qtdItemCarrinho{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  top: -2px;
+  right: -5px;
+  color: white;
+  background-color: rgb(87, 148, 18);
+  padding: 3px;
+  border-radius: 50%;
+  font-size: 14px;
+}
+
 
 
 
