@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Item } from '../model/item';
 import { Cesta } from '../model/cesta';
 import { HttpClient } from '@angular/common/http';
@@ -139,5 +139,9 @@ export class CestaService {
     public salvarCesta(valorTotalFinal:number, porcentagemDesconto:number){
       this.salvarTotalComDesconto(valorTotalFinal, porcentagemDesconto);
       return this.http.post("http://localhost:8080/api/cesta", this.cestaSalva.value);
+    }
+
+    public carregarComprasCliente(clienteCod:number): Observable<Cesta[]>{
+      return this.http.get<Cesta[]>("http://localhost:8080/api/cesta/cliente", { params: {clienteCod: clienteCod.toString()} });
     }
 }
