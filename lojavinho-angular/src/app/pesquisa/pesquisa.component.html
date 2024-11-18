@@ -1,6 +1,9 @@
 <menu></menu>
 <div id="container">
-  <p id="pesquisa-title"><I>Pesquisa por: <b>{{termo}}</b></I></p><br><br><br>
+  <p id="pesquisa-title"><I>Pesquisa por: <b>{{termo}}</b></I></p>
+  <div *ngIf="mensagem" class="mensagem">
+    <p>{{mensagem}}</p><br><br>
+  </div>
   <div id="pesquisa-container">
     <div class="card" *ngFor="let vinho of itens" id="vinho-{{vinho.codigo}}" (click)="verMais(vinho)">
       <img class="flag" src="assets/paises/{{vinho.cdPais}}.png" alt="Bandeira do país"><br><br><br>
