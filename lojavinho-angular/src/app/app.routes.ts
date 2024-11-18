@@ -6,6 +6,7 @@ import { EsqueciSenhaComponent } from './esqueci-senha/esqueci-senha.component';
 import { LoginComponent } from './login/login.component';
 import { PesquisaComponent } from './pesquisa/pesquisa.component';
 import { VitrineComponent } from './vitrine/vitrine.component';
+import { ConfigContaComponent } from './config-conta/config-conta.component';
 
 export const routes: Routes = [
   { path: "cadastro", component: CadastroComponent },
@@ -15,5 +16,6 @@ export const routes: Routes = [
   { path: "login", component: LoginComponent },
   { path: "pesquisa", component: PesquisaComponent },
   { path: "vitrine", component: VitrineComponent },
+  { path: "config-conta", component: ConfigContaComponent },
   { path: "", component: VitrineComponent }
 ];
