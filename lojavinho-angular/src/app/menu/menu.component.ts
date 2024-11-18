@@ -12,6 +12,7 @@ import { CestaService } from '../service/cesta.service';
   styleUrl: './menu.component.css'
 })
 export class MenuComponent{
+  public clienteLogado:Cliente = new Cliente();
   public estaAtivoMenuLateral = false;
   public pesquisaValorVinho:string = "";
   public qtdItensCarrinho:number = 0;
@@ -25,6 +26,14 @@ export class MenuComponent{
 
     if(pesquisaValorVinhoJSON != null){
       this.pesquisaValorVinho =  pesquisaValorVinhoJSON.replace(/"/g, '');
+    }
+
+    let clienteJSON = localStorage.getItem('cliente');
+    if(clienteJSON != null){
+      this.clienteLogado = JSON.parse(clienteJSON);
+    }
+    else{
+      this.clienteLogado = new Cliente();
     }
   }
 

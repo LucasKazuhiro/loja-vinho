@@ -39,9 +39,13 @@
         <a href="./cadastro">
           <img src="assets/icons/user.svg" alt="" width="40px">
         </a>
-        <p id="mensagem-menu">
-          <span>Bem-vindo(a)</span><br>
-          <a href="./login"> Entrar</a> ou <a href="./cadastro">Cadastrar</a>
+        <p id="mensagem-menu" *ngIf="clienteLogado.nome == ''">
+            <span>Bem-vindo(a)</span><br>
+            <a href="./login"> Entrar</a> ou <a href="./cadastro">Cadastrar</a>
+        </p>
+        <p id="mensagem-menu" *ngIf="clienteLogado.nome != ''">
+          <span>Bem-vindo(a) </span><br>
+          <span>{{clienteLogado.nome}}</span>
         </p>
       </div>
       <a href="./cesta" id="carrinho-box">
