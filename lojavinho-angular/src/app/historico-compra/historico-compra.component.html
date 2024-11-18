@@ -1,0 +1,38 @@
+<div>
+    <menu></menu>
+    <div id="container">
+		<div id="container-2">
+            <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 50px;">
+                <h1 style="font-size: 30px;"> Histórico de Compras </h1>
+			</div>
+            <table class="table">
+                <thead>
+                    <th width="6%">Cod.</th>
+                    <th width="50%">Items</th>
+                    <th width="15%">Data</th>
+                    <th width="10%">Desc.</th>
+                    <th width="15%">Total</th>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let compra of comprasCliente">
+                        <td data-label="Codigo"> {{compra.codigo}} </td>
+
+                        <td data-label="Items"> 
+                            <p  *ngFor="let item of compra.itens" class="items-paragraph"> 
+                                {{item.vinho.nome}} ({{item.quantidade}}) 
+                            </p>
+
+                        </td>
+
+                        <td data-label="Data"> {{compra.data}} </td>
+
+                        <td data-label="Desconto"> {{compra.desconto}}% </td>
+
+                        <td data-label="total"> R$ {{compra.total.toFixed(2)}} </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
-import { MenuComponent } from '../../menu/menu.component';
-import { CestaService } from '../../service/cesta.service';
-import { Cesta } from '../../model/cesta';
+import { MenuComponent } from '../menu/menu.component';
+import { CestaService } from '../service/cesta.service';
+import { Cesta } from '../model/cesta';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-historico-compra',
   standalone: true,
-  imports: [MenuComponent],
+  imports: [MenuComponent, CommonModule],
   templateUrl: './historico-compra.component.html',
   styleUrl: './historico-compra.component.css'
 })
