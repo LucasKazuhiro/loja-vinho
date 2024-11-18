@@ -6,12 +6,13 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faEye } from '@fortawesome/free-solid-svg-icons'
 import { faEyeSlash } from '@fortawesome/free-solid-svg-icons'
 import { ClienteService } from '../service/cliente.service';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
   selector: 'app-cadastro',
   standalone: true,
-  imports: [MenuComponent, FormsModule, FontAwesomeModule],
+  imports: [MenuComponent, FormsModule, FontAwesomeModule, CommonModule ],
   templateUrl: './cadastro.component.html',
   styleUrl: './cadastro.component.css'
 })
