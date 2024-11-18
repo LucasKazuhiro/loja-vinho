@@ -166,6 +166,8 @@ menu{
   text-align: center;
 }
 
+
+
 @media (max-width: 1024px) {
   .container {
     width: 80%;
