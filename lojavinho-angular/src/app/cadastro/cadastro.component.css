@@ -158,7 +158,12 @@ menu{
   font-size: 16px;
 }
 
-
+.mensagem {
+  color: red; 
+  font-size: 1rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
 
 @media (max-width: 1024px) {
   .container {
