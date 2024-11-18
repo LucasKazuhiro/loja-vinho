@@ -12,7 +12,7 @@
       </label>
 
       <a href="./vitrine">Vitrine</a>
-      <a href="./pesquisa">Pesquisar</a>
+      <a href="./config-conta">Configurações da Conta</a>
       <a href="./login">Logar</a>
       <a href="./cadastro">Cadastrar</a>
       <a href="./cesta">Carrinho</a>
@@ -64,7 +64,7 @@
     </div>
   </nav>
   <div id="caixa-pesquisa-mobile" class="caixa-pesquisa-box">
-    <input type="text" placeholder="Encontre seu vinho..." class="caixa-pesquisa" [(ngModel)]="pesquisaValorVinho">
+    <input type="text" placeholder="Encontre seu vinho..." class="caixa-pesquisa" [(ngModel)]="pesquisaValorVinho" (keyup.enter)="pesquisarVinho()">
     <div class="lupa-pesquisa-box" (click)="pesquisarVinho()">
       <img src="assets/icons/search.svg" alt="" width="28px" class="lupa-pesquisa">
     </div>
