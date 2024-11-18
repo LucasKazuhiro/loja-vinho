@@ -89,7 +89,7 @@
 							<img src="assets/icons/ticket.png" alt="" width="30px">
 							<h2> Cumpom de desconto </h2>
 						</div>
-						<input type="text" placeholder="Inserir código de desconto" [(ngModel)]="codigoDesconto">
+						<input type="text" placeholder="Inserir código de desconto" [(ngModel)]="codigoDesconto" (keyup.enter)="aplicarDesconto()">
 						<button id="cupom-botao" (click)="aplicarDesconto()"> Aplicar </button>
 					</div>
 					<div id="pedido-box">
