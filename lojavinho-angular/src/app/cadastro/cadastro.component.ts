@@ -44,7 +44,7 @@ export class CadastroComponent {
  
   gravar() {
     const todosValoresPreenchidos = Object.values(this.cliente).every(dado => dado !== null && dado !== '');
-
+  
     if (todosValoresPreenchidos) {
       if (this.cliente.senha === this.confirmarSenhaValor) {
         this.service.inserir(this.cliente).subscribe({
@@ -53,7 +53,11 @@ export class CadastroComponent {
             window.location.href = "/login";
           },
           error: (err) => {
-            this.mensagem = "Ocorreu um problema, tente novamente mais tarde!";
+            if (err.status === 400 && err.error === "Este email já está cadastrado.") {
+              this.mensagem = "Este email já está cadastrado. Por favor, faça login ou novo cadastro.";
+            } else {
+              this.mensagem = "Ocorreu um problema, tente novamente mais tarde!";
+            }
           }
         });
       } else {
@@ -63,7 +67,7 @@ export class CadastroComponent {
       this.mensagem = "Todos os campos devem estar preenchidos!";
     }
   }
-
+  
    
   alternaSenha() {
     this.mostraSenha = !this.mostraSenha;

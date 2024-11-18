@@ -23,13 +23,20 @@ public class ClienteController {
      
     @PostMapping("/api/cliente")
     public ResponseEntity<?> gravar(@RequestBody Cliente cliente) {
-        try{
+        try {
+            
+            Optional<Cliente> clienteExistente = clienteRepository.procuraEmail(cliente.getEmail());
+            if (clienteExistente.isPresent()) {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Este email já está cadastrado.");
+            }
+    
+            
             return ResponseEntity.ok(clienteRepository.save(cliente));
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro interno no servidor: " + e.getMessage());
         }
     }
+    
 
      
     @PutMapping("/api/cliente")
