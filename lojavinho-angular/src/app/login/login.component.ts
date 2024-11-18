@@ -65,6 +65,7 @@ export class LoginComponent implements OnInit {
 
   public logout() {
     localStorage.removeItem('cliente');
+    this.cestaService.logoutRemoverCesta();
     window.location.href = './login';
   }
 

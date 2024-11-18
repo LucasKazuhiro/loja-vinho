@@ -28,7 +28,7 @@
     </a>
 
     <div id="caixa-pesquisa-desktop" class="caixa-pesquisa-box">
-      <input type="text" [placeholder]="itemPesquisado" class="caixa-pesquisa" [(ngModel)]="pesquisaValorVinho">
+      <input type="text" placeholder="Encontre seu vinho..." class="caixa-pesquisa" [(ngModel)]="pesquisaValorVinho" (keyup.enter)="pesquisarVinho()">
       <div class="lupa-pesquisa-box" (click)="pesquisarVinho()">
         <img src="assets/icons/search.svg" alt="" width="28px" class="lupa-pesquisa">
       </div>
@@ -39,9 +39,13 @@
         <a href="./cadastro">
           <img src="assets/icons/user.svg" alt="" width="40px">
         </a>
-        <p id="mensagem-menu">
-          <span>Bem-vindo(a)</span><br>
-          <a href="./login"> Entrar</a> ou <a href="./cadastro">Cadastrar</a>
+        <p id="mensagem-menu" *ngIf="clienteLogado.nome == ''">
+            <span>Bem-vindo(a)</span><br>
+            <a href="./login"> Entrar</a> ou <a href="./cadastro">Cadastrar</a>
+        </p>
+        <p id="mensagem-menu" *ngIf="clienteLogado.nome != ''">
+          <span>Bem-vindo(a) </span><br>
+          <span>{{clienteLogado.nome}}</span>
         </p>
       </div>
       <a href="./cesta" id="carrinho-box">
@@ -60,7 +64,7 @@
     </div>
   </nav>
   <div id="caixa-pesquisa-mobile" class="caixa-pesquisa-box">
-    <input type="text" [placeholder]="itemPesquisado" class="caixa-pesquisa" [(ngModel)]="pesquisaValorVinho">
+    <input type="text" placeholder="Encontre seu vinho..." class="caixa-pesquisa" [(ngModel)]="pesquisaValorVinho">
     <div class="lupa-pesquisa-box" (click)="pesquisarVinho()">
       <img src="assets/icons/search.svg" alt="" width="28px" class="lupa-pesquisa">
     </div>

@@ -31,6 +31,11 @@ export class CestaComponent {
       this.cestaCompra = cesta
       this.verificarCestaVazia(this.cestaCompra);
     });
+
+    let clienteJSON = localStorage.getItem('cliente');
+    if(clienteJSON === null){
+      this.mensagem = "Cadastre-se no site para efetuar uma compra";
+    }
   }
 
 
