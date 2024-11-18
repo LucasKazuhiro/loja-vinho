@@ -7,11 +7,12 @@ import { MenuComponent } from '../menu/menu.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';   
 import { faEye } from '@fortawesome/free-solid-svg-icons';
 import { faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-config-conta',
   standalone: true,
-  imports: [MenuComponent, FormsModule, FontAwesomeModule],   
+  imports: [MenuComponent, FormsModule, FontAwesomeModule, CommonModule],   
   templateUrl: './config-conta.component.html',
   styleUrls: ['./config-conta.component.css']
 })
@@ -53,21 +54,26 @@ export class ConfigContaComponent implements OnInit {
 
   gravar() {
     const todosValoresPreenchidos = Object.values(this.cliente).every(dado => dado !== null && dado !== '');
-
+  
     if (todosValoresPreenchidos) {
-      this.clienteService.alterar(this.cliente).subscribe({
-        next: (data) => {
-          this.mensagem = "Dados atualizados com sucesso!";
-          this.router.navigate(['/vitrine']);
-        },
-        error: (err) => {
-          this.mensagem = "Erro ao atualizar dados!";
-        }
-      });
+      if (this.cliente.senha === this.confirmarSenhaValor) {
+        this.clienteService.alterar(this.cliente).subscribe({
+          next: (data) => {
+            this.mensagem = "Dados atualizados com sucesso!";
+            this.router.navigate(['/vitrine']);
+          },
+          error: (err) => {
+            this.mensagem = "Erro ao atualizar dados!";
+          }
+        });
+      } else {
+        this.mensagem = "As senhas informadas são diferentes!";
+      }
     } else {
       this.mensagem = "Todos os campos devem estar preenchidos!";
     }
   }
+  
 
   alternaSenha() {
     this.mostraSenha = !this.mostraSenha;
