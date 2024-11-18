@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { PesquisaComponent } from './pesquisa/pesquisa.component';
 import { VitrineComponent } from './vitrine/vitrine.component';
 import { ConfigContaComponent } from './config-conta/config-conta.component';
+import { HistoricoCompraComponent } from './historico-compra/historico-compra.component';
 
 export const routes: Routes = [
   { path: "cadastro", component: CadastroComponent },
@@ -17,5 +18,6 @@ export const routes: Routes = [
   { path: "pesquisa", component: PesquisaComponent },
   { path: "vitrine", component: VitrineComponent },
   { path: "config-conta", component: ConfigContaComponent },
+  { path: "historico-compra", component: HistoricoCompraComponent},
   { path: "", component: VitrineComponent }
 ];
