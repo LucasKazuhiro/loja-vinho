@@ -8,6 +8,9 @@ import com.fatecipiranga.paoo.lojavinho_springboot.model.Cliente;
 
 @Repository
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {
+    @Query(value = "select * from cliente where email=?1", nativeQuery = true)
+    Optional<Cliente> procuraEmail(String email);
+
     @Query(value = "select * from cliente where email=?1 and senha=?2", nativeQuery = true)
     Optional<Cliente> login(String email, String senha);
 
