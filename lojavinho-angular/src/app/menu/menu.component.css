@@ -169,7 +169,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 45%;
+  width: 50%;
   height: 50px;
 }
 
@@ -221,6 +221,10 @@
     display: none;
   }
 
+  #menu-items-box {
+    width: 80%;
+  }
+
 }
 
 @media only screen and (max-width: 750px) {
@@ -229,7 +233,7 @@
   }
 
   #menu-items-box {
-    width: 80%;
+    width: 95%;
   }
 }
 
