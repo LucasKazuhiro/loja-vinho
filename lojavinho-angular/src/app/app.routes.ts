@@ -7,7 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { PesquisaComponent } from './pesquisa/pesquisa.component';
 import { VitrineComponent } from './vitrine/vitrine.component';
 import { ConfigContaComponent } from './config-conta/config-conta.component';
-import { HistoricoCompraComponent } from './historico-compra/historico-compra/historico-compra.component';
+import { HistoricoCompraComponent } from './historico-compra/historico-compra.component';
 
 export const routes: Routes = [
   { path: "cadastro", component: CadastroComponent },
