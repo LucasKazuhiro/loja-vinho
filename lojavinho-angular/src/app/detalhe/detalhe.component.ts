@@ -17,6 +17,7 @@ import { VinhoService } from '../service/vinho.service';
 })
 
 export class DetalheComponent{
+  public clienteLogado:boolean = false;
   public vinhoId:number | null = null;
   public vinho:Vinho = new Vinho();
   public precoComDesconto:number = 0;
@@ -34,6 +35,11 @@ export class DetalheComponent{
         console.log(err.message);
       }
     })
+
+    let clienteJSON = localStorage.getItem('cliente');
+    if(clienteJSON != null){
+      this.clienteLogado = true;
+    }
   }
 
   quantidadeAumentar(){

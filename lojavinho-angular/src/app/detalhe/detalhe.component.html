@@ -50,7 +50,7 @@
               <p id="preco-valor">R$ {{precoComDesconto.toFixed(2)}}</p>
               <p id="preco-parcela"> 3x de R$ {{(precoComDesconto/3).toFixed(2)}} sem juros</p>
 
-              <div id="comprar-box">
+              <div id="comprar-box" *ngIf="clienteLogado === true">
                 <div id="quantidade-box">
                   <button (click)="quantidadeDiminuir()" class="botaoMaisMenos">
                     <img src="assets/icons/minus.png" alt="" width="12px">
