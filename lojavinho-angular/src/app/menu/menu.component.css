@@ -296,6 +296,10 @@
     display: block;
   }
 
+  #logo-img-box{
+    margin-left: 64px;
+  }
+
   #caixa-pesquisa-desktop {
     display: none;
   }
