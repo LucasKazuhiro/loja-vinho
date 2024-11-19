@@ -19,6 +19,8 @@ export class MenuComponent{
   public qtdItensCarrinho:number = 0;
 
   constructor(private cestaService:CestaService){
+    this.detectClickOutside = this.detectClickOutside.bind(this);
+
     this.cestaService.cestaSalva$.subscribe(cesta => {
       this.qtdItensCarrinho = cesta.itens.length
     });
@@ -59,10 +61,23 @@ export class MenuComponent{
           userMenu.setAttribute('style', 'width:205px')
         }
 
+        document.addEventListener('click', this.detectClickOutside);
       }
       else{
         userMenu.classList.remove('showUserMenu');
+        document.removeEventListener('click', this.detectClickOutside);
       }
+    }
+  }
+  
+  private detectClickOutside(clickEvent: MouseEvent){
+    const cadastroLoginBox = document.getElementById('cadastro-login-box');
+    const userMenu = document.getElementById('menu-user-box');
+    
+    if(userMenu && cadastroLoginBox && !cadastroLoginBox.contains(clickEvent.target as Node)){
+      this.estaAtivoMenuUsuario = false;
+      userMenu.classList.remove('showUserMenu');
+      document.removeEventListener('click', this.detectClickOutside);
     }
   }
 
