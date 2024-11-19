@@ -122,11 +122,11 @@
   opacity: 0;
   position: absolute;
   left: 18px;
+  top: 55px;
   background-color: #4d4d4d;
   width: 205px;
   border-radius: 4px 12px 12px 12px;
   overflow: hidden;
-  bottom: -86px;
   transition: .3s;
 }
 
@@ -257,8 +257,8 @@
   }
 
   #menu-user-box{
-    left: -182px;
-    bottom: -86px;
+    right: 18px;
+    left: unset;
     border-radius: 12px 4px 12px 12px;
   }
 
@@ -282,7 +282,7 @@
   }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 550px) {
   #container {
     padding-bottom: 12px;
   }
@@ -304,10 +304,6 @@
     display: flex;
     width: 95%;
     border-radius: 10px;
-  }
-
-  #cadastro-login-box {
-    display: none;
   }
 
   #menu-box-2 {
