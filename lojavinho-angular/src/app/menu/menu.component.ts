@@ -87,4 +87,10 @@ export class MenuComponent{
       window.location.href="./pesquisa";
     }
   }
+
+
+  public logout() {
+    localStorage.removeItem('cliente');
+    this.cestaService.logoutRemoverCesta();
+  }
 }
