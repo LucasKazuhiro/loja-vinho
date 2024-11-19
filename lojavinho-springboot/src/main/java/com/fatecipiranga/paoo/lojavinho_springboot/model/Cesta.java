@@ -1,5 +1,6 @@
 package com.fatecipiranga.paoo.lojavinho_springboot.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -13,6 +14,7 @@ public class Cesta {
 
     @ManyToOne
     @JoinColumn(name = "cliente_cod", nullable = false)
+    @JsonIgnore
     private Cliente cliente;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "cesta")
