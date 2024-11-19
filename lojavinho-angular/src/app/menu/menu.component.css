@@ -255,6 +255,12 @@
     gap: 10px;
   }
 
+  #menu-user-box{
+    left: -182px;
+    bottom: -86px;
+    border-radius: 12px 4px 12px 12px;
+  }
+
   #mensagem-menu {
     display: none;
   }
