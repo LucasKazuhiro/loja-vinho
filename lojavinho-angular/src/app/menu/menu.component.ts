@@ -14,6 +14,7 @@ import { CestaService } from '../service/cesta.service';
 export class MenuComponent{
   public clienteLogado:Cliente = new Cliente();
   public estaAtivoMenuLateral = false;
+  public estaAtivoMenuUsuario = false;
   public pesquisaValorVinho:string = "";
   public qtdItensCarrinho:number = 0;
 
@@ -40,6 +41,21 @@ export class MenuComponent{
 
   public toggleMenuLateral(){
     this.estaAtivoMenuLateral = !this.estaAtivoMenuLateral;
+  }
+
+  public toggleUserMenu(){
+    this.estaAtivoMenuUsuario = !this.estaAtivoMenuUsuario;
+
+    const userMenu = document.getElementById('menu-user-box');
+
+    if(userMenu){
+      if(this.estaAtivoMenuUsuario){
+        userMenu.classList.add('showUserMenu');
+      }
+      else{
+        userMenu.classList.remove('showUserMenu');
+      }
+    }
   }
 
   public pesquisarVinho(){
