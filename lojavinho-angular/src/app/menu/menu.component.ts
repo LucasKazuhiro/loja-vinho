@@ -51,6 +51,14 @@ export class MenuComponent{
     if(userMenu){
       if(this.estaAtivoMenuUsuario){
         userMenu.classList.add('showUserMenu');
+
+        if(this.clienteLogado.codigo === 0){
+          userMenu.setAttribute('style', 'width:130px') 
+        }
+        else{
+          userMenu.setAttribute('style', 'width:205px')
+        }
+
       }
       else{
         userMenu.classList.remove('showUserMenu');
