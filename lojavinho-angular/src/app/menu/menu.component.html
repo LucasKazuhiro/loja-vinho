@@ -41,7 +41,7 @@
 
     <div id="conta-carrinho-box">
       <div id="cadastro-login-box">
-        <img src="assets/icons/user.svg" alt="" width="40px" (click)="toggleUserMenu()">
+        <img src="assets/icons/user.svg" id="user-icon-img" alt="" width="40px" (click)="toggleUserMenu()">
         <div id="menu-user-box">
           <a href="./login" *ngIf="clienteLogado.codigo === 0">Entrar</a>
           <a href="./cadastro" *ngIf="clienteLogado.codigo === 0">Cadastrar</a>

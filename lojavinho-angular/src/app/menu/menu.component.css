@@ -117,6 +117,10 @@
   align-items: center;
 }
 
+#cadastro-login-box img#user-icon-img{
+  cursor: pointer;
+}
+
 #menu-user-box{
   visibility: hidden;
   opacity: 0;
