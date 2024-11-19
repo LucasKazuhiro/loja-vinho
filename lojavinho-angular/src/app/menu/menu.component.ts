@@ -14,10 +14,13 @@ import { CestaService } from '../service/cesta.service';
 export class MenuComponent{
   public clienteLogado:Cliente = new Cliente();
   public estaAtivoMenuLateral = false;
+  public estaAtivoMenuUsuario = false;
   public pesquisaValorVinho:string = "";
   public qtdItensCarrinho:number = 0;
 
   constructor(private cestaService:CestaService){
+    this.detectClickOutside = this.detectClickOutside.bind(this);
+
     this.cestaService.cestaSalva$.subscribe(cesta => {
       this.qtdItensCarrinho = cesta.itens.length
     });
@@ -42,10 +45,52 @@ export class MenuComponent{
     this.estaAtivoMenuLateral = !this.estaAtivoMenuLateral;
   }
 
+  public toggleUserMenu(){
+    this.estaAtivoMenuUsuario = !this.estaAtivoMenuUsuario;
+
+    const userMenu = document.getElementById('menu-user-box');
+
+    if(userMenu){
+      if(this.estaAtivoMenuUsuario){
+        userMenu.classList.add('showUserMenu');
+
+        if(this.clienteLogado.codigo === 0){
+          userMenu.setAttribute('style', 'width:130px') 
+        }
+        else{
+          userMenu.setAttribute('style', 'width:205px')
+        }
+
+        document.addEventListener('click', this.detectClickOutside);
+      }
+      else{
+        userMenu.classList.remove('showUserMenu');
+        document.removeEventListener('click', this.detectClickOutside);
+      }
+    }
+  }
+  
+  private detectClickOutside(clickEvent: MouseEvent){
+    const cadastroLoginBox = document.getElementById('cadastro-login-box');
+    const userMenu = document.getElementById('menu-user-box');
+    
+    if(userMenu && cadastroLoginBox && !cadastroLoginBox.contains(clickEvent.target as Node)){
+      this.estaAtivoMenuUsuario = false;
+      userMenu.classList.remove('showUserMenu');
+      document.removeEventListener('click', this.detectClickOutside);
+    }
+  }
+
   public pesquisarVinho(){
     if(this.pesquisaValorVinho){
       localStorage.setItem("pesquisaValorVinho", JSON.stringify(this.pesquisaValorVinho));
       window.location.href="./pesquisa";
     }
+  }
+
+
+  public logout() {
+    localStorage.removeItem('cliente');
+    this.cestaService.logoutRemoverCesta();
   }
 }

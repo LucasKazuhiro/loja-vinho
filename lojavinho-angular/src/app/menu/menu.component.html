@@ -3,7 +3,9 @@
     <label id="sobreporFundoMenuLateral" for="menu-lateral-ativo" [ngStyle]="{
             opacity: estaAtivoMenuLateral ? '0.3' : '0',
             visibility: estaAtivoMenuLateral ? 'visible' : 'hidden'
-        }"></label>
+        }"
+        (click)="toggleMenuLateral()"
+        ></label>
     <nav class="menu-lateral-box" aria-hidden="true" [ngStyle]="{
             left: estaAtivoMenuLateral ? '0' : '-100%'
         }" [attr.aria-hidden]="!estaAtivoMenuLateral">
@@ -12,10 +14,11 @@
       </label>
 
       <a href="./vitrine">Vitrine</a>
-      <a href="./config-conta">Configurações da Conta</a>
-      <a href="./login">Logar</a>
-      <a href="./cadastro">Cadastrar</a>
-      <a href="./cesta">Carrinho</a>
+      <a href="./login" *ngIf="clienteLogado.codigo === 0">Entrar</a>
+      <a href="./cadastro" *ngIf="clienteLogado.codigo === 0">Cadastrar</a>
+      <a href="./config-conta" *ngIf="clienteLogado.codigo != 0">Minha Conta</a>
+      <a href="./historico-compra" *ngIf="clienteLogado.codigo != 0">Histórico de Compra</a>
+      <a href="./vitrine" (click)="logout()" *ngIf="clienteLogado.codigo != 0">Sair da Conta</a>
     </nav>
   </aside>
   <div id="menu-box">
@@ -23,9 +26,11 @@
       <img src="assets/icons/menu-hamb.png" alt="" id="menu-hamb-icon">
     </label>
 
-    <a href="./vitrine">
-      <img src="assets/icons/logo2.png" alt="" width="28px">
-    </a>
+    <div id="logo-img-box">
+      <a href="./vitrine">
+        <img src="assets/icons/logo2.png" alt="logo do site" width="28px">
+      </a>
+    </div>
 
     <div id="caixa-pesquisa-desktop" class="caixa-pesquisa-box">
       <input type="text" placeholder="Encontre seu vinho..." class="caixa-pesquisa" [(ngModel)]="pesquisaValorVinho" (keyup.enter)="pesquisarVinho()">
@@ -36,12 +41,17 @@
 
     <div id="conta-carrinho-box">
       <div id="cadastro-login-box">
-        <a href="./cadastro">
-          <img src="assets/icons/user.svg" alt="" width="40px">
-        </a>
+        <img src="assets/icons/user.svg" id="user-icon-img" alt="" width="40px" (click)="toggleUserMenu()">
+        <div id="menu-user-box">
+          <a href="./login" *ngIf="clienteLogado.codigo === 0">Entrar</a>
+          <a href="./cadastro" *ngIf="clienteLogado.codigo === 0">Cadastrar</a>
+          <a href="./config-conta" *ngIf="clienteLogado.codigo != 0">Minha Conta</a>
+          <a href="./historico-compra" *ngIf="clienteLogado.codigo != 0">Histórico de Compras</a>
+          <a href="./vitrine" (click)="logout()" *ngIf="clienteLogado.codigo != 0">Sair da Conta</a>
+        </div>
         <p id="mensagem-menu" *ngIf="clienteLogado.nome == ''">
-            <span>Bem-vindo(a)</span><br>
-            <a href="./login"> Entrar</a> ou <a href="./cadastro">Cadastrar</a>
+          <span>Bem-vindo(a)</span><br>
+          <a href="./login"> Entrar</a> ou <a href="./cadastro">Cadastrar</a>
         </p>
         <p id="mensagem-menu" *ngIf="clienteLogado.nome != ''">
           <span>Bem-vindo(a) </span><br>
@@ -57,10 +67,10 @@
   <nav id="menu-box-2">
     <div id="menu-items-box">
       <a href="./vitrine">Vitrine</a>
-      <a href="./config-conta">Configurações da Conta</a>
-      <a href="./login">Logar</a>
-      <a href="./cadastro">Cadastrar</a>
-      <a href="./cesta">Carrinho</a>
+      <a href="./login" *ngIf="clienteLogado.codigo === 0">Entrar</a>
+      <a href="./cadastro" *ngIf="clienteLogado.codigo === 0">Cadastrar</a>
+      <a href="./config-conta" *ngIf="clienteLogado.codigo != 0">Minha Conta</a>
+      <a href="./historico-compra" *ngIf="clienteLogado.codigo != 0">Histórico de Compra</a>
     </div>
   </nav>
   <div id="caixa-pesquisa-mobile" class="caixa-pesquisa-box">
