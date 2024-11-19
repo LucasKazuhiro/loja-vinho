@@ -166,7 +166,22 @@ menu{
   text-align: center;
 }
 
+#delete-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: rgba(255, 69, 58, 1); 
+  font-family: Arial, sans-serif;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
 
+#delete-btn:hover {
+  background-color: rgba(200, 0, 0, 1); 
+}
 
 @media (max-width: 1024px) {
   .container {

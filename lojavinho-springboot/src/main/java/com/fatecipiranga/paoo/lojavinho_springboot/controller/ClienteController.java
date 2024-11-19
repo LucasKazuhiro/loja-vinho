@@ -58,17 +58,17 @@ public class ClienteController {
 
      
     @DeleteMapping("/api/cliente/{codigo}")
-    public ResponseEntity<?> remover(@PathVariable long codigo) {
-        try{
-            return ResponseEntity.ok("Sua conta foi deletada com sucesso! Recarregue a página.");
-        }
-        catch(EmptyResultDataAccessException e){
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Conta do usuário não encontrada!");
-        }
-        catch(Exception e){
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro interno no servidor: " + e.getMessage());
-        }
+public ResponseEntity<?> remover(@PathVariable long codigo) {
+    try {
+        clienteRepository.deleteById(codigo); 
+        return ResponseEntity.ok("Sua conta foi deletada com sucesso! Recarregue a página.");
+    } catch (EmptyResultDataAccessException e) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Conta do usuário não encontrada!");
+    } catch (Exception e) {
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro interno no servidor: " + e.getMessage());
     }
+}
+
 
     
     @GetMapping("/api/clientes")
