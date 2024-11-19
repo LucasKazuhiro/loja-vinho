@@ -36,9 +36,11 @@
 
     <div id="conta-carrinho-box">
       <div id="cadastro-login-box">
-        <a href="./cadastro">
-          <img src="assets/icons/user.svg" alt="" width="40px">
-        </a>
+        <img src="assets/icons/user.svg" alt="" width="40px" (click)="toggleUserMenu()">
+        <div id="menu-user-box">
+          <a href="./config-conta">Minha Conta</a>
+          <a href="./historico-compra">Histórico de Compras</a>
+        </div>
         <p id="mensagem-menu" *ngIf="clienteLogado.nome == ''">
             <span>Bem-vindo(a)</span><br>
             <a href="./login"> Entrar</a> ou <a href="./cadastro">Cadastrar</a>
