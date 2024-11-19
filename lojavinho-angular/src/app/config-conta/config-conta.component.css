@@ -57,7 +57,7 @@ menu{
   font-family: Arial;
 }
 
-#mensagem-erro{
+#mensagem-execucao{
   display: flex;
   align-items: center;
   font-size: 15px;
