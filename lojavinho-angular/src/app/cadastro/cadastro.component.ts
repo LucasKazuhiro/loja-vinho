@@ -31,17 +31,6 @@ export class CadastroComponent {
 
   constructor(private service: ClienteService) {}
  
-  carregar() {
-    if (this.cliente.codigo) {
-      this.mensagemTitulo = "Atualizar os dados da conta";
-      this.cadastrarBtnText = "Atualizar dados";
-    } else {
-      this.mensagemTitulo = "Criar uma nova conta";
-      this.cadastrarBtnText = "Criar conta";
-    }
-  }
-
- 
   gravar() {
     const todosValoresPreenchidos = Object.values(this.cliente).every(dado => dado !== null && dado !== '');
   
