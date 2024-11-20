@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Cliente } from '../model/cliente';
 import { FormsModule } from '@angular/forms';
 import { MenuComponent } from '../menu/menu.component';
@@ -16,7 +16,7 @@ import { CestaService } from '../service/cesta.service';
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent{
   // Icones da Senha (FontAwesomeModule)
   faEye = faEye;
   faEyeSlash = faEyeSlash;
@@ -28,12 +28,7 @@ export class LoginComponent implements OnInit {
   public senhaCliente: string = '';
   public mostraSenha: boolean = false;
 
-  constructor(private clienteService: ClienteService, private cestaService:CestaService) {} // 
-
-  ngOnInit() {
-    // Executa a função "verificarEstaLogado()"
-    this.verificarEstaLogado();
-  }
+  constructor(private clienteService: ClienteService, private cestaService:CestaService) {}
 
   // Permite o login do usuário
   public fazerLogin() {
@@ -65,18 +60,6 @@ export class LoginComponent implements OnInit {
         },
       });
     }
-  }
-
-  // Verifica se o usuário está logado
-  public verificarEstaLogado() {
-    this.estaLogado = localStorage.getItem('cliente') !== null;
-  }
-
-  
-  public logout() {
-    localStorage.removeItem('cliente');
-    this.cestaService.logoutRemoverCesta();
-    window.location.href = './login';
   }
 
   // Verifica se a senha deve estar oculta ou não
