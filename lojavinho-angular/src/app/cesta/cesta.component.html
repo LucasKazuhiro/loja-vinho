@@ -7,7 +7,7 @@
 				<button (click)="limparCesta()" id="botaoLimparCarrinho" *ngIf="this.cestaCompra.itens.length != 0"> Limpar
 				</button>
 			</div>
-			<p *ngIf="mensagem != null" style="font-family: Tajawal; font-size: 22px;"> {{mensagem}} </p>
+			<p *ngIf="mensagem != null" style="font-family: Tajawal; font-size: 22px;"> {{mensagem}} <br><br></p>
 			<div id="carrinho-box">
 				<div id="produtos-carrinho-box">
 					<div class="item-carrinho-box" *ngFor="let item of cestaCompra.itens">
