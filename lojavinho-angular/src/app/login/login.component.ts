@@ -45,7 +45,6 @@ export class LoginComponent implements OnInit {
       this.clienteService.fazerLogin(clienteLogin).subscribe({
         next: (clienteRetornado: Cliente) => {
           if (clienteRetornado) {
-            this.cestaService.salvarClienteNaCesta(clienteRetornado);
             localStorage.setItem('cliente', JSON.stringify(clienteRetornado));
             window.location.href = './vitrine';
           } else {
