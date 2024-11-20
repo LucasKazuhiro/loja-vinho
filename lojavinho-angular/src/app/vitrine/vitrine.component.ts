@@ -17,6 +17,7 @@ import { Router } from '@angular/router';
 })
 
 export class VitrineComponent {
+  // Icone de Localização (FontAwesomeModule)
   faLocationDot = faLocationDot;
 
   public mensagem: string = "";
@@ -25,16 +26,23 @@ export class VitrineComponent {
 
     
   constructor(private service : VinhoService, private router: Router){
+    // Chama a função "carregarVitrine()"
     this.carregarVitrine();
   }
-    carregarVitrine(){
-      this.service.listar().subscribe({
-        next:(data) =>{this.vinhos = data},
-        error:() =>{this.mensagem="ocorreu um erro, volte mais tarde"}
-      });
-    }
 
-    public verMais(vinho: Vinho) {
-      this.router.navigate([`/detalhe`, vinho.codigo]);
-    }
+  // Carrega os Itens da vitrine com base no banco de dados
+  carregarVitrine(){
+    // Se inscreve na função "listar()" de VinhoService
+    this.service.listar().subscribe({
+      // Salva a array de vinho retornado em uma var local
+      next:(data) =>{this.vinhos = data},
+      // Mensagem de erro
+      error:() =>{this.mensagem="ocorreu um erro, volte mais tarde"}
+    });
   }
+
+  // Função para encaminhar o usuário para a página de Detalhe enviando o código do vinho
+  public verMais(vinho: Vinho) {
+    this.router.navigate([`/detalhe`, vinho.codigo]);
+  }
+}
