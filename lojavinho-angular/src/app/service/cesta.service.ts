@@ -121,13 +121,6 @@ export class CestaService {
 
     }
 
-    public salvarClienteNaCesta(cliente:Cliente){
-      this.cestaSalva.next({
-        ...this.cestaSalva.value,
-        cliente: cliente
-      })
-    }
-
     public salvarTotalComDesconto(valorTotalFinal:number, porcentagemDesconto:number){
       this.cestaSalva.next({
         ...this.cestaSalva.value,
@@ -136,9 +129,15 @@ export class CestaService {
       })
     }
 
-    public salvarCesta(valorTotalFinal:number, porcentagemDesconto:number){
+    public salvarCesta(idCliente: number, valorTotalFinal:number, porcentagemDesconto:number){
       this.salvarTotalComDesconto(valorTotalFinal, porcentagemDesconto);
-      return this.http.post("http://localhost:8080/api/cesta", this.cestaSalva.value);
+
+      const body = {
+        idCliente : idCliente,
+        cesta : this.cestaSalva.value
+      }
+
+      return this.http.post("http://localhost:8080/api/cliente/cesta", body);
     }
 
     public carregarComprasCliente(clienteCod:number): Observable<Cesta[]>{
