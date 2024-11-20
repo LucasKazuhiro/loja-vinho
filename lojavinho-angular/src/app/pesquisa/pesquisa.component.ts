@@ -5,6 +5,7 @@ import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { CommonModule } from '@angular/common';
 import { MenuComponent } from '../menu/menu.component';
 import { VinhoService } from '../service/vinho.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pesquisa',
@@ -14,14 +15,14 @@ import { VinhoService } from '../service/vinho.service';
   styleUrl: './pesquisa.component.css'
 })
 export class PesquisaComponent {
-  // Icones da Senha (FontAwesomeModule)
+  // Icone de Localização (FontAwesomeModule)
   faLocationDot = faLocationDot;
 
   public itens: Vinho[] = [];  
   public mensagem: string = "";
   public termo: string = "";
 
-  constructor(private service : VinhoService){}
+  constructor(private service : VinhoService, private router: Router){}
 
   ngOnInit(): void {
     // Puxa o termo pesquisado do localStorage e salva em uma var local
@@ -57,9 +58,6 @@ export class PesquisaComponent {
 
   // Função para ver mais detalhes de um determinado vinho
   public verMais(vinho:Vinho){
-    // Salva o vinho no localStorage
-    localStorage.setItem("vinho", JSON.stringify(vinho));
-    // Encaminha para a pagina de detalhe
-    window.location.href="./detalhe";
+    this.router.navigate([`/detalhe`, vinho.codigo]);
   }
 }
