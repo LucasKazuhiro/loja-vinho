@@ -5,7 +5,7 @@
       <h1> Esqueci minha senha </h1>
       <p id="mensagem-execucao"> {{mensagemExecucao}} </p>
       <label for="email">Email</label>
-      <input type="email" name="email" id="email" placeholder="Informe o email da conta" [(ngModel)]="emailCliente">
+      <input type="email" name="email" id="email" placeholder="Informe o email da conta" [(ngModel)]="emailCliente" (keyup.enter)="enviarCodigo()">
 
       <button id="enviar-codigo-botao" type="button" (click)="enviarCodigo()"> Enviar código </button>
     </div>
