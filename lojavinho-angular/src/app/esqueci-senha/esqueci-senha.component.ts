@@ -19,12 +19,16 @@ export class EsqueciSenhaComponent {
 
   constructor(private clienteService: ClienteService) {}
 
+  // Simula o envio de código para o email
   enviarCodigo() {
+    // Verifica se os campos não são vazios
     if (this.emailCliente !== "" && this.emailCliente !== null) {
 
+      // Cria uma instância de Cliente para armazenar o email coletado
       const cliente = new Cliente();
       cliente.email = this.emailCliente;
   
+      // Se inscreve na função "recuperarSenha()" do ClienteService
       this.clienteService.recuperarSenha(cliente).subscribe({
         next: (clienteRetornado: Cliente) => {
           if (clienteRetornado) {

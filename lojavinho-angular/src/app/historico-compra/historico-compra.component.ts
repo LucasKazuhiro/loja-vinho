@@ -17,23 +17,30 @@ export class HistoricoCompraComponent {
   public idClienteLogado:number = 0;
 
   constructor(cestaService:CestaService){
+    // Identifica o cliente logado
     let clienteJSON = localStorage.getItem('cliente');
     if(clienteJSON === null){
+      // Se não houver login, exibe mensagem de aviso
       this.mensagem = "Cadastre-se no site para efetuar uma compra";
     }
     else{
+      // Salva o ID do cliente logado em uma variável local
       this.idClienteLogado = JSON.parse(clienteJSON).codigo;
     }
 
+    // Se inscreve na função "carregarComprasCliente()" do CestaService
     cestaService.carregarComprasCliente(this.idClienteLogado).subscribe({
       next:(response) =>{
+        // Salva a lista de cesta retornada em uma variável local
         this.comprasCliente = response;
      
+        // Exibe mensagem de aviso caso não haja nenhuma compra
         if(this.comprasCliente.length === 0){
           this.mensagem = "Você não possui nenhuma compra efetuada!";
         }
       },
       error:(err) =>{
+        // Exibe mensagem de erro
         this.mensagem = "Parece que houve um erro! Tente novamente mais tarde.";
       }
     })
