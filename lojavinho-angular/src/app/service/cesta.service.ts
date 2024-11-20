@@ -39,18 +39,17 @@ export class CestaService {
       let itensSalvos = this.cestaSalva.value.itens;
       let itemExiste = false;
       let compraTotal = 0;
-
-      // Verifica se o item já não existe na Cesta
-      for(let i=0; i<itensSalvos.length; i++){
-        if(item.vinho.codigo === itensSalvos[i].vinho.codigo){
+      
+      itensSalvos.forEach(itemSalvoBD => {
+        if(item.vinho.codigo === itemSalvoBD.vinho.codigo){
           // Se existir, atualizar as informações daquele item na cesta
-          itensSalvos[i] = item;
+          itemSalvoBD = item;
           itemExiste = true;
         }
 
         // Calcula novo valor total da cesta
-        compraTotal += itensSalvos[i].valorTotal;
-      }
+        compraTotal += itemSalvoBD.valorTotal;
+      })
       
       // Se ele não existir, adicionar no fim da cesta
       if(!itemExiste){
