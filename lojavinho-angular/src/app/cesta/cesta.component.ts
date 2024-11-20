@@ -32,10 +32,13 @@ export class CestaComponent {
       this.verificarCestaVazia(this.cestaCompra);
     });
 
-    let clienteJSON = localStorage.getItem('cliente');
-    if(clienteJSON === null){
+    if(!this.verificarLogin()){
       this.mensagem = "Cadastre-se no site para efetuar uma compra";
-    }
+    }    
+  }
+
+  public verificarLogin(){
+    return localStorage.getItem('cliente') ? true : false;
   }
 
 
@@ -90,22 +93,31 @@ export class CestaComponent {
 
 
   public salvarCesta(){
-    this.cestaService.salvarCesta(this.valorTotalFinal, this.porcentagemDesconto).subscribe({
-      next: (response) => {
-        this.mensagem = "Cesta salva com sucesso!";
-        this.cestaService.limparCesta();
-        window.location.href = '/vitrine';
-      },
-      error: (err) => {
-        if(err.status === 400 && err.error){
-          this.mensagem = err.error;
-        }
-        else{
-          console.log(err)
-          this.mensagem = "Erro ao salvar a cesta. Tente novamente!";
+    if(this.verificarLogin()){
+      if(this.cestaCompra.itens.length > 0){
+        const clienteLogado = localStorage.getItem('cliente');
+        if(clienteLogado != null){
+          const clienteLogadoJSON = JSON.parse(clienteLogado)
+          this.cestaService.salvarCesta(clienteLogadoJSON.codigo, this.valorTotalFinal, this.porcentagemDesconto).subscribe({
+            next: (response) => {
+              this.mensagem = "Cesta salva com sucesso!";
+              this.cestaService.limparCesta();
+              window.location.href = '/vitrine';
+            },
+            error: (err) => {
+                console.log(err)
+                this.mensagem = "Erro ao salvar a cesta. Tente novamente!";
+            }
+          });
         }
       }
-    });
+      else{
+        this.mensagem = "É necessário pelo menos um produto para efetuar uma compra"
+      }
+    }
+    else{
+      alert("Cadastre-se no site para efetuar uma compra");
+    }
   }
 
 }

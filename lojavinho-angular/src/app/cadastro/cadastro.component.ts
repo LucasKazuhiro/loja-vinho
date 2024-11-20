@@ -50,7 +50,10 @@ export class CadastroComponent {
         this.service.inserir(this.cliente).subscribe({
           next: (data) => {
             this.mensagem = "Cadastro realizado com sucesso!";
-            window.location.href = "/login";
+
+            setTimeout(() => {
+              window.location.href = "/login";
+            }, 2000); 
           },
           error: (err) => {
             if (err.status === 400 && err.error === "Este email já está cadastrado.") {

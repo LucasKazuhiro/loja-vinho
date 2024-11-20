@@ -75,6 +75,7 @@ export class ConfigContaComponent implements OnInit {
       this.mensagem = "Todos os campos devem estar preenchidos!";
     }
   }
+
   removerConta() {
     if (confirm("Tem certeza de que deseja deletar sua conta? Essa ação não pode ser desfeita.")) {
       const clienteId = JSON.parse(localStorage.getItem('cliente') || '{}').codigo;
@@ -85,17 +86,15 @@ export class ConfigContaComponent implements OnInit {
 
           setTimeout(() => {
             this.logout();  
-          }, 1000); 
+          }, 2000); 
           
         },
         error: (err) => {
-          alert(err.error); 
+          this.mensagem = err.error;
         }
       });
     }
   }
-  
-  
   
   logout() {
     localStorage.removeItem('cliente');
@@ -103,7 +102,6 @@ export class ConfigContaComponent implements OnInit {
     window.location.href = './login';   
   }
   
-
   alternaSenha() {
     this.mostraSenha = !this.mostraSenha;
   }

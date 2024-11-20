@@ -3,6 +3,9 @@ package com.fatecipiranga.paoo.lojavinho_springboot.model;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 public class Cliente {
 
@@ -20,7 +23,9 @@ public class Cliente {
     private String cidade;
     private String complemento;
 
-    
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Cesta> cestas = new ArrayList<>();
+
     public Long getCodigo() {
         return codigo;
     }
@@ -99,5 +104,13 @@ public class Cliente {
 
     public void setComplemento(String complemento) {
         this.complemento = complemento;
+    }
+
+    public List<Cesta> getCestas() {
+        return cestas;
+    }
+
+    public void setCestas(List<Cesta> cestas) {
+        this.cestas = cestas;
     }
 }

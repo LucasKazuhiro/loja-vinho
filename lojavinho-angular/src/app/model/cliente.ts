@@ -1,3 +1,5 @@
+import { Cesta } from "./cesta";
+
 export class Cliente {
   public codigo: number = 0;
   public nome: string = "";
@@ -9,4 +11,5 @@ export class Cliente {
   public cep: string = "";
   public cidade: string = "";
   public complemento: string = "";
+  public cestas: Cesta[] = [];
 }

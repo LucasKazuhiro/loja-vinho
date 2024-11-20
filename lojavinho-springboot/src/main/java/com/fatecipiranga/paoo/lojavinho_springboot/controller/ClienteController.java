@@ -1,8 +1,15 @@
 package com.fatecipiranga.paoo.lojavinho_springboot.controller;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fatecipiranga.paoo.lojavinho_springboot.model.Cesta;
+import com.fatecipiranga.paoo.lojavinho_springboot.model.Item;
+import com.fatecipiranga.paoo.lojavinho_springboot.repository.CestaRepository;
 import org.aspectj.apache.bcel.classfile.ExceptionTable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -19,7 +26,7 @@ public class ClienteController {
 
     @Autowired
     private ClienteRepository clienteRepository;
-
+    private CestaRepository bd_cesta;
      
     @PostMapping("/api/cliente")
     public ResponseEntity<?> gravar(@RequestBody Cliente cliente) {
@@ -36,7 +43,34 @@ public class ClienteController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro interno no servidor: " + e.getMessage());
         }
     }
-    
+
+
+    @PostMapping("/api/cliente/cesta")
+    public ResponseEntity<?> salvarCesta(@RequestBody Map<String, Object> body){
+        Long idCliente = ((Number) body.get("idCliente")).longValue();
+        Cesta cesta = new ObjectMapper().convertValue(body.get("cesta"), Cesta.class);
+
+        try{
+            for(Item item : cesta.getItens()){
+                item.setCesta(cesta);
+            }
+
+            if (cesta.getData() == null) {
+                cesta.setData(LocalDate.now());
+            }
+
+            return clienteRepository.findById(idCliente)
+                    .map(clienteEncontrado -> {
+                        cesta.setCliente(clienteEncontrado);
+                        clienteEncontrado.getCestas().add(cesta);
+                        return ResponseEntity.ok(clienteRepository.save(clienteEncontrado));
+                    }).orElseGet(() -> ResponseEntity.notFound().build());
+
+        }
+        catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro interno no servidor: " + e.getMessage());
+        }
+    }
 
      
     @PutMapping("/api/cliente")

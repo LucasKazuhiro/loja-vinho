@@ -29,7 +29,7 @@ menu{
 .container {
   margin: auto;
   background-color: #fff;
-  padding: 20px;
+  padding: 30px;
   border-radius: 20px;
   box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.1);
   max-width: 850px;
@@ -57,7 +57,7 @@ menu{
   font-family: Arial;
 }
 
-#mensagem-erro{
+#mensagem-execucao{
   display: flex;
   align-items: center;
   font-size: 15px;
