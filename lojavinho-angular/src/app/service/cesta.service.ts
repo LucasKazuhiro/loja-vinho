@@ -10,36 +10,46 @@ import { Cliente } from '../model/cliente';
 })
 export class CestaService {
     constructor(private http : HttpClient){
+      // Ao iniciar a Service, executa a função "carregarCestaSession()" e salva o valor no cestaSalva
       this.cestaSalva.next(this.carregarCestaSession());
 
+      // Se inscreve no BehaviorSubject (observable) "cestaSalva" do CestaService
       this.cestaSalva.subscribe(cesta => {
+        // Chama a função "salvarCestaSession()" enviando a cestaSalva
         this.salvarCestaSession(cesta);
       })
     }
 
+    // Cria um Observable to tipo BehaviorSubject que guadará uma cesta
     private cestaSalva = new BehaviorSubject<Cesta>(new Cesta());
+    // Cria um Observable para cestaSalva (apenas efetua leituras)
     cestaSalva$ = this.cestaSalva.asObservable();
 
 
+    // Puxa a cesta armazenada em sessionStorage
     public carregarCestaSession(){
       const cestaSession = sessionStorage.getItem('cesta');
       return cestaSession ? JSON.parse(cestaSession) : new Cesta();
     }
 
+    // Salva a cestaSalva no sessionStorage
     public salvarCestaSession(cesta:Cesta){
       sessionStorage.setItem('cesta', JSON.stringify(cesta));
     }
 
+    // Remove todos os dados da cesta
     public logoutRemoverCesta(){
       this.cestaSalva.next(new Cesta);
       sessionStorage.removeItem('cesta');
     }
 
+    // Adiciona um item na cesta
     public adicionarItem(item : Item){
       let itensSalvos = this.cestaSalva.value.itens;
       let itemExiste = false;
       let compraTotal = 0;
       
+      // Verifica se o item já não existe na cesta
       itensSalvos.forEach(itemSalvoBD => {
         if(item.vinho.codigo === itemSalvoBD.vinho.codigo){
           // Se existir, atualizar as informações daquele item na cesta
@@ -62,6 +72,7 @@ export class CestaService {
       this.salvarItensTotal(itensSalvos, compraTotal);
     }
 
+    // Remove um item da cesta
     public removerItem(item : Item){
       let itensSalvos = this.cestaSalva.value.itens;
       let compraTotal = 0;
@@ -78,6 +89,7 @@ export class CestaService {
       this.salvarItensTotal(itensSalvos, compraTotal);
     }
 
+    // Limpa a cesta zerandos todos seus valores
     public limparCesta(){
       // Zera tudo e salva os valores
       this.cestaSalva.next({
@@ -88,6 +100,7 @@ export class CestaService {
       });
     }
 
+    // Altera a quantidade de um item
     public alterarQuantidade(item:Item, qtd:number){
       let itensSalvos = this.cestaSalva.value.itens;
       let compraTotal = 0;
@@ -110,8 +123,8 @@ export class CestaService {
       this.salvarItensTotal(itensSalvos, compraTotal);
     }
 
+    // Salva os valores no observable da cesta (cestaSalva)
     public salvarItensTotal(itensSalvos:Item[], compraTotal:number){
-      // Salva os valores
       this.cestaSalva.next({
         ...this.cestaSalva.value,
         itens: itensSalvos,
@@ -120,6 +133,7 @@ export class CestaService {
 
     }
 
+    // Altera os valores "total" e "desconto" da cesta
     public salvarTotalComDesconto(valorTotalFinal:number, porcentagemDesconto:number){
       this.cestaSalva.next({
         ...this.cestaSalva.value,
@@ -128,18 +142,24 @@ export class CestaService {
       })
     }
 
+    // Salva a cesta no Banco de Dados
     public salvarCesta(idCliente: number, valorTotalFinal:number, porcentagemDesconto:number){
+      // Chama a função "salvarCestaComDesconto()" para calcular alguns valores
       this.salvarTotalComDesconto(valorTotalFinal, porcentagemDesconto);
 
+      // Cria a variavel para ser enviada no BodyRequest contendo o ID do cliente e uma instancia da cesta
       const body = {
         idCliente : idCliente,
         cesta : this.cestaSalva.value
       }
 
+      // Efetua uma requisição POST para a URL enviando o "body"
       return this.http.post("http://localhost:8080/api/cliente/cesta", body);
     }
 
+    // Carrega as compras de um determinado cliente
     public carregarComprasCliente(clienteCod:number): Observable<Cesta[]>{
+      // Efetua uma requisição GET para a URL enviando como parametro o codigo do cliente
       return this.http.get<Cesta[]>("http://localhost:8080/api/cesta/cliente", { params: {clienteCod: clienteCod.toString()} });
     }
 }
