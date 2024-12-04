@@ -77,3 +77,21 @@ ng serve
 ```console
 http://localhost:4200/
 ```
+
+<br><br>
+
+# Imagens do Projeto
+## Vitrine da Loja
+<img alt="Pàgina da Vitrine" src="readme-imgs/Vitrine.png">
+
+## Cadastro de Usuário
+<img alt="Página de Cadastro" src="readme-imgs/Cadastro.png">
+
+## Pesquisa de Produto
+<img alt="Página de Pesquisa" src="readme-imgs/Pesquisa.png">
+
+## Detalhes do Produto
+<img alt="Página de Detalhe" src="readme-imgs/Detalhe.png">
+
+## Carrinho
+<img alt="Página do Carrinho" src="readme-imgs/Cesta.png">
