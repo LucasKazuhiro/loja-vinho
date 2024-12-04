@@ -30,10 +30,10 @@ Para desenvolver o front-end foi utiliza o framework Angular (typescript), e par
     <tr>
         <th>
             Frameworks
-        <th>
+        </th>
         <td>
             <img alt="Angular" src="https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white"/>
-        <td>
+        </td>
         <td>
             <img alt="Spring" src="https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white"/>
         </td>
@@ -53,10 +53,10 @@ Para desenvolver o front-end foi utiliza o framework Angular (typescript), e par
 4. Instale o [`MySQL`](https://dev.mysql.com/downloads/mysql/). Opcionalmente você pode baixar o [`MySQL Workbench`](https://dev.mysql.com/downloads/workbench/) para gerenciar os bancos de dados via interface gráfica.
 
 # Inicializando o projeto
-#### 1. Inicialize o serviço do MySQL (`MySQL80`)
-#### 2. Execute o arquivo `LojavinhoSpringbootApplication.java`
-#### 3. Importe o arquivo `requestsPostman.json` e na pasta "Vinho" execute todas as requisições `POST`
-#### 4. Acesse a pasta `lojavinho-angular`, abra o CMD e execute o seguinte código:
+1. Inicialize o serviço do MySQL (`MySQL80`)
+2. Execute o arquivo `LojavinhoSpringbootApplication.java`
+3. Importe o arquivo `requestsPostman.json` e na pasta "Vinho" execute todas as requisições `POST`
+4. Acesse a pasta `lojavinho-angular`, abra o CMD e execute o seguinte código:
 ```console
 ng serve
 ```
