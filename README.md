@@ -2,7 +2,7 @@
 O seguinte projeto foi elaborado para a matéria de Programação WEB, e se trata de uma loja online de venda de vinhos onde é possível criar uma conta, alterar dados desse cadastro, se logar (e deslogar), visualizar detalhes dos vinhos, adicionar um item ao carrinho e, por fim, efetuar uma compra.
 
 # Tecnologias
-Para desenvolver o front-end foi utiliza o framework Angular (typescript), e para o back-end Sprintboot (java), além de HTML e CSS para estruturar e estilar as páginas.
+Para desenvolver o front-end foi utiliza o framework Angular (typescript), e para o back-end Sprintboot (java), além de HTML e CSS para estruturar e estilar as páginas. No banco de dados foi utilizado a linguagem SQL e o framework MySQL (para gerenciar)
 
 <table align="center">
     <tr>
