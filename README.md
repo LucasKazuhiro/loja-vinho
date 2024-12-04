@@ -62,7 +62,7 @@ Para desenvolver o front-end foi utiliza o framework Angular (typescript), e par
 1. Instale o [`Node.js`](https://nodejs.org/en) e certifique-se de que ele inclua o gerenciador de pacotes `npm`.
 2. Instale o [`Angular CLI`](https://angular.dev/installation#install-angular-cli) globalmente.
 3. Instale o [`Java Development Kit`](https://www.oracle.com/java/technologies/downloads/?er=221886#jdk23-windows) (JDK) ou semelhantes.
-4. Instale o [`MySQL`](https://dev.mysql.com/downloads/mysql/). Opcionalmente você pode baixar o [`MySQL Workbench`](https://dev.mysql.com/downloads/workbench/) para gerenciar os bancos de dados via interface gráfica.
+4. Instale o [`MySQL`](https://dev.mysql.com/downloads/mysql/). Opcionalmente você pode baixar o [`MySQL Workbench`](https://dev.mysql.com/downloads/workbench/) para gerenciar o banco de dado via interface gráfica.
 5. Instale o [`Postman`](https://www.postman.com/downloads/) para efetuar requisições manuais.
 
 # Inicializando o projeto
