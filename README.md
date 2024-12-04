@@ -63,11 +63,12 @@ Para desenvolver o front-end foi utiliza o framework Angular (typescript), e par
 2. Instale o [`Angular CLI`](https://angular.dev/installation#install-angular-cli) globalmente.
 3. Instale o [`Java Development Kit`](https://www.oracle.com/java/technologies/downloads/?er=221886#jdk23-windows) (JDK) ou semelhantes.
 4. Instale o [`MySQL`](https://dev.mysql.com/downloads/mysql/). Opcionalmente você pode baixar o [`MySQL Workbench`](https://dev.mysql.com/downloads/workbench/) para gerenciar os bancos de dados via interface gráfica.
+5. Instale o [`Postman`](https://www.postman.com/downloads/) para efetuar requisições manuais.
 
 # Inicializando o projeto
 1. Inicialize o serviço do MySQL (`MySQL80`)
 2. Execute o arquivo `LojavinhoSpringbootApplication.java`
-3. Importe o arquivo `requestsPostman.json` e na pasta "Vinho" execute todas as requisições `POST`
+3. Importe o arquivo `requestsPostman.json` no Postman e na pasta "Vinho" execute todas as requisições `POST`
 4. Acesse a pasta `lojavinho-angular`, abra o CMD e execute o seguinte código:
 ```console
 ng serve
