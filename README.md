@@ -41,7 +41,7 @@ Para desenvolver o front-end foi utiliza o framework Angular (typescript), e par
     </tr>
     <tr>
         <th>
-            IDEs/Editors
+            IDE / Editor
         </th>
         <td>
             <img alt="Visual Studio Code" src="https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white"/>
@@ -72,7 +72,7 @@ Para desenvolver o front-end foi utiliza o framework Angular (typescript), e par
 ```console
 ng serve
 ```
-#### 5. Acesse o `localhost` para abrir o site:
+5. Acesse o `localhost` para abrir o site:
 ```console
 http://localhost:4200/
 ```
