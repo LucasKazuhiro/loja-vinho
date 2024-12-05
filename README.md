@@ -67,13 +67,17 @@ Para desenvolver o front-end foi utiliza o framework Angular (typescript), e par
 
 # Inicializando o projeto
 1. Inicialize o serviço do MySQL (`MySQL80`).
-2. Execute o arquivo `LojavinhoSpringbootApplication.java`.
-3. Importe o arquivo `requestsPostman.json` no Postman e na pasta "Vinho" execute todas as requisições `POST`.
-4. Acesse a pasta `lojavinho-angular`, abra o CMD e execute o seguinte código:
+2. Faça um `git clone` do repositório:
+```console
+git clone https://github.com/LucasKazuhiro/loja-vinho.git
+```
+3. Execute o arquivo `LojavinhoSpringbootApplication.java`.
+4. Importe o arquivo `requestsPostman.json` no Postman e na pasta "Vinho" execute todas as requisições `POST`.
+5. Acesse a pasta `lojavinho-angular`, abra o CMD e execute o seguinte código:
 ```console
 ng serve
 ```
-5. Acesse o `localhost` para abrir o site:
+6. Acesse o `localhost` para abrir o site:
 ```console
 http://localhost:4200/
 ```
